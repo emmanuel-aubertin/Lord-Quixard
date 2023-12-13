@@ -1,0 +1,13 @@
+.vscode/
+
+*.dSYM
+
+MacMahon
+
+*.out
+
+*.bin
+
+*.gch
+
+*.json
