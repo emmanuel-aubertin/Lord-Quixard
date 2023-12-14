@@ -25,18 +25,65 @@ void GameEngine::printBoard()
     this->board->printBoard();
 }
 
+bool GameEngine::isWinner() {
+    for (int i = 0; i < this->board->getBoard().size(); ++i) {
+        if (isRowWin(i) || isColumnWin(i)) {
+            return true;
+        }
+    }
+    return isMainDiagonalWin() || isAntiDiagonalWin();
+}
+
+bool GameEngine::isRowWin(int row) {
+    const auto& firstSign = this->board->getBoard()[row][0].sign;
+    if (firstSign == Tile::Blank) return false;
+
+    for (int j = 1; j < this->board->getBoard().size(); ++j) {
+        if (this->board->getBoard()[row][j].sign != firstSign) return false;
+    }
+    return true;
+}
+
+bool GameEngine::isColumnWin(int column) {
+    const auto& firstSign = this->board->getBoard()[0][column].sign;
+    if (firstSign == Tile::Blank) return false;
+
+    for (int i = 1; i < this->board->getBoard().size(); ++i) {
+        if (this->board->getBoard()[i][column].sign != firstSign) return false;
+    }
+    return true;
+}
+
+bool GameEngine::isMainDiagonalWin() {
+    const auto& firstSign = this->board->getBoard()[0][0].sign;
+    if (firstSign == Tile::Blank) return false;
+
+    for (int i = 1; i < this->board->getBoard().size(); ++i) {
+        if (this->board->getBoard()[i][i].sign != firstSign) return false;
+    }
+    return true;
+}
+
+bool GameEngine::isAntiDiagonalWin() {
+    const auto& firstSign = this->board->getBoard()[0][this->board->getBoard().size() - 1].sign;
+    if (firstSign == Tile::Blank) return false;
+
+    for (int i = 1; i < this->board->getBoard().size(); ++i) {
+        if (this->board->getBoard()[i][this->board->getBoard().size() - i - 1].sign != firstSign) return false;
+    }
+    return true;
+}
+
 void GameEngine::makeIAmove()
 {
     PlayerAI *aiPlayer = dynamic_cast<PlayerAI *>(&playerTwo);
     if (aiPlayer != nullptr)
     {
         std::vector<int> play = aiPlayer->getPlay(this->board);
-        while(!this->move(play[0], play[1], play[2], play[3])) {
+        while (!this->move(play[0], play[1], play[2], play[3]))
+        {
             play = aiPlayer->getPlay(this->board);
         }
-        
-        
-
     }
     else
     {
