@@ -1,3 +1,6 @@
+#ifndef GAMEBOARD_HPP
+#define GAMEBOARD_HPP
+
 #include <iostream>
 #include "./../Tile.cpp"
 
@@ -11,3 +14,4 @@ public:
 private:
     std::array<std::array<Tile, 5>, 5> board;
 };
+#endif
