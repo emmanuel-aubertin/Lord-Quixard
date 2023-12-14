@@ -11,3 +11,7 @@ MacMahon
 *.gch
 
 *.json
+
+Quixo
+
+build/*
