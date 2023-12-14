@@ -5,10 +5,10 @@
 
 RandomAI::RandomAI(const std::string &name) : PlayerAI(name)
 {
-
+    // Useless for the moment
 }
 
-std::vector<int> RandomAI::getPlay(GameBoard*)
+std::vector<int> RandomAI::getPlay(GameBoard *)
 {
     std::vector<int> randomIntegers;
     std::random_device rd;
