@@ -1,9 +1,13 @@
 #include <iostream>
 #include "GameEngine.hpp"
+#include "../Player/AIPlayer/PlayerAI.hpp"
 
-GameEngine::GameEngine()
+GameEngine::GameEngine(Player &playerOne, Player &playerTwo)
+    : playerOne(playerOne), playerTwo(playerTwo)
 {
     this->board = new GameBoard();
+    this->playerOne = playerOne;
+    this->playerTwo = playerTwo;
 }
 
 bool GameEngine::move(const int x, const int y, const int new_x, const int new_y)
@@ -19,6 +23,25 @@ bool GameEngine::move(const int x, const int y, const int new_x, const int new_y
 void GameEngine::printBoard()
 {
     this->board->printBoard();
+}
+
+void GameEngine::makeIAmove()
+{
+    PlayerAI *aiPlayer = dynamic_cast<PlayerAI *>(&playerTwo);
+    if (aiPlayer != nullptr)
+    {
+        std::vector<int> play = aiPlayer->getPlay(this->board);
+        while(!this->move(play[0], play[1], play[2], play[3])) {
+            play = aiPlayer->getPlay(this->board);
+        }
+        
+        
+
+    }
+    else
+    {
+        std::cerr << "Error: playerTwo is not an AI player." << std::endl;
+    }
 }
 
 /**

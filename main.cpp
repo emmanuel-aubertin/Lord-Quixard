@@ -14,16 +14,13 @@
 
 #include <iostream>
 #include <string.h>
-#ifdef __x86_64__
-    #include <SDL2/SDL.h>
-#elif defined(__arm64__) || defined(__aarch64__)
-    #include <SDL2/SDL.h>
-#else
-    #error "Unsupported architecture"
-#endif
+#include <SDL2/SDL.h>
 
 
-#include "./src/GameBoard/GameBoard.hpp"
+
+#include "src/GameEngine/GameEngine.hpp"
+#include "src/Player/PlayerHuman/PlayerHuman.hpp"
+#include "src/Player/AIPlayer/RandomAI/RandomAI.hpp"
 
 std::string PROGNAME="Quixo";
 std::string FILE_NAME= __FILE__;
@@ -87,16 +84,21 @@ int main(int argc,char** argv){
         }
     }
 
+    PlayerHuman* david = new PlayerHuman("David");
+    RandomAI* roger = new RandomAI("Roger");
 
-    GameBoard* test = new GameBoard();
+    GameEngine* engine = new GameEngine(*david, *roger);
     //test->printBoard();
     //test->move(0, 0, 0, 4);
-    test->move(0, 2, 0, 4);
-    test->move(0, 0, 0, 4);
-    test->move(0, 0, 4, 0);
-    test->move(0, 0, 4, 0);
+    engine->move(0, 2, 0, 4);
+    engine->move(0, 0, 0, 4);
+    engine->move(0, 0, 4, 0);
+    engine->move(0, 0, 4, 0);
     //test->move(2, 0, 2, 4);
-    test->printBoard();
+    engine->printBoard();
+
+    engine->makeIAmove();
+    engine->printBoard();
 
 /*
     if(SDL_Init(SDL_INIT_VIDEO) < 0) {
