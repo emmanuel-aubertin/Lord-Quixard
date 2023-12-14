@@ -7,7 +7,10 @@ clean:
 
 compiler:
 	@printf "\e[32m--------| \e[1;32mCompilation of all your .cpp\e[0m\e[32m |--------\e[0m\n\n"
-	g++ -std=c++17  -Ofast -g   main.cpp  -o Quixo
+	cmake -S ./ -B ./build
+	@printf "\n \e[32m\cmake done\e[0m\n"
+	clang++ -std=c++17 -I/opt/homebrew/include -L/opt/homebrew/lib -lSDL2 -o Quixo main.cpp src/GameBoard/GameBoard.cpp
+
 	@printf "\e[32m\tDONE\e[0m\n"
 
 test:   compiler

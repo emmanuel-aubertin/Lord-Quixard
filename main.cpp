@@ -14,9 +14,16 @@
 
 #include <iostream>
 #include <string.h>
-#include <fstream>
-#include <stdlib.h>
-#include <chrono>
+#ifdef __x86_64__
+    #include <SDL2/SDL.h>
+#elif defined(__arm64__) || defined(__aarch64__)
+    #include <SDL2/SDL.h>
+#else
+    #error "Unsupported architecture"
+#endif
+
+
+#include "./src/GameBoard/GameBoard.hpp"
 
 std::string PROGNAME="Quixo";
 std::string FILE_NAME= __FILE__;
@@ -80,5 +87,56 @@ int main(int argc,char** argv){
         }
     }
 
+
+    GameBoard* test = new GameBoard();
+    //test->printBoard();
+    //test->move(0, 0, 0, 4);
+    test->move(0, 2, 0, 4);
+    test->move(0, 0, 0, 4);
+    test->move(0, 0, 4, 0);
+    test->move(0, 0, 4, 0);
+    //test->move(2, 0, 2, 4);
+    test->printBoard();
+
+/*
+    if(SDL_Init(SDL_INIT_VIDEO) < 0) {
+        failure("Failed to initialize the SDL2 library\n");
+        return -1;
+    }
+
+    SDL_Window *window = SDL_CreateWindow(PROGNAME.c_str(), // Cast PROGNAME from string to const char *
+                                          SDL_WINDOWPOS_CENTERED,
+                                          SDL_WINDOWPOS_CENTERED,
+                                          680, 480,
+                                          0);
+
+    if(!window) {
+        failure("Failed to create window\n");
+        return -1;
+    }
+
+    SDL_Surface *window_surface = SDL_GetWindowSurface(window);
+
+    if(!window_surface) {
+        failure("Failed to get the surface from the window\n");
+        return -1;
+    }
+
+    SDL_Event event;
+    bool running = true;
+
+    while(running) {
+        while(SDL_PollEvent(&event)) {
+            switch(event.type) {
+                case SDL_QUIT:
+                    running = false;
+                    break;
+            }
+        }
+        SDL_UpdateWindowSurface(window);
+    }
+
+    SDL_DestroyWindow(window);
+    SDL_Quit();*/
     return 0;
 }
