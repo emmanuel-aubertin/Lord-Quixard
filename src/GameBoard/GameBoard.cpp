@@ -35,7 +35,7 @@ void GameBoard::printBoard()
     }
 }
 
-bool GameBoard::move(const int x, const int y, const int new_x, const int new_y)
+bool GameBoard::move(const int x, const int y, const int new_x, const int new_y, const Tile::Sign sign)
 {
     std::cout << "Move : From (" << x << ", " << y << " ) To (" << new_x << ", " << new_y << ")" << std::endl;
     if (new_x == x)
@@ -50,7 +50,7 @@ bool GameBoard::move(const int x, const int y, const int new_x, const int new_y)
                 board[x][i] = prev;
                 prev = temp;
             }
-            board[new_x][new_y].sign = Tile::X;
+            board[new_x][new_y].sign = sign;
             return true;
         }
         Tile prev = board[x][new_y];
@@ -60,7 +60,7 @@ bool GameBoard::move(const int x, const int y, const int new_x, const int new_y)
             board[x][i] = prev;
             prev = temp;
         }
-        board[new_x][new_y].sign = Tile::X;
+        board[new_x][new_y].sign = sign;
         return true;
     }
 
@@ -73,7 +73,7 @@ bool GameBoard::move(const int x, const int y, const int new_x, const int new_y)
             board[i][y] = prev;
             prev = temp;
         }
-        board[new_x][new_y].sign = Tile::X;
+        board[new_x][new_y].sign = sign;
         return true;
     }
     Tile prev = board[new_x][y];
@@ -83,7 +83,7 @@ bool GameBoard::move(const int x, const int y, const int new_x, const int new_y)
         board[i][y] = prev;
         prev = temp;
     }
-    board[new_x][new_y].sign = Tile::X;
+    board[new_x][new_y].sign = sign;
     return true;
 }
 

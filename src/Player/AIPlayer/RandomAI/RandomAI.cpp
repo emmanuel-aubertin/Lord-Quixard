@@ -5,7 +5,7 @@
 
 RandomAI::RandomAI(const std::string &name) : PlayerAI(name)
 {
-    // Useless for the moment
+    // Waiting for new feature
 }
 
 std::vector<int> RandomAI::getPlay(GameBoard *)
@@ -13,6 +13,7 @@ std::vector<int> RandomAI::getPlay(GameBoard *)
     std::vector<int> randomIntegers;
     std::random_device rd;
     std::mt19937 gen(rd());
+    std::uniform_int_distribution<> ran_big(1, 100);
     std::uniform_int_distribution<> edge_dis(0, 4);
     std::uniform_int_distribution<> middle_dis(1, 3);
 
@@ -22,7 +23,7 @@ std::vector<int> RandomAI::getPlay(GameBoard *)
     randomIntegers.push_back(ran_x);
     randomIntegers.push_back(ran_y);
 
-    if (std::chrono::system_clock::to_time_t(std::chrono::system_clock::now()) % 2 == 1)
+    if (ran_big(gen) % 2 == 1)
     {
         randomIntegers.push_back(ran_x);
         randomIntegers.push_back(ran_y == 4 ? 0 : 4);

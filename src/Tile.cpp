@@ -1,3 +1,6 @@
+#ifndef TILE
+#define TILE
+
 struct Tile
 {
     enum Sign {X, O, Blank};
@@ -5,3 +8,5 @@ struct Tile
 
     Tile() : sign(Blank) {};
 };
+
+#endif
