@@ -99,12 +99,16 @@ int main(int argc, char **argv)
 
     GameEngine *engine = new GameEngine(*david, *roger);
 
-    engine->printBoard();
+    engine->move(0, 0, 0, 4);
 
-    while (!engine->isWinner())
+    engine->printBoard();
+    int count = 0;
+    while (!engine->isWinner() && !engine->isDraw() && count < 12)
     {
         engine->makeIAmove();
+        count++;
     }
+    std::cout << "----------" << std::endl;
 
     engine->printBoard();
 

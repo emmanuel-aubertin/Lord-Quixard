@@ -8,7 +8,7 @@ class GameBoard
 {
 public:
     GameBoard();
-    bool move(const int x, const int y, const int new_x, const int new_y);
+    bool move(const int x, const int y, const int new_x, const int new_y, const Tile::Sign sign);
     void printBoard();
     std::array<std::array<Tile, 5>, 5> getBoard();
 private:
