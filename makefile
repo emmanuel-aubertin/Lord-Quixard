@@ -8,7 +8,7 @@ cmake:
 	cmake -S ./ -B ./build
 compiler:
 	@printf "\e[32m--------| \e[1;32mCompilation of all your .cpp\e[0m\e[32m |--------\e[0m\n\n"
-	clang++  -std=c++17 -I/opt/homebrew/include -L/opt/homebrew/lib -lSDL2 -o Quixo main.cpp src/GameBoard/GameBoard.cpp src/GameEngine/GameEngine.cpp src/Player/Player.cpp src/Player/PlayerHuman/PlayerHuman.cpp src/Player/AIPlayer/PlayerAI.cpp src/Player/AIPlayer/RandomAI/RandomAI.cpp
+	clang++  -std=c++17 -I/opt/homebrew/include -L/opt/homebrew/lib -lSDL2 -lSDL2_ttf -o Quixo main.cpp src/MVC/Model.cpp src/GameBoard/GameBoard.cpp src/GameEngine/GameEngine.cpp src/Player/Player.cpp src/Player/PlayerHuman/PlayerHuman.cpp src/Player/AIPlayer/PlayerAI.cpp src/Player/AIPlayer/RandomAI/RandomAI.cpp Config.cpp
 	@printf "\e[32m\tDONE\e[0m\n"
 
 test:   compiler
