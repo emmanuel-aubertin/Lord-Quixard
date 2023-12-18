@@ -19,7 +19,7 @@
 #include "src/GameEngine/GameEngine.hpp"
 #include "src/Player/PlayerHuman/PlayerHuman.hpp"
 #include "src/Player/AIPlayer/RandomAI/RandomAI.hpp"
-#include "src/MVC/Model.hpp"
+#include "src/MVC/Controller.hpp"
 #include "Config.hpp"
 
 bool VERBOSE = false;
@@ -57,7 +57,7 @@ auto print_help = []()
 
 int main(int argc, char **argv)
 {
-    std::cout << "🤗  |Welcome in \033[1m" << Config::PROGNAME << "\033[0m mode| 🤗" << std::endl;
+    std::cout << "🤗  | Welcome in \033[1m" << Config::PROGNAME << "\033[0m | 🤗" << std::endl;
     print_release();
     std::cout << std::endl
               << std::endl;
@@ -97,9 +97,10 @@ int main(int argc, char **argv)
 
     GameEngine *engine = new GameEngine(*david, *roger);
 
-    Model* model = new Model();
+
+    Controller* c = new Controller();
     
-    model->run();
+    c->run();
     
     return 0;
 }
