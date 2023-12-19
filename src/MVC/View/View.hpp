@@ -10,6 +10,7 @@ protected:
     SDL_Window* window;
     SDL_Surface* windowSurface;
 
+
     std::string getWorkingDirectory();
 public:
     View(SDL_Window* win);

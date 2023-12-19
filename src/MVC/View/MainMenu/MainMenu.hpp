@@ -5,6 +5,8 @@
 #include <SDL2/SDL_ttf.h>
 #include <string>
 #include "../View.hpp"
+#include <vector>
+#include <utility>
 
 class MainMenu : public View {
 public:
@@ -13,6 +15,7 @@ public:
 
     void render() override;
 private:
+    bool isCube;
     TTF_Font* font;
     SDL_Surface* gHelloWorld;
     SDL_Surface *textSurface;
@@ -22,6 +25,7 @@ private:
     Uint32 frameStart;
     int frameCount;
     int fps;
+    bool isPointInPoly(int x, int y, const std::vector<std::pair<int, int>>& poly);
 };
 
 #endif

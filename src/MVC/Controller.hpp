@@ -11,6 +11,7 @@ private:
     View* view;
     SDL_Window* window;
     bool isRunning;
+    int mouseX, mouseY;
 
 public:
     Controller();
