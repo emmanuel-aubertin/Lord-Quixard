@@ -8,13 +8,23 @@
 #include <vector>
 #include <utility>
 
-class MageSMelee : public View {
+struct TileCoords {
+    SDL_Point topLeft;
+    SDL_Point topRight;
+    SDL_Point bottomRight;
+    SDL_Point bottomLeft;
+};
+
+class MageSMelee : public View
+{
 public:
-    MageSMelee(SDL_Window* win);
+    MageSMelee(SDL_Window *win);
     virtual ~MageSMelee();
     void render() override;
+
 private:
-    View* handleClick(int, int) override;
+    bool isPointInTile(const SDL_Point &point, const TileCoords &tile);
+    View *handleClick(int, int) override;
     SDL_Surface *backgroundSuface;
     SDL_Surface *window_surface;
     SDL_Surface *tileSurface;
