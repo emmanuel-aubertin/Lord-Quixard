@@ -12,7 +12,7 @@ private:
     SDL_Window* window;
     bool isRunning;
     int mouseX, mouseY;
-
+    void updateView(View* newView);
 public:
     Controller();
     ~Controller();
@@ -20,4 +20,4 @@ public:
     void handleEvents();
 };
 
-#endif // CONTROLLER_HPP
+#endif 
