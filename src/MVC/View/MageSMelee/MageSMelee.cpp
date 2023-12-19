@@ -3,12 +3,6 @@
 #include <array>
 #include <utility>
 
-const int GRID_SIZE = 5;
-const int TILE_SIZE = 110;
-const int gridWidth = GRID_SIZE * TILE_SIZE;
-const int gridHeight = GRID_SIZE * TILE_SIZE;
-const int startX = 647;
-const int startY = 232;
 
 MageSMelee::MageSMelee(SDL_Window *win) : View(win)
 {
@@ -28,12 +22,7 @@ MageSMelee::MageSMelee(SDL_Window *win) : View(win)
         SDL_BlitSurface(backgroundSuface, NULL, windowSurface, NULL);
     }
 
-    std::string tile_path = getWorkingDirectory() + "/static/img/EmptyTile.bmp";
-    tileSurface = SDL_LoadBMP(tile_path.c_str());
-    if (!tileSurface)
-    {
-        std::cerr << "Unable to load image " << tile_path << "! SDL Error: " << SDL_GetError() << std::endl;
-    }
+
 }
 
 MageSMelee::~MageSMelee()
@@ -65,17 +54,7 @@ void MageSMelee::render()
         SDL_BlitScaled(backgroundSuface, NULL, windowSurface, &destRect);
     }
 
-    if (tileSurface)
-    {
-        for (int row = 0; row < GRID_SIZE; ++row)
-        {
-            for (int col = 0; col < GRID_SIZE; ++col)
-            {
-                SDL_Rect destRect = {startX + col * TILE_SIZE, startY + row * TILE_SIZE, TILE_SIZE, TILE_SIZE};
-                SDL_BlitSurface(tileSurface, NULL, windowSurface, &destRect);
-            }
-        }
-    }
+
 
     SDL_Color textColor = {255, 255, 255};
 
@@ -86,29 +65,62 @@ void MageSMelee::render()
     // Render the new FPS text
 
     std::string fpsText = "FPS: " + std::to_string(fps);
-    //renderText(fpsText, 1725, 5, textColor, 24);
+    renderText(fpsText, 1725, 5, textColor, 24);
 
     //renderText("Magic Quixo", 20, 20, textColor, 124);
 }
 
+struct TileCoords {
+    SDL_Point topLeft;
+    SDL_Point topRight;
+    SDL_Point bottomRight;
+    SDL_Point bottomLeft;
+};
+
+const int NUM_TILES = 25;
+TileCoords tileCoords[NUM_TILES] = {
+    {{710, 321}, {772, 319}, {773, 378}, {711, 377}},
+    {{780, 320}, {841, 320}, {841, 378}, {780, 377}},
+    {{847, 322}, {908, 322}, {908, 376}, {848, 378}},
+    {{914, 322}, {975, 319}, {978, 378}, {914, 377}},
+    {{982, 320}, {1044, 318}, {1045, 378}, {985, 378}},
+    {{710, 387}, {772, 387}, {773, 444}, {709, 443}},
+    {{779, 388}, {841, 387}, {842, 446}, {778, 443}},
+    {{847, 388}, {909, 386}, {909, 443}, {847, 444}},
+    {{914, 387}, {978, 386}, {978, 445}, {916, 447}},
+    {{984, 389}, {1046, 388}, {1047, 445}, {985, 446}},
+    {{708, 453}, {772, 452}, {773, 507}, {707, 505}},
+    {{778, 452}, {841, 452}, {840, 506}, {777, 507}},
+    {{847, 453}, {911, 452}, {911, 506}, {846, 507}},
+    {{917, 455}, {979, 455}, {981, 506}, {918, 506}},
+    {{985, 453}, {1047, 451}, {1050, 506}, {985, 505}},
+    {{707, 514}, {772, 514}, {772, 571}, {707, 569}},
+    {{777, 516}, {841, 515}, {841, 571}, {778, 570}},
+    {{846, 515}, {910, 514}, {910, 573}, {849, 570}},
+    {{917, 512}, {980, 512}, {982, 571}, {919, 571}},
+    {{987, 514}, {1050, 513}, {1050, 570}, {988, 571}},
+    {{706, 579}, {770, 579}, {770, 637}, {704, 637}},
+    {{777, 580}, {841, 578}, {840, 637}, {776, 636}},
+    {{848, 579}, {911, 579}, {912, 636}, {849, 637}},
+    {{917, 579}, {981, 579}, {983, 638}, {916, 636}},
+    {{989, 579}, {1051, 579}, {1053, 638}, {990, 640}}
+};
+
+
+bool isPointInTile(const SDL_Point& point, const TileCoords& tile) {
+    return (point.x >= tile.topLeft.x && point.x <= tile.topRight.x &&
+            point.y >= tile.topLeft.y && point.y <= tile.bottomLeft.y);
+}
+
+
 View *MageSMelee::handleClick(int x, int y)
 {
-    int col = (x - startX) / TILE_SIZE;
-    int row = (y - startY) / TILE_SIZE;
-
-    // Check if the click is within the grid bounds
-    if (col >= 0 && col < GRID_SIZE && row >= 0 && row < GRID_SIZE)
-    {
-        // Calculate the tile number (0-based index)
-        int tileNumber = row * GRID_SIZE + col;
-
-        // TODO: Perform your action based on the clicked tile
-        std::cout << "Clicked on tile number: " << tileNumber << " (" << row << ", " << col << ")" << std::endl;
+SDL_Point clickedPoint = {x, y};
+    for (int i = 0; i < NUM_TILES; ++i) {
+        if (isPointInTile(clickedPoint, tileCoords[i])) {
+            std::cout << "Clicked on tile " << i << std::endl;
+            break;
+        }
     }
-    else
-    {
-        std::cout << "Clicked outside of the grid." << std::endl;
-    }
-
     return nullptr;
 }
