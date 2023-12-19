@@ -11,16 +11,16 @@ class GameEngine
 public:
     GameEngine(Player &playerOne, Player &playerTwo);
     bool move(const int x, const int y, const int new_x, const int new_y);
+    bool move(const int index, const int new_x, const int new_y);
     void printBoard();
     void makeIAmove();
     bool isWinner();
-    bool isDraw();
 private:
     GameBoard *board;
     Player &playerOne;
     Player &playerTwo;
     Tile::Sign whichPlay;
-
+    std::pair<int, int> getCoordsFromIndex(int index);
     bool isRowWin(int row);
     bool isColumnWin(int column);
     bool isMainDiagonalWin();

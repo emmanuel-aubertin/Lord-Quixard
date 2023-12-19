@@ -7,6 +7,7 @@
 #include "../View.hpp"
 #include <vector>
 #include <utility>
+#include "../../../GameEngine/GameEngine.hpp"
 
 struct TileCoords {
     SDL_Point topLeft;
@@ -23,6 +24,7 @@ public:
     void render() override;
 
 private:
+    GameEngine* engine;
     bool isPointInTile(const SDL_Point &point, const TileCoords &tile);
     View *handleClick(int, int) override;
     SDL_Surface *backgroundSuface;

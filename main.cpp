@@ -92,12 +92,6 @@ int main(int argc, char **argv)
         }
     }
 
-    PlayerHuman *david = new PlayerHuman("David");
-    RandomAI *roger = new RandomAI("Roger");
-
-    GameEngine *engine = new GameEngine(*david, *roger);
-
-
     Controller* c = new Controller();
     
     c->run();
