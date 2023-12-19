@@ -15,6 +15,13 @@ public:
     void render() override;
 private:
     View* handleClick(int, int) override;
+    SDL_Surface *backgroundSuface;
+    SDL_Surface *window_surface;
+    SDL_Surface *tileSurface;
+    // For FPS tracking
+    Uint32 frameStart;
+    int frameCount;
+    int fps;
 };
 
 #endif
