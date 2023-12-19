@@ -46,7 +46,7 @@ void Controller::run()
     while (isRunning)
     {
         handleEvents();
-        //std::cout << "x: " << mouseX << " y: " << mouseY << std::endl;
+        // std::cout << "x: " << mouseX << " y: " << mouseY << std::endl;
 
         view->render();
         SDL_UpdateWindowSurface(window);
@@ -63,6 +63,23 @@ void Controller::handleEvents()
         case SDL_QUIT:
             isRunning = false;
             break;
+
+        case SDL_MOUSEBUTTONDOWN:
+            int mouseX, mouseY;
+            SDL_GetMouseState(&mouseX, &mouseY);
+            View *tempView = view->handleClick(mouseX, mouseY);
+            if (tempView != nullptr)
+            {
+                updateView(tempView);
+            }
+            break;
         }
     }
+}
+
+void Controller::updateView(View* newView)
+{
+    SDL_FillRect(SDL_GetWindowSurface(window), NULL, SDL_MapRGB(SDL_GetWindowSurface(window)->format, 0, 0, 0));
+    delete view;
+    this->view = newView;
 }
