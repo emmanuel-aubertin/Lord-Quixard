@@ -21,6 +21,11 @@ void GameEngine::toogleWichPlay()
     this->whichPlay = Tile::X;
 }
 
+    bool GameEngine::move(const int index, const int new_x, const int new_y) {
+        std::pair<int, int> coords = this->getCoordsFromIndex(index);
+        return this->move(coords.first, coords.second, new_x, new_y);
+    }
+
 bool GameEngine::move(const int x, const int y, const int new_x, const int new_y)
 {
     if (!this->isValidMove(x, y, new_x, new_y))
@@ -35,6 +40,12 @@ bool GameEngine::move(const int x, const int y, const int new_x, const int new_y
 void GameEngine::printBoard()
 {
     this->board->printBoard();
+}
+
+std::pair<int, int> GameEngine::getCoordsFromIndex(int index){
+    int row = index / 5;
+    int col = index % 5;
+    return std::make_pair(row, col);
 }
 
 
