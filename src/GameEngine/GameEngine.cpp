@@ -37,27 +37,6 @@ void GameEngine::printBoard()
     this->board->printBoard();
 }
 
-bool GameEngine::isDraw()
-{
-
-    if (isWinner())
-    {
-        return false;
-    }
-
-    for (const auto &row : this->board->getBoard())
-    {
-        for (const auto &tile : row)
-        {
-            if (tile.sign == Tile::Blank)
-            {
-                return false;
-            }
-        }
-    }
-
-    return true;
-}
 
 bool GameEngine::isWinner()
 {

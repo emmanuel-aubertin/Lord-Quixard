@@ -14,7 +14,6 @@ public:
     void printBoard();
     void makeIAmove();
     bool isWinner();
-    bool isDraw();
 private:
     GameBoard *board;
     Player &playerOne;
