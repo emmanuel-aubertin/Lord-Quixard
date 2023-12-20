@@ -37,6 +37,8 @@ void GameBoard::printBoard()
 
 bool GameBoard::move(const int x, const int y, const int new_x, const int new_y, const Tile::Sign sign)
 {
+    bool change = board[x][y].sign == Tile::Blank;
+
     std::cout << "Move : From (" << x << ", " << y << " ) To (" << new_x << ", " << new_y << ")" << std::endl;
     if (new_x == x)
     {
@@ -44,49 +46,69 @@ bool GameBoard::move(const int x, const int y, const int new_x, const int new_y,
         if (new_y < y)
         {
             Tile prev = board[x][y];
-            for (int i = y; i <= new_y; i++)
+            for (int i = new_y; i <= y; ++i)
             {
                 Tile temp = board[x][i];
                 board[x][i] = prev;
                 prev = temp;
             }
-            board[new_x][new_y].sign = sign;
+            if (change)
+            {
+                board[new_x][new_y].sign = sign;
+            }
             return true;
         }
         Tile prev = board[x][new_y];
-        for (int i = new_y; i >= y; i--)
+        for (int i = new_y; i >= y; --i)
         {
             Tile temp = board[x][i];
             board[x][i] = prev;
             prev = temp;
         }
-        board[new_x][new_y].sign = sign;
+        if (change)
+        {
+            board[new_x][new_y].sign = sign;
+        }
         return true;
     }
 
     if (new_x < x)
     {
         Tile prev = board[x][y];
-        for (int i = x; i < new_x; i++)
+        for (int i = new_x; i <= x; i++)
         {
             Tile temp = board[i][y];
             board[i][y] = prev;
             prev = temp;
         }
-        board[new_x][new_y].sign = sign;
+        if (change)
+        {
+            board[new_x][new_y].sign = sign;
+        }
         return true;
     }
     Tile prev = board[new_x][y];
-    for (int i = new_x; i > x; i--)
+    for (int i = new_x; i >= x; i--)
     {
         Tile temp = board[i][y];
         board[i][y] = prev;
         prev = temp;
     }
-    board[new_x][new_y].sign = sign;
+    if (change)
+    {
+        board[new_x][new_y].sign = sign;
+    }
     return true;
 }
-
-std::array<std::array<Tile, 5>, 5> GameBoard::getBoard() {
+/*std::cout << "[" << i << "][" << y  << "] = ";
+if( board[i][y].sign == Tile::O) {
+    std::cout << "O" << std::endl;
+} else if( board[i][y].sign == Tile::Blank) {
+    std::cout << "B" << std::endl;
+} else if( board[i][y].sign == Tile::X) {
+    std::cout << "X" << std::endl;
+}*/
+std::array<std::array<Tile, 5>, 5> GameBoard::getBoard()
+{
     return this->board;
 }
