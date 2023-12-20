@@ -15,12 +15,15 @@ public:
     void printBoard();
     void makeIAmove();
     bool isWinner();
+    Tile::Sign getWichSignPlay();
+    std::array<std::array<Tile, 5>, 5> getBoard();
 private:
     GameBoard *board;
     Player &playerOne;
     Player &playerTwo;
     Tile::Sign whichPlay;
     std::pair<int, int> getCoordsFromIndex(int index);
+    int getIndexFromCoords(const int x, const int y);
     bool isRowWin(int row);
     bool isColumnWin(int column);
     bool isMainDiagonalWin();

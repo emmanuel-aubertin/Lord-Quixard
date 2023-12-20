@@ -21,10 +21,11 @@ void GameEngine::toogleWichPlay()
     this->whichPlay = Tile::X;
 }
 
-    bool GameEngine::move(const int index, const int new_x, const int new_y) {
-        std::pair<int, int> coords = this->getCoordsFromIndex(index);
-        return this->move(coords.first, coords.second, new_x, new_y);
-    }
+bool GameEngine::move(const int index, const int new_x, const int new_y)
+{
+    std::pair<int, int> coords = this->getCoordsFromIndex(index);
+    return this->move(coords.first, coords.second, new_x, new_y);
+}
 
 bool GameEngine::move(const int x, const int y, const int new_x, const int new_y)
 {
@@ -42,12 +43,27 @@ void GameEngine::printBoard()
     this->board->printBoard();
 }
 
-std::pair<int, int> GameEngine::getCoordsFromIndex(int index){
+Tile::Sign GameEngine::getWichSignPlay()
+{
+    return this->whichPlay;
+}
+
+std::pair<int, int> GameEngine::getCoordsFromIndex(const int index)
+{
     int row = index / 5;
     int col = index % 5;
     return std::make_pair(row, col);
 }
 
+int GameEngine::getIndexFromCoords(const int x, const int y)
+{
+    return x * 5 + y;
+}
+
+std::array<std::array<Tile, 5>, 5> GameEngine::getBoard()
+{
+    return this->board->getBoard();
+}
 
 bool GameEngine::isWinner()
 {
@@ -147,12 +163,6 @@ void GameEngine::makeIAmove()
  */
 bool GameEngine::isValidMove(const int x, const int y, const int new_x, const int new_y)
 {
-    // As already a sign
-    if (this->board->getBoard()[x][y].sign != Tile::Blank)
-    {
-        return false;
-    }
-
     // If out of board
     if (x > 4 || y > 4 || new_x == x && new_y == y)
     {
