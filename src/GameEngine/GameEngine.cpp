@@ -65,6 +65,21 @@ std::array<std::array<Tile, 5>, 5> GameEngine::getBoard()
     return this->board->getBoard();
 }
 
+std::vector<std::pair<int, int>> GameEngine::getPlayableFrom(int x, int y) {
+    std::vector<std::pair<int, int>> output;
+    const int gridSize = 5;
+    // Not very opti but win of time :)
+    for (int new_x = 0; new_x < gridSize; ++new_x) {
+        for (int new_y = 0; new_y < gridSize; ++new_y) {
+            if (isValidMove(x, y, new_x, new_y)) {
+                output.emplace_back(new_x, new_y);
+            }
+        }
+    }
+    return output;
+}
+
+
 bool GameEngine::isWinner()
 {
     for (int i = 0; i < this->board->getBoard().size(); ++i)
