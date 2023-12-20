@@ -3,9 +3,12 @@
 #include <array>
 #include <utility>
 #include "../../../Player/PlayerHuman/PlayerHuman.hpp"
+#include "../MainMenu/MainMenu.hpp"
+#include "../../../Tile.cpp"
+#include "../View.hpp"
 
-const int NUM_TILES = 25;
-TileCoords TILE_COORDS[NUM_TILES] = {
+TileCoords MageSMelee::BACK_BTN = {{0, 0}, {278, 0}, {0, 55}, {278, 55}};
+TileCoords MageSMelee::TILE_COORDS[NUM_TILES] = {
     {{753, 323}, {813, 323}, {812, 363}, {749, 366}},
     {{815, 325}, {875, 324}, {873, 365}, {812, 365}},
     {{877, 324}, {935, 325}, {937, 365}, {876, 365}},
@@ -30,11 +33,11 @@ TileCoords TILE_COORDS[NUM_TILES] = {
     {{799, 513}, {866, 512}, {866, 566}, {796, 566}},
     {{870, 512}, {938, 511}, {940, 565}, {869, 565}},
     {{942, 511}, {1011, 512}, {1014, 565}, {944, 564}},
-    {{1012, 512}, {1081, 513}, {1088, 565}, {1017, 565}}
-};
+    {{1012, 512}, {1081, 513}, {1088, 565}, {1017, 565}}};
 
 MageSMelee::MageSMelee(SDL_Window *win) : View(win)
 {
+    indexCliked = -1;
     PlayerHuman *playerOne = new PlayerHuman("Thalira Mooncrest");
     PlayerHuman *playerTwo = new PlayerHuman("Cedric Frostshard");
     engine = new GameEngine(*playerOne, *playerTwo);
@@ -44,6 +47,10 @@ MageSMelee::MageSMelee(SDL_Window *win) : View(win)
     fps = 0;
 
     std::string background_path = getWorkingDirectory() + "/static/img/GameTable.bmp";
+    std::string x_path = getWorkingDirectory() + "/static/img/XSprite.bmp";
+    std::string o_path = getWorkingDirectory() + "/static/img/OSprite.bmp";
+    oSprite = SDL_LoadBMP(o_path.c_str());
+    xSprite = SDL_LoadBMP(x_path.c_str());
     backgroundSuface = SDL_LoadBMP(background_path.c_str());
     if (!backgroundSuface)
     {
@@ -54,8 +61,6 @@ MageSMelee::MageSMelee(SDL_Window *win) : View(win)
     {
         SDL_BlitSurface(backgroundSuface, NULL, windowSurface, NULL);
     }
-
-
 }
 
 MageSMelee::~MageSMelee()
@@ -63,6 +68,12 @@ MageSMelee::~MageSMelee()
     if (backgroundSuface)
     {
         SDL_FreeSurface(backgroundSuface);
+    }
+    if (xSprite) {
+        SDL_FreeSurface(xSprite);
+    }
+    if (oSprite) {
+        SDL_FreeSurface(oSprite);
     }
 }
 
@@ -86,8 +97,33 @@ void MageSMelee::render()
         SDL_Rect destRect = {0, 0, windowSurface->w, windowSurface->h};
         SDL_BlitScaled(backgroundSuface, NULL, windowSurface, &destRect);
     }
+    
 
+    int index = 0;
+    for (const auto &row : board)
+    {
+        for (const auto &tile : row)
+        {
+            if(tile.sign == Tile::Blank) {index++;continue;}
+            // Calculate the center of the tile
+            int centerX = (TILE_COORDS[index].topLeft.x + TILE_COORDS[index].topRight.x) / 2;
+            int centerY = (TILE_COORDS[index].topLeft.y + TILE_COORDS[index].bottomLeft.y) / 2;
 
+            // Create a new rect to center the 40x40 sprite within the tile
+            SDL_Rect spriteRect;
+            spriteRect.w = 40;
+            spriteRect.h = 40;
+            spriteRect.x = centerX - spriteRect.w / 2;  // Center the sprite
+            spriteRect.y = centerY - spriteRect.h / 2;  // Center the sprite
+
+            if (tile.sign == Tile::X) {
+                SDL_BlitSurface(xSprite, NULL, windowSurface, &spriteRect);
+            } else if (tile.sign == Tile::O) {
+                SDL_BlitSurface(oSprite, NULL, windowSurface, &spriteRect);
+            }
+            index++;
+        }
+    }
 
     SDL_Color textColor = {255, 255, 255};
 
@@ -100,25 +136,51 @@ void MageSMelee::render()
     std::string fpsText = "FPS: " + std::to_string(fps);
     renderText(fpsText, 1725, 5, textColor, 24);
 
-    //renderText("Magic Quixo", 20, 20, textColor, 124);
+    renderText("Back to artifact valley", 20, 20, textColor, 32);
+    if(engine->isWinner()) {
+        renderText("GG", 500, 20, textColor, 256);
+    }
+
 }
 
-
-
-
-bool MageSMelee::isPointInTile(const SDL_Point& point, const TileCoords& tile) {
+bool MageSMelee::isPointInTile(const SDL_Point &point, const TileCoords &tile)
+{
     return (point.x >= tile.topLeft.x && point.x <= tile.topRight.x &&
             point.y >= tile.topLeft.y && point.y <= tile.bottomLeft.y);
 }
 
-
 View *MageSMelee::handleClick(int x, int y)
 {
-SDL_Point clickedPoint = {x, y};
-    for (int i = 0; i < NUM_TILES; ++i) {
-        if (isPointInTile(clickedPoint, TILE_COORDS[i])) {
-            engine->move(i, 0, 0);
-            std::cout << "Clicked on tile " << i << std::endl;
+    //std::cout << "cliked : " << x << ", " << y << std::endl;
+    SDL_Point clickedPoint = {x, y};
+    if (isPointInTile(clickedPoint, BACK_BTN))
+    {
+        return new MainMenu(window);
+    }
+    for (int i = 0; i < NUM_TILES; ++i)
+    {
+        if (isPointInTile(clickedPoint, TILE_COORDS[i]))
+        {
+            //std::cout << "Clicked on tile " << i << std::endl;
+            if (indexCliked == -1)
+            {
+                indexCliked = i;
+                break;
+            }
+            std::pair<int, int> coords = engine->getCoordsFromIndex(i);
+            if (engine->move(indexCliked, coords.first, coords.second))
+            {
+                engine->printBoard();
+                board = engine->getBoard();
+                indexCliked = -1;
+                break;
+            }
+            if (coords.first == 0 || coords.first == 4 || coords.second == 0 || coords.second == 4)
+            {
+                indexCliked = i; // New place to play
+                break;
+            }
+            // Middle tile nothing todo
             break;
         }
     }
@@ -135,16 +197,16 @@ View *MageSMelee::handleClick(int x, int y)
     if(pointCounter == 0){
         std::cout <<"{{" << x << ", "<< y  << "}, ";
         return nullptr;
-    } 
+    }
     if(pointCounter == 3){
         std::cout << "{" << x << ", "<< y  << "}}, " << std::endl;
         tileNum++;
         pointCounter =-1 ;
         return nullptr;
-    } 
+    }
     std::cout << "{" << x << ", "<< y  << "}, ";
 
-    
+
 
     return nullptr;
 }*/

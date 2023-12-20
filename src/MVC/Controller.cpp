@@ -45,11 +45,12 @@ void Controller::run()
 {
     while (isRunning)
     {
+
         handleEvents();
-        // std::cout << "x: " << mouseX << " y: " << mouseY << std::endl;
 
         view->render();
         SDL_UpdateWindowSurface(window);
+
     }
 }
 
