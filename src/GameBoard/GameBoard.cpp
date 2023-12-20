@@ -40,24 +40,11 @@ bool GameBoard::move(const int x, const int y, const int new_x, const int new_y,
     bool change = board[x][y].sign == Tile::Blank;
 
     std::cout << "Move : From (" << x << ", " << y << " ) To (" << new_x << ", " << new_y << ")" << std::endl;
-    if (sign == Tile::O)
-    {
-        std::cout << "O" << std::endl;
-    }
-    else if (sign == Tile::Blank)
-    {
-        std::cout << "B" << std::endl;
-    }
-    else if (sign == Tile::X)
-    {
-        std::cout << "X" << std::endl;
-    }
     if (new_x == x)
     {
 
         if (new_y < y)
         {
-            std::cout << new_y << "<" << y << std::endl;
             Tile prev = board[x][y];
             for (int i = new_y; i <= y; ++i)
             {
@@ -90,19 +77,6 @@ bool GameBoard::move(const int x, const int y, const int new_x, const int new_y,
         Tile prev = board[x][y];
         for (int i = new_x; i <= x; i++)
         {
-            std::cout << "[" << i << "][" << y << "] = ";
-            if (board[i][y].sign == Tile::O)
-            {
-                std::cout << "O" << std::endl;
-            }
-            else if (board[i][y].sign == Tile::Blank)
-            {
-                std::cout << "B" << std::endl;
-            }
-            else if (board[i][y].sign == Tile::X)
-            {
-                std::cout << "X" << std::endl;
-            }
             Tile temp = board[i][y];
             board[i][y] = prev;
             prev = temp;
