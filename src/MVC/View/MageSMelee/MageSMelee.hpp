@@ -9,12 +9,6 @@
 #include <utility>
 #include "../../../GameEngine/GameEngine.hpp"
 
-struct TileCoords {
-    SDL_Point topLeft;
-    SDL_Point topRight;
-    SDL_Point bottomRight;
-    SDL_Point bottomLeft;
-};
 
 class MageSMelee : public View
 {
@@ -23,13 +17,20 @@ public:
     virtual ~MageSMelee();
     void render() override;
 
-private:
+protected:
+static constexpr int NUM_TILES = 25; // Define NUM_TILES as a constant expression
+    static TileCoords BACK_BTN;
+    static TileCoords TILE_COORDS[NUM_TILES];
+    int indexCliked;
     GameEngine* engine;
     bool isPointInTile(const SDL_Point &point, const TileCoords &tile);
     View *handleClick(int, int) override;
     SDL_Surface *backgroundSuface;
     SDL_Surface *window_surface;
     SDL_Surface *tileSurface;
+    SDL_Surface* oSprite;
+    SDL_Surface* xSprite;
+    std::array<std::array<Tile, 5>, 5> board;
     // For FPS tracking
     Uint32 frameStart;
     int frameCount;

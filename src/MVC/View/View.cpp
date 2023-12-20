@@ -1,5 +1,7 @@
 #include "View.hpp"
 #include <iostream>
+#include <string>
+#include <sstream>
 #include <vector>
 #include <utility>
 #ifdef _WIN32
@@ -63,27 +65,66 @@ bool View::isPointInPoly(int x, int y, const std::vector<std::pair<int, int>> &p
 }
 
 
-void View::renderText(const std::string &text, int x, int y, SDL_Color color, int size)
-{
+void View::renderText(const std::string &text, int x, int y, SDL_Color color, int size) {
     std::string fontFile = getWorkingDirectory() + "/static/font/Norsebold.ttf";
     TTF_Font *font = TTF_OpenFont(fontFile.c_str(), size);
-    if (!font)
-    {
+    if (!font) {
         std::cerr << "Error: Failed to load font. SDL_ttf Error: " << TTF_GetError() << std::endl;
         return;
     }
 
-    SDL_Surface *surface = TTF_RenderText_Solid(font, text.c_str(), color);
-    if (!surface)
-    {
-        std::cerr << "Error: Unable to render text surface. SDL_ttf Error: " << TTF_GetError() << std::endl;
-        TTF_CloseFont(font);
+    // Splitting the string by newline character
+    std::istringstream iss(text);
+    std::string line;
+    int yOffset = 0;
+    while (std::getline(iss, line)) {
+        SDL_Surface *surface = TTF_RenderText_Solid(font, line.c_str(), color);
+        if (!surface) {
+            std::cerr << "Error: Unable to render text surface. SDL_ttf Error: " << TTF_GetError() << std::endl;
+            continue;
+        }
+
+        SDL_Rect destRect = {x, y + yOffset, surface->w, surface->h};
+        SDL_BlitSurface(surface, NULL, windowSurface, &destRect);
+        yOffset += surface->h; // Move down for the next line
+
+        SDL_FreeSurface(surface);
+    }
+
+    TTF_CloseFont(font);
+}
+
+void View::renderCenteredText(const std::string& text, int winWidth, int startY, SDL_Color color, int fontSize) {
+    std::istringstream iss(text);
+    std::string line;
+    int y = startY;
+    std::string fontFile = getWorkingDirectory() + "/static/font/Norsebold.ttf";
+    TTF_Font *font = TTF_OpenFont(fontFile.c_str(), fontSize);
+    if (!font) {
+        std::cerr << "Error: Failed to load font. SDL_ttf Error: " << TTF_GetError() << std::endl;
         return;
     }
 
-    SDL_Rect destRect = {x, y, surface->w, surface->h};
-    SDL_BlitSurface(surface, NULL, windowSurface, &destRect);
+    while (std::getline(iss, line)) {
+        int textWidth, textHeight;
+        TTF_SizeText(font, line.c_str(), &textWidth, &textHeight);
 
-    SDL_FreeSurface(surface);
+        int x = (winWidth - textWidth) / 2;
+
+        SDL_Surface* textSurface = TTF_RenderText_Solid(font, line.c_str(), color);
+        if (!textSurface) {
+            TTF_CloseFont(font);
+            std::cerr << "Error: Unable to render text surface. SDL_ttf Error: " << TTF_GetError() << std::endl;
+            return;
+        }
+
+        SDL_Rect textRect = {x, y, textWidth, textHeight};
+        SDL_BlitSurface(textSurface, NULL, windowSurface, &textRect);
+        SDL_FreeSurface(textSurface);
+
+        y += textHeight; // Move to the next line position
+    }
+
     TTF_CloseFont(font);
 }
+
