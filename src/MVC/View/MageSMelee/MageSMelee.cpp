@@ -37,6 +37,7 @@ TileCoords MageSMelee::TILE_COORDS[NUM_TILES] = {
 
 MageSMelee::MageSMelee(SDL_Window *win) : View(win)
 {
+    
     indexCliked = -1;
     PlayerHuman *playerOne = new PlayerHuman("Thalira Mooncrest");
     PlayerHuman *playerTwo = new PlayerHuman("Cedric Frostshard");

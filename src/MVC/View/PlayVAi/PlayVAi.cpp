@@ -49,9 +49,9 @@ View *PlayVAi::handleClick(int x, int y)
                     indexCliked = -1;
                     break;
                 }
+                engine->makeIAmove();
                 engine->printBoard();
                 board = engine->getBoard();
-                engine->makeIAmove();
                 indexCliked = -1;
                 break;
             }

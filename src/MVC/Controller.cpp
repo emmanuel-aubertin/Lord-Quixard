@@ -3,11 +3,20 @@
 #include "View/MainMenu/MainMenu.hpp"
 #include "../../Config.hpp"
 #include <typeinfo>
+#include <SDL2/SDL_mixer.h>
+
+#ifdef _WIN32
+    #include <direct.h>
+    #define GETCWD _getcwd
+#else
+    #include <unistd.h>
+    #define GETCWD getcwd
+#endif
 
 Controller::Controller()
 {
     SDL_GetMouseState(&mouseX, &mouseY);
-    if (SDL_Init(SDL_INIT_VIDEO) < 0)
+    if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0)
     {
         std::cerr << "❌ Error: Failed to initialize the SDL2 library ❌" << std::endl;
         exit(-1);
@@ -32,11 +41,32 @@ Controller::Controller()
 
     this->view = new MainMenu(window);
     isRunning = true;
+
+    //Initialize SDL_mixer
+    if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 ) < 0 )
+    {
+        printf( "SDL_mixer could not initialize! SDL_mixer Error: %s\n", Mix_GetError() );
+    }
+
+    char buff[FILENAME_MAX];
+    GETCWD(buff, FILENAME_MAX);
+    std::string pathMusic = std::string(buff) + "/static/audio/music.wav";
+
+    gMusic = Mix_LoadWAV( pathMusic.c_str() );
+    if( gMusic == NULL )
+    {
+        printf( "Failed to load medium sound effect! SDL_mixer Error: %s\n", Mix_GetError() );
+    }
+    Mix_VolumeChunk(gMusic, 32);
+
+    // Play music on a loop
+    Mix_PlayChannel(-1, gMusic, -1);
 }
 
 Controller::~Controller()
 {
     delete view;
+    Mix_FreeChunk( gMusic );
     SDL_DestroyWindow(window);
     SDL_Quit();
 }
@@ -45,9 +75,7 @@ void Controller::run()
 {
     while (isRunning)
     {
-
         handleEvents();
-
         view->render();
         SDL_UpdateWindowSurface(window);
 
