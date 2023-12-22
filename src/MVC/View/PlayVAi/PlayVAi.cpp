@@ -8,13 +8,40 @@
 #include "../../../Tile.cpp"
 #include "../View.hpp"
 #include "../MageSMelee/MageSMelee.hpp"
+#include <SDL2/SDL_mixer.h>
 
+#ifdef _WIN32
+    #include <direct.h>
+    #define GETCWD _getcwd
+#else
+    #include <unistd.h>
+    #define GETCWD getcwd
+#endif
 
 PlayVAi::PlayVAi(SDL_Window *win) : MageSMelee(win)
 {
     PlayerHuman *playerOne = new PlayerHuman("Thalira Mooncrest");
     RandomAI *playerTwo = new RandomAI("Lord Hazarde");
     engine = new GameEngine(*playerOne, *playerTwo);
+    //Initialize SDL_mixer
+    if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 ) < 0 )
+    {
+        printf( "SDL_mixer could not initialize! SDL_mixer Error: %s\n", Mix_GetError() );
+    }
+    char buff[FILENAME_MAX];
+    GETCWD(buff, FILENAME_MAX);
+
+    std::string pathWelcome = std::string(buff) + "/static/audio/balthazard.hello.1.wav";
+
+    Mix_Chunk* gWelcome = Mix_LoadWAV( pathWelcome.c_str() );
+    if( gWelcome == NULL )
+    {
+        printf( "Failed to load medium sound effect! SDL_mixer Error: %s\n", Mix_GetError() );
+    }
+    Mix_VolumeChunk(gWelcome, 40);
+
+    // Play music on a loop
+    Mix_PlayChannel(-1, gWelcome, 0);
 }
 
 PlayVAi::~PlayVAi() {
@@ -22,7 +49,6 @@ PlayVAi::~PlayVAi() {
 
 View *PlayVAi::handleClick(int x, int y)
 {
-    //std::cout << "cliked : " << x << ", " << y << std::endl;
     SDL_Point clickedPoint = {x, y};
     if (isPointInTile(clickedPoint, BACK_BTN))
     {
@@ -35,7 +61,6 @@ View *PlayVAi::handleClick(int x, int y)
     {
         if (isPointInTile(clickedPoint, TILE_COORDS[i]))
         {
-            //std::cout << "Clicked on tile " << i << std::endl;
             if (indexCliked == -1)
             {
                 indexCliked = i;
@@ -57,10 +82,9 @@ View *PlayVAi::handleClick(int x, int y)
             }
             if (coords.first == 0 || coords.first == 4 || coords.second == 0 || coords.second == 4)
             {
-                indexCliked = i; // New place to play
+                indexCliked = i;
                 break;
             }
-            // Middle tile nothing todo
             break;
         }
     }

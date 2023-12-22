@@ -42,7 +42,6 @@ bool GameBoard::move(const int x, const int y, const int new_x, const int new_y,
     std::cout << "Move : From (" << x << ", " << y << " ) To (" << new_x << ", " << new_y << ")" << std::endl;
     if (new_x == x)
     {
-
         if (new_y < y)
         {
             Tile prev = board[x][y];

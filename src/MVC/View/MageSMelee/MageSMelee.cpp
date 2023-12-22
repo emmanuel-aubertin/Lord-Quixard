@@ -114,8 +114,8 @@ void MageSMelee::render()
             SDL_Rect spriteRect;
             spriteRect.w = 40;
             spriteRect.h = 40;
-            spriteRect.x = centerX - spriteRect.w / 2;  // Center the sprite
-            spriteRect.y = centerY - spriteRect.h / 2;  // Center the sprite
+            spriteRect.x = centerX - spriteRect.w / 2;  
+            spriteRect.y = centerY - spriteRect.h / 2;  
 
             if (tile.sign == Tile::X) {
                 SDL_BlitSurface(xSprite, NULL, windowSurface, &spriteRect);

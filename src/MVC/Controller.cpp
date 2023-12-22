@@ -57,9 +57,23 @@ Controller::Controller()
     {
         printf( "Failed to load medium sound effect! SDL_mixer Error: %s\n", Mix_GetError() );
     }
-    Mix_VolumeChunk(gMusic, 32);
+
+    std::string pathWelcome = std::string(buff) + "/static/audio/welcome.wav";
+
+    Mix_Chunk* gWelcome = Mix_LoadWAV( pathWelcome.c_str() );
+    if( gWelcome == NULL )
+    {
+        printf( "Failed to load medium sound effect! SDL_mixer Error: %s\n", Mix_GetError() );
+    }
+    Mix_VolumeChunk(gWelcome, 32);
 
     // Play music on a loop
+    Mix_PlayChannel(-1, gWelcome, 0);
+
+    
+
+    // Play music on a loop
+    Mix_VolumeChunk(gMusic, 32);
     Mix_PlayChannel(-1, gMusic, -1);
 }
 

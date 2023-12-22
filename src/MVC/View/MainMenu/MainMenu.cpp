@@ -4,19 +4,23 @@
 #include <iostream>
 #include <array>
 #include <utility>
+#include <SDL2/SDL_mixer.h>
+
+#ifdef _WIN32
+#include <direct.h>
+#define GETCWD _getcwd
+#else
+#include <unistd.h>
+#define GETCWD getcwd
+#endif
 
 const std::vector<std::pair<int, int>> CASTEL_POLY = {
-    {1383, 264}, {1379, 216}, {1375, 233}, {1368, 223},
-    {1364, 215}, {1358, 217}, {1355, 210}, {1352, 198},
-    {1344, 216}, {1345, 205}, {1338, 196}, {1334, 185},
-    {1324, 182}, {1319, 179}, {1308, 184}, {1299, 199},
-    {1292, 217}, {1288, 196}, {1280, 218}, {1271, 223},
-    {1262, 218}, {1260, 244}, {1259, 265}, {1279, 264},
-    {1303, 262}
-};
+    {1383, 264}, {1379, 216}, {1375, 233}, {1368, 223}, {1364, 215}, {1358, 217}, {1355, 210}, {1352, 198}, {1344, 216}, {1345, 205}, {1338, 196}, {1334, 185}, {1324, 182}, {1319, 179}, {1308, 184}, {1299, 199}, {1292, 217}, {1288, 196}, {1280, 218}, {1271, 223}, {1262, 218}, {1260, 244}, {1259, 265}, {1279, 264}, {1303, 262}};
 
 const std::vector<std::pair<int, int>> CUBE_POLY = {
-        {936, 690}, {1050, 626}, {1050, 484}, {939, 453}, {819, 485}, {822, 623}};
+    {936, 690}, {1050, 626}, {1050, 484}, {939, 453}, {819, 485}, {822, 623}};
+
+const std::vector<std::pair<int, int>> GIRL_POLY = {{384, 903}, {401, 902}, {412, 897}, {420, 887}, {408, 873}, {394, 860}, {392, 841}, {389, 831}, {397, 836}, {397, 826}, {388, 818}, {386, 805}, {383, 795}, {379, 785}, {369, 784}, {361, 787}, {361, 799}, {353, 809}, {344, 820}, {337, 828}, {337, 838}, {326, 841}, {321, 852}, {320, 866}, {323, 873}, {322, 885}, {335, 896}, {368, 901}, {401, 903}};
 
 MainMenu::MainMenu(SDL_Window *win) : View(win)
 {
@@ -24,7 +28,9 @@ MainMenu::MainMenu(SDL_Window *win) : View(win)
     frameStart = SDL_GetTicks();
     frameCount = 0;
     fps = 0;
-
+    isCube = false;
+    isBal = false;
+    isMinMax = false;
     // Load background image once
     std::string background_path = getWorkingDirectory() + "/static/img/QuixoMainMenu.bmp";
     gHelloWorld = SDL_LoadBMP(background_path.c_str());
@@ -68,10 +74,23 @@ void MainMenu::render()
 
     // Define hexagon vertices
 
-
     // Check if mouse is inside hexagon
     if (isPointInPoly(mouseX, mouseY, CUBE_POLY))
     {
+        if (!isCube)
+        {
+            std::string pathMage = getWorkingDirectory() + "/static/audio/mageVmage.wav";
+
+            gMageVmage = Mix_LoadWAV(pathMage.c_str());
+            if (gMageVmage == NULL)
+            {
+                printf("Failed to load medium sound effect! SDL_mixer Error: %s\n", Mix_GetError());
+            }
+            Mix_VolumeChunk(gMageVmage, 48);
+            Mix_PlayChannel(-1, gMageVmage, 0);
+            isCube = true;
+        }
+
         // std::cout << "x: " << mouseX << " y: " << mouseY << std::endl;
         //  Load background image once
         std::string background_path = getWorkingDirectory() + "/static/img/CubeSprite.bmp";
@@ -87,9 +106,26 @@ void MainMenu::render()
             SDL_BlitSurface(Cube, NULL, windowSurface, NULL);
         }
     }
+    else
+    {
+        isCube = false;
+    }
 
     if (isPointInPoly(mouseX, mouseY, CASTEL_POLY))
     {
+        if (!isBal)
+        {
+            std::string pathMage = getWorkingDirectory() + "/static/audio/thalilaVbal.wav";
+
+            gMageVmage = Mix_LoadWAV(pathMage.c_str());
+            if (gMageVmage == NULL)
+            {
+                printf("Failed to load medium sound effect! SDL_mixer Error: %s\n", Mix_GetError());
+            }
+            Mix_VolumeChunk(gMageVmage, 48);
+            Mix_PlayChannel(-1, gMageVmage, 0);
+            isBal = true;
+        }
         // std::cout << "x: " << mouseX << " y: " << mouseY << std::endl;
         //  Load background image once
         std::string background_path = getWorkingDirectory() + "/static/img/CastelSprite.bmp";
@@ -105,16 +141,44 @@ void MainMenu::render()
             SDL_BlitSurface(CastelSurf, NULL, windowSurface, NULL);
         }
     }
-    else if (isCube)
+    else
     {
-        const SDL_Rect cubeRect = {700, 350, 500, 500};
-        SDL_Rect dstRect = {700, 350, 500, 500};
+        isBal = false;
+    }
 
-        if (SDL_BlitSurface(this->gHelloWorld, &cubeRect, windowSurface, &dstRect) < 0)
+    if (isPointInPoly(mouseX, mouseY, GIRL_POLY))
+    {
+        if (!isMinMax)
         {
-            std::cerr << "SDL_BlitSurface error: " << SDL_GetError() << std::endl;
+            std::string pathMage = getWorkingDirectory() + "/static/audio/thalilaVpetit.wav";
+
+            gMageVmage = Mix_LoadWAV(pathMage.c_str());
+            if (gMageVmage == NULL)
+            {
+                printf("Failed to load medium sound effect! SDL_mixer Error: %s\n", Mix_GetError());
+            }
+            Mix_VolumeChunk(gMageVmage, 48);
+            Mix_PlayChannel(-1, gMageVmage, 0);
+            isMinMax = true;
         }
-        isCube = false;
+        // std::cout << "x: " << mouseX << " y: " << mouseY << std::endl;
+        //  Load background image once
+        std::string background_path = getWorkingDirectory() + "/static/img/GirlSprite.bmp";
+        SDL_Surface *GirlSurf = SDL_LoadBMP(background_path.c_str());
+        if (!GirlSurf)
+        {
+            std::cerr << "Unable to load image " << background_path << "! SDL Error: " << SDL_GetError() << std::endl;
+            // Consider a more graceful error handling approach
+        }
+
+        if (GirlSurf)
+        {
+            SDL_BlitSurface(GirlSurf, NULL, windowSurface, NULL);
+        }
+    }
+        else
+    {
+        isMinMax = false;
     }
 
     // Clear the previous FPS text
@@ -125,14 +189,14 @@ void MainMenu::render()
     std::string fpsText = "FPS: " + std::to_string(fps);
     renderText(fpsText, 1725, 5, textColor, 24);
 
-    renderText("Affrontement Magique", 723, 390, textColor, 64);
+    renderText("Affrontement Magique", 700, 390, textColor, 64);
     renderCenteredText("Repaire de l'Anomalie\nHasardeuse", 2650, 100, textColor, 32);
     renderText("Lord Quixard", 20, 20, textColor, 124);
 }
 
 View *MainMenu::handleClick(int x, int y)
 {
-    std::cout << "{" << x << ", "<< y  << "} " << std::endl;
+    std::cout << "{" << x << ", " << y << "} " << std::endl;
     std::vector<std::pair<int, int>> CUBE_POLY = {
         {936, 690}, {1050, 626}, {1050, 484}, {939, 453}, {819, 485}, {822, 623}};
     if (isPointInPoly(x, y, CUBE_POLY))
@@ -159,13 +223,7 @@ View *MainMenu::handleClick(int x, int y)
         std::cout <<"{{" << x << ", "<< y  << "}, ";
         return nullptr;
     }
-    if(pointCounter == 3){
-        std::cout << "{" << x << ", "<< y  << "}}, " << std::endl;
-        tileNum++;
-        pointCounter =-1 ;
-        return nullptr;
-    }
-    std::cout << "{" << x << ", "<< y  << "}, ";
+    std::cout << "{" << x << ", "<< y  << "}, " << std::endl;
 
 
 

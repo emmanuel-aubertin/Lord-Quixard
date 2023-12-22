@@ -17,3 +17,5 @@ Quixo
 build/*
 
 music.wav
+
+*.aup3*
