@@ -77,7 +77,7 @@ void MainMenu::render()
     // Check if mouse is inside hexagon
     if (isPointInPoly(mouseX, mouseY, CUBE_POLY))
     {
-        if (!isCube)
+        if (!isCube && !Mix_Playing(4))
         {
             std::string pathMage = getWorkingDirectory() + "/static/audio/mageVmage.wav";
 
@@ -87,7 +87,7 @@ void MainMenu::render()
                 printf("Failed to load medium sound effect! SDL_mixer Error: %s\n", Mix_GetError());
             }
             Mix_VolumeChunk(gMageVmage, 48);
-            Mix_PlayChannel(-1, gMageVmage, 0);
+            Mix_PlayChannel(4, gMageVmage, 0);
             isCube = true;
         }
 
@@ -113,7 +113,7 @@ void MainMenu::render()
 
     if (isPointInPoly(mouseX, mouseY, CASTEL_POLY))
     {
-        if (!isBal)
+        if (!isBal && !Mix_Playing(2)) // TODO: && if not already curently playing
         {
             std::string pathMage = getWorkingDirectory() + "/static/audio/thalilaVbal.wav";
 
@@ -123,7 +123,7 @@ void MainMenu::render()
                 printf("Failed to load medium sound effect! SDL_mixer Error: %s\n", Mix_GetError());
             }
             Mix_VolumeChunk(gMageVmage, 48);
-            Mix_PlayChannel(-1, gMageVmage, 0);
+            Mix_PlayChannel(2, gMageVmage, 0);
             isBal = true;
         }
         // std::cout << "x: " << mouseX << " y: " << mouseY << std::endl;
@@ -148,7 +148,7 @@ void MainMenu::render()
 
     if (isPointInPoly(mouseX, mouseY, GIRL_POLY))
     {
-        if (!isMinMax)
+        if (!isMinMax && !Mix_Playing(3))
         {
             std::string pathMage = getWorkingDirectory() + "/static/audio/thalilaVpetit.wav";
 
@@ -158,7 +158,7 @@ void MainMenu::render()
                 printf("Failed to load medium sound effect! SDL_mixer Error: %s\n", Mix_GetError());
             }
             Mix_VolumeChunk(gMageVmage, 48);
-            Mix_PlayChannel(-1, gMageVmage, 0);
+            Mix_PlayChannel(3, gMageVmage, 0);
             isMinMax = true;
         }
         // std::cout << "x: " << mouseX << " y: " << mouseY << std::endl;
@@ -176,7 +176,7 @@ void MainMenu::render()
             SDL_BlitSurface(GirlSurf, NULL, windowSurface, NULL);
         }
     }
-        else
+    else
     {
         isMinMax = false;
     }
@@ -201,11 +201,19 @@ View *MainMenu::handleClick(int x, int y)
         {936, 690}, {1050, 626}, {1050, 484}, {939, 453}, {819, 485}, {822, 623}};
     if (isPointInPoly(x, y, CUBE_POLY))
     {
+        if (Mix_Playing(4))
+        {
+            Mix_HaltChannel(4);
+        }
         std::cout << "In cube" << std::endl;
         return new MageSMelee(window);
     }
     if (isPointInPoly(x, y, CASTEL_POLY))
     {
+        if (Mix_Playing(2))
+        {
+            Mix_HaltChannel(2);
+        }
         std::cout << "In cube" << std::endl;
         return new PlayVAi(window);
     }

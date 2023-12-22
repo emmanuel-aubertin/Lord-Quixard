@@ -9,7 +9,8 @@
 #include "../View.hpp"
 #include "../MageSMelee/MageSMelee.hpp"
 #include <SDL2/SDL_mixer.h>
-
+#include <cstdlib>
+#include <ctime>
 #ifdef _WIN32
     #include <direct.h>
     #define GETCWD _getcwd
@@ -31,14 +32,17 @@ PlayVAi::PlayVAi(SDL_Window *win) : MageSMelee(win)
     char buff[FILENAME_MAX];
     GETCWD(buff, FILENAME_MAX);
 
-    std::string pathWelcome = std::string(buff) + "/static/audio/balthazard.hello.1.wav";
+    srand(time(NULL));
+    int randomInt = rand() % 2 + 1; 
+    std::string pathWelcome = std::string(buff) + "/static/audio/balthazard.hello." + std::to_string(randomInt) + ".wav";
+
 
     Mix_Chunk* gWelcome = Mix_LoadWAV( pathWelcome.c_str() );
     if( gWelcome == NULL )
     {
         printf( "Failed to load medium sound effect! SDL_mixer Error: %s\n", Mix_GetError() );
     }
-    Mix_VolumeChunk(gWelcome, 40);
+    Mix_VolumeChunk(gWelcome, 48);
 
     // Play music on a loop
     Mix_PlayChannel(-1, gWelcome, 0);
