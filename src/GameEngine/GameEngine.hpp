@@ -20,6 +20,7 @@ public:
     std::vector<std::pair<int, int>> getPlayableFrom(int x, int y);
     std::pair<int, int> getCoordsFromIndex(int index);
     int getIndexFromCoords(const int x, const int y);
+    Player getWinner();
 
 private:
     GameBoard *board;

@@ -190,7 +190,8 @@ void MainMenu::render()
     renderText(fpsText, 1725, 5, textColor, 24);
 
     renderText("Affrontement Magique", 700, 390, textColor, 64);
-    renderCenteredText("Repaire de l'Anomalie\nHasardeuse", 2650, 100, textColor, 32);
+    renderCenteredText("Repaire de Balthazard\nle Terryble", 2650, 100, textColor, 32);
+    renderCenteredText("PetiGran\nle savant", 750, 700, textColor, 32);
     renderText("Lord Quixard", 20, 20, textColor, 124);
 }
 

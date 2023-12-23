@@ -139,6 +139,7 @@ void MageSMelee::render()
 
     renderText("Back to artifact valley", 20, 20, textColor, 32);
     if(engine->isWinner()) {
+        engine->getWinner();
         renderText("GG", 500, 20, textColor, 256);
     }
 

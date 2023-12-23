@@ -22,7 +22,7 @@
 PlayVAi::PlayVAi(SDL_Window *win) : MageSMelee(win)
 {
     PlayerHuman *playerOne = new PlayerHuman("Thalira Mooncrest");
-    RandomAI *playerTwo = new RandomAI("Lord Hazarde");
+    RandomAI *playerTwo = new RandomAI("Balthazard le Terryble");
     engine = new GameEngine(*playerOne, *playerTwo);
     //Initialize SDL_mixer
     if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 ) < 0 )
