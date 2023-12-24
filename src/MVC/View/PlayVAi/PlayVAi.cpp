@@ -34,18 +34,7 @@ PlayVAi::PlayVAi(SDL_Window *win) : MageSMelee(win)
 
     srand(time(NULL));
     int randomInt = rand() % 2 + 1; 
-    std::string pathWelcome = std::string(buff) + "/static/audio/balthazard.hello." + std::to_string(randomInt) + ".wav";
-
-
-    Mix_Chunk* gWelcome = Mix_LoadWAV( pathWelcome.c_str() );
-    if( gWelcome == NULL )
-    {
-        printf( "Failed to load medium sound effect! SDL_mixer Error: %s\n", Mix_GetError() );
-    }
-    Mix_VolumeChunk(gWelcome, 48);
-
-    // Play music on a loop
-    Mix_PlayChannel(-1, gWelcome, 0);
+    playAudio(loadAudio("balthazard.hello." + std::to_string(randomInt), 48), 5);
 }
 
 PlayVAi::~PlayVAi() {
@@ -56,6 +45,7 @@ View *PlayVAi::handleClick(int x, int y)
     SDL_Point clickedPoint = {x, y};
     if (isPointInTile(clickedPoint, BACK_BTN))
     {
+        if(Mix_Playing(5)){Mix_HaltChannel(5);}
         return new MainMenu(window);
     }
     if(engine->isWinner()){
