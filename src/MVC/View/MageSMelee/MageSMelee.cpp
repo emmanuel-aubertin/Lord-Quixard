@@ -38,7 +38,7 @@ TileCoords MageSMelee::TILE_COORDS[NUM_TILES] = {
 
 MageSMelee::MageSMelee(SDL_Window *win) : View(win)
 {
-    
+
     indexCliked = -1;
     PlayerHuman *playerOne = new PlayerHuman("Thalira Mooncrest");
     PlayerHuman *playerTwo = new PlayerHuman("Cedric Frostshard");
@@ -71,10 +71,12 @@ MageSMelee::~MageSMelee()
     {
         SDL_FreeSurface(backgroundSuface);
     }
-    if (xSprite) {
+    if (xSprite)
+    {
         SDL_FreeSurface(xSprite);
     }
-    if (oSprite) {
+    if (oSprite)
+    {
         SDL_FreeSurface(oSprite);
     }
 }
@@ -99,14 +101,30 @@ void MageSMelee::render()
         SDL_Rect destRect = {0, 0, windowSurface->w, windowSurface->h};
         SDL_BlitScaled(backgroundSuface, NULL, windowSurface, &destRect);
     }
-    
 
+    int indicatorX = windowSurface->w / 2 - 20; // Centering the 40x40 sprite
+    int indicatorY = windowSurface->h - 60;     // Positioning it 60 pixels from the bottom
+
+    if (engine->getWichSignPlay() == Tile::X)
+    {
+        SDL_Rect xRect = {indicatorX, indicatorY, 40, 40};
+        SDL_BlitSurface(xSprite, NULL, windowSurface, &xRect);
+    }
+    else if (engine->getWichSignPlay() == Tile::O)
+    {
+        SDL_Rect oRect = {indicatorX, indicatorY, 40, 40};
+        SDL_BlitSurface(oSprite, NULL, windowSurface, &oRect);
+    }
     int index = 0;
     for (const auto &row : board)
     {
         for (const auto &tile : row)
         {
-            if(tile.sign == Tile::Blank) {index++;continue;}
+            if (tile.sign == Tile::Blank)
+            {
+                index++;
+                continue;
+            }
             // Calculate the center of the tile
             int centerX = (TILE_COORDS[index].topLeft.x + TILE_COORDS[index].topRight.x) / 2;
             int centerY = (TILE_COORDS[index].topLeft.y + TILE_COORDS[index].bottomLeft.y) / 2;
@@ -115,12 +133,15 @@ void MageSMelee::render()
             SDL_Rect spriteRect;
             spriteRect.w = 40;
             spriteRect.h = 40;
-            spriteRect.x = centerX - spriteRect.w / 2;  
-            spriteRect.y = centerY - spriteRect.h / 2;  
+            spriteRect.x = centerX - spriteRect.w / 2;
+            spriteRect.y = centerY - spriteRect.h / 2;
 
-            if (tile.sign == Tile::X) {
+            if (tile.sign == Tile::X)
+            {
                 SDL_BlitSurface(xSprite, NULL, windowSurface, &spriteRect);
-            } else if (tile.sign == Tile::O) {
+            }
+            else if (tile.sign == Tile::O)
+            {
                 SDL_BlitSurface(oSprite, NULL, windowSurface, &spriteRect);
             }
             index++;
@@ -139,11 +160,11 @@ void MageSMelee::render()
     renderText(fpsText, 1725, 5, textColor, 24);
 
     renderText("Back to artifact valley", 20, 20, textColor, 32);
-    if(engine->isWinner()) {
+    if (engine->isWinner())
+    {
         engine->getWinner();
         renderText("GG", 500, 20, textColor, 256);
     }
-
 }
 
 bool MageSMelee::isPointInTile(const SDL_Point &point, const TileCoords &tile)
@@ -154,7 +175,7 @@ bool MageSMelee::isPointInTile(const SDL_Point &point, const TileCoords &tile)
 
 View *MageSMelee::handleClick(int x, int y)
 {
-    //std::cout << "cliked : " << x << ", " << y << std::endl;
+    // std::cout << "cliked : " << x << ", " << y << std::endl;
     SDL_Point clickedPoint = {x, y};
     if (isPointInTile(clickedPoint, BACK_BTN))
     {
@@ -164,7 +185,7 @@ View *MageSMelee::handleClick(int x, int y)
     {
         if (isPointInTile(clickedPoint, TILE_COORDS[i]))
         {
-            //std::cout << "Clicked on tile " << i << std::endl;
+            // std::cout << "Clicked on tile " << i << std::endl;
             if (indexCliked == -1)
             {
                 indexCliked = i;
@@ -183,7 +204,7 @@ View *MageSMelee::handleClick(int x, int y)
             std::cout << "Didn't move" << std::endl;
             std::string pathMage = getWorkingDirectory() + "/static/audio/wrongMove.wav";
 
-            Mix_Chunk* wrong = Mix_LoadWAV(pathMage.c_str());
+            Mix_Chunk *wrong = Mix_LoadWAV(pathMage.c_str());
             if (wrong == NULL)
             {
                 printf("Failed to load medium sound effect! SDL_mixer Error: %s\n", Mix_GetError());
