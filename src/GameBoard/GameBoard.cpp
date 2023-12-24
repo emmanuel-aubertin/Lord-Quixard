@@ -35,92 +35,59 @@ void GameBoard::printBoard()
     }
 }
 
-bool GameBoard::move(const int x, const int y, const int new_x, const int new_y, const Tile::Sign sign)
-{
-    if (board[x][y].sign != Tile::Blank && board[x][y].sign != sign)
-    {
-        std::cout << "Move not valid" << std::endl;
+bool GameBoard::move(const int x, const int y, const int new_x, const int new_y, const Tile::Sign sign) {
+    // Check if the move is valid
+    if (!isValidMove(x, y, new_x, new_y, sign)) {
         return false;
     }
 
-    bool change = board[x][y].sign == Tile::Blank;
-
-    std::cout << "Move : From (" << x << ", " << y << " ) To (" << new_x << ", " << new_y << ")" ;
-    if (sign == Tile::X)
-    {
-        std::cout << " sign: X" << std::endl;
-    }
-    else
-    {
-        std::cout << "O" << std::endl;
-    }
-    if (new_x == x)
-    {
-        if (new_y < y)
-        {
-            Tile prev = board[x][y];
-            for (int i = new_y; i <= y; ++i)
-            {
-                Tile temp = board[x][i];
-                board[x][i] = prev;
-                prev = temp;
+    // If the move is along the same row
+    if (y == new_y) {
+        if (x < new_x) { // Moving to the right
+            for (int i = x; i < new_x; ++i) {
+                board[y][i] = board[y][i + 1];
             }
-            if (change)
-            {
-                board[new_x][new_y].sign = sign;
+        } else { // Moving to the left
+            for (int i = x; i > new_x; --i) {
+                board[y][i] = board[y][i - 1];
             }
-            return true;
         }
-        Tile prev = board[x][new_y];
-        for (int i = new_y; i >= y; --i)
-        {
-            Tile temp = board[x][i];
-            board[x][i] = prev;
-            prev = temp;
-        }
-        if (change)
-        {
-            board[new_x][new_y].sign = sign;
-        }
-        return true;
     }
 
-    if (new_x < x)
-    {
-        Tile prev = board[x][y];
-        for (int i = new_x; i <= x; i++)
-        {
-            Tile temp = board[i][y];
-            board[i][y] = prev;
-            prev = temp;
+    // If the move is along the same column
+    else if (x == new_x) {
+        if (y < new_y) { // Moving down
+            for (int i = y; i < new_y; ++i) {
+                board[i][x] = board[i + 1][x];
+            }
+        } else { // Moving up
+            for (int i = y; i > new_y; --i) {
+                board[i][x] = board[i - 1][x];
+            }
         }
-        if (change)
-        {
-            board[new_x][new_y].sign = sign;
-        }
-        return true;
     }
-    Tile prev = board[new_x][y];
-    for (int i = new_x; i >= x; i--)
-    {
-        Tile temp = board[i][y];
-        board[i][y] = prev;
-        prev = temp;
-    }
-    if (change)
-    {
-        board[new_x][new_y].sign = sign;
-    }
+
+    board[new_y][new_x].sign = sign;
+
     return true;
 }
-/*std::cout << "[" << i << "][" << y  << "] = ";
-if( board[i][y].sign == Tile::O) {
-    std::cout << "O" << std::endl;
-} else if( board[i][y].sign == Tile::Blank) {
-    std::cout << "B" << std::endl;
-} else if( board[i][y].sign == Tile::X) {
-    std::cout << "X" << std::endl;
-}*/
+
+bool GameBoard::isValidMove(const int x, const int y, const int new_x, const int new_y, const Tile::Sign sign) {
+    if (x != 0 && x != 5 - 1 && y != 0 && y != 5 - 1) {
+        return false; // Not an edge tile
+    }
+
+    if (board[y][x].sign != Tile::Blank && board[y][x].sign != sign) {
+        return false; // Tile not blank or not player's sign
+    }
+
+    if(x != new_x && y != new_y){
+        return false; // Not on same row and col
+    }
+
+    return true;
+}
+
 std::array<std::array<Tile, 5>, 5> GameBoard::getBoard()
 {
     return this->board;

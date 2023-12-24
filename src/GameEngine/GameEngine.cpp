@@ -68,8 +68,8 @@ Tile::Sign GameEngine::getWichSignPlay()
 
 std::pair<int, int> GameEngine::getCoordsFromIndex(const int index)
 {
-    int row = index / 5;
-    int col = index % 5;
+    int col = index / 5;
+    int row = index % 5;
     return std::make_pair(row, col);
 }
 
