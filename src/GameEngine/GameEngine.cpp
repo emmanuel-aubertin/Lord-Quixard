@@ -11,6 +11,21 @@ GameEngine::GameEngine(Player &playerOne, Player &playerTwo)
     this->whichPlay = Tile::X;
 }
 
+Player GameEngine::getWinner()
+{
+    if (!isWinner())
+    {
+        throw std::runtime_error("No winner yet"); // Or handle it some other way
+    }
+    if (this->whichPlay == Tile::X)
+    {
+        //std::cout << "WINNER: O" << std::endl;
+        return playerTwo;
+    }
+    //std::cout << "WINNER: X" << std::endl;
+    return playerOne;
+}
+
 void GameEngine::toogleWichPlay()
 {
     if (this->whichPlay == Tile::X)
@@ -33,9 +48,12 @@ bool GameEngine::move(const int x, const int y, const int new_x, const int new_y
     {
         return false;
     }
-    this->board->move(x, y, new_x, new_y, this->whichPlay);
-    this->toogleWichPlay();
-    return true;
+    if (this->board->move(x, y, new_x, new_y, this->whichPlay))
+    {
+        this->toogleWichPlay();
+        return true;
+    }
+    return false;
 }
 
 void GameEngine::printBoard()

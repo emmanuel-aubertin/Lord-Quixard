@@ -37,12 +37,25 @@ void GameBoard::printBoard()
 
 bool GameBoard::move(const int x, const int y, const int new_x, const int new_y, const Tile::Sign sign)
 {
+    if (board[x][y].sign != Tile::Blank && board[x][y].sign != sign)
+    {
+        std::cout << "Move not valid" << std::endl;
+        return false;
+    }
+
     bool change = board[x][y].sign == Tile::Blank;
 
-    std::cout << "Move : From (" << x << ", " << y << " ) To (" << new_x << ", " << new_y << ")" << std::endl;
+    std::cout << "Move : From (" << x << ", " << y << " ) To (" << new_x << ", " << new_y << ")" ;
+    if (sign == Tile::X)
+    {
+        std::cout << " sign: X" << std::endl;
+    }
+    else
+    {
+        std::cout << "O" << std::endl;
+    }
     if (new_x == x)
     {
-
         if (new_y < y)
         {
             Tile prev = board[x][y];

@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 #include <utility>
+#include <SDL2/SDL_mixer.h>
 
 struct TileCoords {
     SDL_Point topLeft;
@@ -21,6 +22,9 @@ protected:
     void renderText(const std::string &text, int x, int y, SDL_Color color, int size);
     bool isPointInPoly(int x, int y, const std::vector<std::pair<int, int>>& poly);
     void renderCenteredText(const std::string& text, int winWidth, int startY, SDL_Color color, int fontSize);
+    Mix_Chunk* loadAudio(std::string filename, int level);
+    void playAudio(std::string filename, int level, int canal);
+    void playAudio(Mix_Chunk* gAudio, int canal);
     std::string getWorkingDirectory();
 public:
     View(SDL_Window* win);

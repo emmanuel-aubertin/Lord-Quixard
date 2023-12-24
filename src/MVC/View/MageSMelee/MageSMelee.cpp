@@ -6,6 +6,7 @@
 #include "../MainMenu/MainMenu.hpp"
 #include "../../../Tile.cpp"
 #include "../View.hpp"
+#include <SDL2/SDL_mixer.h>
 
 TileCoords MageSMelee::BACK_BTN = {{0, 0}, {278, 0}, {0, 55}, {278, 55}};
 TileCoords MageSMelee::TILE_COORDS[NUM_TILES] = {
@@ -37,6 +38,7 @@ TileCoords MageSMelee::TILE_COORDS[NUM_TILES] = {
 
 MageSMelee::MageSMelee(SDL_Window *win) : View(win)
 {
+    
     indexCliked = -1;
     PlayerHuman *playerOne = new PlayerHuman("Thalira Mooncrest");
     PlayerHuman *playerTwo = new PlayerHuman("Cedric Frostshard");
@@ -113,8 +115,8 @@ void MageSMelee::render()
             SDL_Rect spriteRect;
             spriteRect.w = 40;
             spriteRect.h = 40;
-            spriteRect.x = centerX - spriteRect.w / 2;  // Center the sprite
-            spriteRect.y = centerY - spriteRect.h / 2;  // Center the sprite
+            spriteRect.x = centerX - spriteRect.w / 2;  
+            spriteRect.y = centerY - spriteRect.h / 2;  
 
             if (tile.sign == Tile::X) {
                 SDL_BlitSurface(xSprite, NULL, windowSurface, &spriteRect);
@@ -138,6 +140,7 @@ void MageSMelee::render()
 
     renderText("Back to artifact valley", 20, 20, textColor, 32);
     if(engine->isWinner()) {
+        engine->getWinner();
         renderText("GG", 500, 20, textColor, 256);
     }
 
@@ -168,19 +171,26 @@ View *MageSMelee::handleClick(int x, int y)
                 break;
             }
             std::pair<int, int> coords = engine->getCoordsFromIndex(i);
-            if (engine->move(indexCliked, coords.first, coords.second))
+            bool move = engine->move(indexCliked, coords.first, coords.second);
+            if (move)
             {
+                std::cout << move << std::endl;
                 engine->printBoard();
                 board = engine->getBoard();
                 indexCliked = -1;
                 break;
             }
-            if (coords.first == 0 || coords.first == 4 || coords.second == 0 || coords.second == 4)
+            std::cout << "Didn't move" << std::endl;
+            std::string pathMage = getWorkingDirectory() + "/static/audio/wrongMove.wav";
+
+            Mix_Chunk* wrong = Mix_LoadWAV(pathMage.c_str());
+            if (wrong == NULL)
             {
-                indexCliked = i; // New place to play
-                break;
+                printf("Failed to load medium sound effect! SDL_mixer Error: %s\n", Mix_GetError());
             }
-            // Middle tile nothing todo
+            Mix_VolumeChunk(wrong, 48);
+            Mix_PlayChannel(2, wrong, 0);
+            indexCliked = -1;
             break;
         }
     }
