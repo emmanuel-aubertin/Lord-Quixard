@@ -44,6 +44,8 @@ MainMenu::MainMenu(SDL_Window *win) : View(win)
     {
         SDL_BlitSurface(gHelloWorld, NULL, windowSurface, NULL);
     }
+
+    
 }
 
 MainMenu::~MainMenu()
@@ -79,15 +81,7 @@ void MainMenu::render()
     {
         if (!isCube && !Mix_Playing(4))
         {
-            std::string pathMage = getWorkingDirectory() + "/static/audio/mageVmage.wav";
-
-            gMageVmage = Mix_LoadWAV(pathMage.c_str());
-            if (gMageVmage == NULL)
-            {
-                printf("Failed to load medium sound effect! SDL_mixer Error: %s\n", Mix_GetError());
-            }
-            Mix_VolumeChunk(gMageVmage, 48);
-            Mix_PlayChannel(4, gMageVmage, 0);
+            playAudio(loadAudio("mageVmage", 48), 4);
             isCube = true;
         }
 
@@ -115,15 +109,7 @@ void MainMenu::render()
     {
         if (!isBal && !Mix_Playing(2)) // TODO: && if not already curently playing
         {
-            std::string pathMage = getWorkingDirectory() + "/static/audio/thalilaVbal.wav";
-
-            gMageVmage = Mix_LoadWAV(pathMage.c_str());
-            if (gMageVmage == NULL)
-            {
-                printf("Failed to load medium sound effect! SDL_mixer Error: %s\n", Mix_GetError());
-            }
-            Mix_VolumeChunk(gMageVmage, 48);
-            Mix_PlayChannel(2, gMageVmage, 0);
+            playAudio(loadAudio("thalilaVbal", 48), 2);
             isBal = true;
         }
         // std::cout << "x: " << mouseX << " y: " << mouseY << std::endl;
@@ -150,15 +136,8 @@ void MainMenu::render()
     {
         if (!isMinMax && !Mix_Playing(3))
         {
-            std::string pathMage = getWorkingDirectory() + "/static/audio/thalilaVpetit.wav";
-
-            gMageVmage = Mix_LoadWAV(pathMage.c_str());
-            if (gMageVmage == NULL)
-            {
-                printf("Failed to load medium sound effect! SDL_mixer Error: %s\n", Mix_GetError());
-            }
-            Mix_VolumeChunk(gMageVmage, 48);
-            Mix_PlayChannel(3, gMageVmage, 0);
+playAudio(loadAudio("thalilaVpetit", 48), 3);
+ 
             isMinMax = true;
         }
         // std::cout << "x: " << mouseX << " y: " << mouseY << std::endl;

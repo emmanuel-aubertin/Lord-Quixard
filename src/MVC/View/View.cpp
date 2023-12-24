@@ -128,3 +128,23 @@ void View::renderCenteredText(const std::string& text, int winWidth, int startY,
     TTF_CloseFont(font);
 }
 
+Mix_Chunk* View::loadAudio(std::string filename, int level)
+{
+    filename = getWorkingDirectory() + "/static/audio/" + filename + ".wav";
+    std::cout << filename << std::endl;
+    Mix_Chunk* gAudio = Mix_LoadWAV(filename.c_str());
+    if (gAudio == NULL)
+    {
+        printf("Failed to load medium sound effect! SDL_mixer Error: %s\n", Mix_GetError());
+    }
+    Mix_VolumeChunk(gAudio, level);
+    return gAudio;
+}
+
+void View::playAudio(Mix_Chunk* gAudio, int canal) {
+    Mix_PlayChannel(canal, gAudio, 0);
+}
+
+void View::playAudio(std::string filename, int level, int canal) {
+    Mix_PlayChannel(canal, loadAudio(filename, level), 0);
+}

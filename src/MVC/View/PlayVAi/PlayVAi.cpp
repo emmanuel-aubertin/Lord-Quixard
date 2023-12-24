@@ -78,6 +78,7 @@ View *PlayVAi::handleClick(int x, int y)
                     indexCliked = -1;
                     break;
                 }
+                // TODO: wqit 2 sec without block ui
                 engine->makeIAmove();
                 engine->printBoard();
                 board = engine->getBoard();

@@ -6,6 +6,7 @@
 #include "../MainMenu/MainMenu.hpp"
 #include "../../../Tile.cpp"
 #include "../View.hpp"
+#include <SDL2/SDL_mixer.h>
 
 TileCoords MageSMelee::BACK_BTN = {{0, 0}, {278, 0}, {0, 55}, {278, 55}};
 TileCoords MageSMelee::TILE_COORDS[NUM_TILES] = {
@@ -170,19 +171,26 @@ View *MageSMelee::handleClick(int x, int y)
                 break;
             }
             std::pair<int, int> coords = engine->getCoordsFromIndex(i);
-            if (engine->move(indexCliked, coords.first, coords.second))
+            bool move = engine->move(indexCliked, coords.first, coords.second);
+            if (move)
             {
+                std::cout << move << std::endl;
                 engine->printBoard();
                 board = engine->getBoard();
                 indexCliked = -1;
                 break;
             }
-            if (coords.first == 0 || coords.first == 4 || coords.second == 0 || coords.second == 4)
+            std::cout << "Didn't move" << std::endl;
+            std::string pathMage = getWorkingDirectory() + "/static/audio/wrongMove.wav";
+
+            Mix_Chunk* wrong = Mix_LoadWAV(pathMage.c_str());
+            if (wrong == NULL)
             {
-                indexCliked = i; // New place to play
-                break;
+                printf("Failed to load medium sound effect! SDL_mixer Error: %s\n", Mix_GetError());
             }
-            // Middle tile nothing todo
+            Mix_VolumeChunk(wrong, 48);
+            Mix_PlayChannel(2, wrong, 0);
+            indexCliked = -1;
             break;
         }
     }
