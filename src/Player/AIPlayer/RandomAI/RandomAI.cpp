@@ -8,7 +8,7 @@ RandomAI::RandomAI(const std::string &name) : PlayerAI(name)
     // Waiting for new feature
 }
 
-std::vector<int> RandomAI::getPlay(GameBoard *)
+std::vector<int> RandomAI::getPlay(GameBoard *, Tile::Sign)
 {
     std::vector<int> randomIntegers;
     std::random_device rd;

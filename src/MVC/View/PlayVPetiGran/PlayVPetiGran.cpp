@@ -1,9 +1,9 @@
-#include "PlayVAi.hpp"
+#include "PlayVPetiGran.hpp"
 #include <iostream>
 #include <array>
 #include <utility>
 #include "../../../Player/PlayerHuman/PlayerHuman.hpp"
-#include "../../../Player/AIPlayer/RandomAI/RandomAI.hpp"
+#include "../../../Player/AIPlayer/MinMaxAI/MinMaxAI.hpp"
 #include "../MainMenu/MainMenu.hpp"
 #include "../../../Tile.cpp"
 #include "../View.hpp"
@@ -12,45 +12,60 @@
 #include <cstdlib>
 #include <ctime>
 #ifdef _WIN32
-    #include <direct.h>
-    #define GETCWD _getcwd
+#include <direct.h>
+#define GETCWD _getcwd
 #else
-    #include <unistd.h>
-    #define GETCWD getcwd
+#include <unistd.h>
+#define GETCWD getcwd
 #endif
 
-PlayVAi::PlayVAi(SDL_Window *win) : MageSMelee(win)
+PlayVPetiGran::PlayVPetiGran(SDL_Window *win) : MageSMelee(win)
 {
     PlayerHuman *playerOne = new PlayerHuman("Thalira Mooncrest");
-    RandomAI *playerTwo = new RandomAI("Balthazard le Terryble");
+    MinMaxAI *playerTwo = new MinMaxAI("Balthazard le Terryble", 6);
     engine = new GameEngine(*playerOne, *playerTwo);
-    //Initialize SDL_mixer
-    if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 ) < 0 )
+    // Initialize SDL_mixer
+    if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0)
     {
-        printf( "SDL_mixer could not initialize! SDL_mixer Error: %s\n", Mix_GetError() );
+        printf("SDL_mixer could not initialize! SDL_mixer Error: %s\n", Mix_GetError());
     }
     char buff[FILENAME_MAX];
     GETCWD(buff, FILENAME_MAX);
 
     srand(time(NULL));
-    int randomInt = rand() % 2 + 1; 
+    int randomInt = rand() % 2 + 1;
     playAudio(loadAudio("balthazard.hello." + std::to_string(randomInt), 48), 5);
 }
-
-PlayVAi::~PlayVAi() {
+void PlayVPetiGran::runAI() {
+    engine->makeIAmove();
+    board = engine->getBoard();
 }
 
-View *PlayVAi::handleClick(int x, int y)
+PlayVPetiGran::~PlayVPetiGran()
+{
+    if (aiThread.joinable())
+    {
+        aiThread.join();
+    }
+}
+
+View *PlayVPetiGran::handleClick(int x, int y)
 {
     SDL_Point clickedPoint = {x, y};
     if (isPointInTile(clickedPoint, BACK_BTN))
     {
-        if(Mix_Playing(5)){Mix_HaltChannel(5);}
+        if (Mix_Playing(5))
+        {
+            Mix_HaltChannel(5);
+        }
         return new MainMenu(window);
     }
-    if(engine->isWinner()){
+
+    if (engine->isWinner())
+    {
         return nullptr;
     }
+
     for (int i = 0; i < NUM_TILES; ++i)
     {
         if (isPointInTile(clickedPoint, TILE_COORDS[i]))
@@ -63,18 +78,25 @@ View *PlayVAi::handleClick(int x, int y)
             std::pair<int, int> coords = engine->getCoordsFromIndex(i);
             if (engine->move(indexCliked, coords.first, coords.second))
             {
-                if(engine->isWinner()){
+                board = engine->getBoard();
+                if (engine->isWinner())
+                {
                     board = engine->getBoard();
                     indexCliked = -1;
                     break;
                 }
-                // TODO: wqit 2 sec without block ui
-                engine->makeIAmove();
-                engine->printBoard();
-                board = engine->getBoard();
+
+                // Start AI thread
+                if (aiThread.joinable())
+                {
+                    aiThread.join();
+                }
+                aiThread = std::thread(&PlayVPetiGran::runAI, this);
+
                 indexCliked = -1;
                 break;
             }
+
             if (coords.first == 0 || coords.first == 4 || coords.second == 0 || coords.second == 4)
             {
                 indexCliked = i;
