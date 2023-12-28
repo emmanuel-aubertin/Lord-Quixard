@@ -34,7 +34,7 @@ PlayVAi::PlayVAi(SDL_Window *win) : MageSMelee(win)
 
     srand(time(NULL));
     int randomInt = rand() % 2 + 1; 
-    playAudio(loadAudio("balthazard.hello." + std::to_string(randomInt), 48), 5);
+    playAudio(loadAudio("balthazard/balthazard.hello." + std::to_string(randomInt), 48), 5);
 }
 
 PlayVAi::~PlayVAi() {

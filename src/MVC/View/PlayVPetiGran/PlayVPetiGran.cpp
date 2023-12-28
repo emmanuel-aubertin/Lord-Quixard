@@ -34,7 +34,7 @@ PlayVPetiGran::PlayVPetiGran(SDL_Window *win) : MageSMelee(win)
     audioWin = false;
     srand(time(NULL));
     int randomInt = rand() % 2 + 1;
-    playAudio(loadAudio("petigran.hello." + std::to_string(randomInt), 48), 5);
+    playAudio(loadAudio("petigran/petigran.hello." + std::to_string(randomInt), 48), 5);
 }
 
 void PlayVPetiGran::runAI()
@@ -60,12 +60,12 @@ void PlayVPetiGran::render()
 
         if (engine->getWichSignPlay() == Tile::O)
         {
-            playAudio(loadAudio("petigran.loose." + std::to_string(randomInt), 48), 6);
+            playAudio(loadAudio("petigran/petigran.loose." + std::to_string(randomInt), 48), 6);
             
         }
         else
         {
-            playAudio(loadAudio("petigran.win." + std::to_string(randomInt), 48), 6);
+            playAudio(loadAudio("petigran/petigran.win." + std::to_string(randomInt), 48), 6);
         }
         audioWin = true;
     }
