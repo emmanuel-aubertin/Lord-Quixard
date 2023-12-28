@@ -22,7 +22,7 @@
 PlayVPetiGran::PlayVPetiGran(SDL_Window *win) : MageSMelee(win)
 {
     PlayerHuman *playerOne = new PlayerHuman("Thalira Mooncrest");
-    MinMaxAI *playerTwo = new MinMaxAI("Balthazard le Terryble", 6);
+    MinMaxAI *playerTwo = new MinMaxAI("PetiGran le savant", 5);
     engine = new GameEngine(*playerOne, *playerTwo);
     // Initialize SDL_mixer
     if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0)
@@ -31,12 +31,16 @@ PlayVPetiGran::PlayVPetiGran(SDL_Window *win) : MageSMelee(win)
     }
     char buff[FILENAME_MAX];
     GETCWD(buff, FILENAME_MAX);
-
+    audioWin = false;
     srand(time(NULL));
     int randomInt = rand() % 2 + 1;
-    playAudio(loadAudio("balthazard.hello." + std::to_string(randomInt), 48), 5);
+    playAudio(loadAudio("petigran/petigran.hello." + std::to_string(randomInt), 48), 5);
+    moveCounter = 0;
+    moveToPlay = 4 + rand() % 4;
 }
-void PlayVPetiGran::runAI() {
+
+void PlayVPetiGran::runAI()
+{
     engine->makeIAmove();
     board = engine->getBoard();
 }
@@ -46,6 +50,25 @@ PlayVPetiGran::~PlayVPetiGran()
     if (aiThread.joinable())
     {
         aiThread.join();
+    }
+}
+
+void PlayVPetiGran::render()
+{
+    MageSMelee::render();
+    if (engine->isWinner() && !audioWin)
+    {
+        int randomInt = rand() % 2 + 1;
+
+        if (engine->getWichSignPlay() == Tile::O)
+        {
+            playAudio(loadAudio("petigran/petigran.win." + std::to_string(randomInt), 48), 6);
+        }
+        else
+        {
+            playAudio(loadAudio("petigran/petigran.loose." + std::to_string(randomInt), 48), 6);
+        }
+        audioWin = true;
     }
 }
 
@@ -78,14 +101,20 @@ View *PlayVPetiGran::handleClick(int x, int y)
             std::pair<int, int> coords = engine->getCoordsFromIndex(i);
             if (engine->move(indexCliked, coords.first, coords.second))
             {
+                moveCounter++;
+                if (moveCounter % moveToPlay == 0)
+                {
+                    moveToPlay = 4 + rand() % 4;
+                    int randomInt = rand() % 3 + 1;
+                    playAudio(loadAudio("petigran/petigran.play." + std::to_string(randomInt), 48), 6);
+                }
                 board = engine->getBoard();
                 if (engine->isWinner())
                 {
-                    board = engine->getBoard();
                     indexCliked = -1;
                     break;
                 }
-
+                
                 // Start AI thread
                 if (aiThread.joinable())
                 {
