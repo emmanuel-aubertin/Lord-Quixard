@@ -114,7 +114,7 @@ std::vector<int> MinMaxAI::getPlay(GameBoard *board, Tile::Sign sign)
     {
         if (move.size() == 4)
         {
-            std::cout << "Move: " << move[0] << ", " << move[1] << " -> " << move[2] << ", " << move[3] << std::endl;
+            //std::cout << "Move: " << move[0] << ", " << move[1] << " -> " << move[2] << ", " << move[3] << std::endl;
             // Async launch of lambda
             futures.push_back(std::async(std::launch::async, [&]()
                                          {

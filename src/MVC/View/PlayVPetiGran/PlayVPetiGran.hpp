@@ -16,9 +16,10 @@ class PlayVPetiGran : public MageSMelee
 public:
     PlayVPetiGran(SDL_Window *win);
     virtual ~PlayVPetiGran();
-
+    void render() override;
 private:
     std::thread aiThread;
+    bool audioWin;
     void runAI();
     View *handleClick(int x, int y) override;
 };
