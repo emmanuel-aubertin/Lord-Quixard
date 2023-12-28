@@ -12,11 +12,11 @@
 #include <cstdlib>
 #include <ctime>
 #ifdef _WIN32
-    #include <direct.h>
-    #define GETCWD _getcwd
+#include <direct.h>
+#define GETCWD _getcwd
 #else
-    #include <unistd.h>
-    #define GETCWD getcwd
+#include <unistd.h>
+#define GETCWD getcwd
 #endif
 
 PlayVAi::PlayVAi(SDL_Window *win) : MageSMelee(win)
@@ -24,20 +24,40 @@ PlayVAi::PlayVAi(SDL_Window *win) : MageSMelee(win)
     PlayerHuman *playerOne = new PlayerHuman("Thalira Mooncrest");
     RandomAI *playerTwo = new RandomAI("Balthazard le Terryble");
     engine = new GameEngine(*playerOne, *playerTwo);
-    //Initialize SDL_mixer
-    if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 ) < 0 )
+    // Initialize SDL_mixer
+    if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0)
     {
-        printf( "SDL_mixer could not initialize! SDL_mixer Error: %s\n", Mix_GetError() );
+        printf("SDL_mixer could not initialize! SDL_mixer Error: %s\n", Mix_GetError());
     }
     char buff[FILENAME_MAX];
     GETCWD(buff, FILENAME_MAX);
-
+    audioWin = false;
     srand(time(NULL));
-    int randomInt = rand() % 2 + 1; 
+    int randomInt = rand() % 2 + 1;
     playAudio(loadAudio("balthazard/balthazard.hello." + std::to_string(randomInt), 48), 5);
 }
 
-PlayVAi::~PlayVAi() {
+PlayVAi::~PlayVAi()
+{
+}
+
+void PlayVAi::render()
+{
+    MageSMelee::render();
+    if (engine->isWinner() && !audioWin)
+    {
+        int randomInt = rand() % 2 + 1;
+
+        if (engine->getWichSignPlay() == Tile::O)
+        {
+            playAudio(loadAudio("petigran/petigran.loose." + std::to_string(randomInt), 48), 6);
+        }
+        else
+        {
+            playAudio(loadAudio("petigran/petigran.win." + std::to_string(randomInt), 48), 6);
+        }
+        audioWin = true;
+    }
 }
 
 View *PlayVAi::handleClick(int x, int y)
@@ -45,10 +65,14 @@ View *PlayVAi::handleClick(int x, int y)
     SDL_Point clickedPoint = {x, y};
     if (isPointInTile(clickedPoint, BACK_BTN))
     {
-        if(Mix_Playing(5)){Mix_HaltChannel(5);}
+        if (Mix_Playing(5))
+        {
+            Mix_HaltChannel(5);
+        }
         return new MainMenu(window);
     }
-    if(engine->isWinner()){
+    if (engine->isWinner())
+    {
         return nullptr;
     }
     for (int i = 0; i < NUM_TILES; ++i)
@@ -63,7 +87,8 @@ View *PlayVAi::handleClick(int x, int y)
             std::pair<int, int> coords = engine->getCoordsFromIndex(i);
             if (engine->move(indexCliked, coords.first, coords.second))
             {
-                if(engine->isWinner()){
+                if (engine->isWinner())
+                {
                     board = engine->getBoard();
                     indexCliked = -1;
                     break;

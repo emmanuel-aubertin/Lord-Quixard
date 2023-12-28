@@ -17,7 +17,9 @@ public:
     PlayVPetiGran(SDL_Window *win);
     virtual ~PlayVPetiGran();
     void render() override;
+
 private:
+    int moveCounter, moveToPlay;
     std::thread aiThread;
     bool audioWin;
     void runAI();

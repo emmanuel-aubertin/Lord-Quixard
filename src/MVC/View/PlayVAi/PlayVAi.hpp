@@ -15,8 +15,9 @@ class PlayVAi : public MageSMelee
 public:
     PlayVAi(SDL_Window *win);
     virtual ~PlayVAi();
-
+    void render() override;
 private:
+bool audioWin;
     View *handleClick(int x, int y) override;
 };
 

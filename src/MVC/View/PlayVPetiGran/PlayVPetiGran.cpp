@@ -35,6 +35,8 @@ PlayVPetiGran::PlayVPetiGran(SDL_Window *win) : MageSMelee(win)
     srand(time(NULL));
     int randomInt = rand() % 2 + 1;
     playAudio(loadAudio("petigran/petigran.hello." + std::to_string(randomInt), 48), 5);
+    moveCounter = 0;
+    moveToPlay = 4 + rand() % 4;
 }
 
 void PlayVPetiGran::runAI()
@@ -60,12 +62,11 @@ void PlayVPetiGran::render()
 
         if (engine->getWichSignPlay() == Tile::O)
         {
-            playAudio(loadAudio("petigran/petigran.loose." + std::to_string(randomInt), 48), 6);
-            
+            playAudio(loadAudio("petigran/petigran.win." + std::to_string(randomInt), 48), 6);
         }
         else
         {
-            playAudio(loadAudio("petigran/petigran.win." + std::to_string(randomInt), 48), 6);
+            playAudio(loadAudio("petigran/petigran.loose." + std::to_string(randomInt), 48), 6);
         }
         audioWin = true;
     }
@@ -100,14 +101,20 @@ View *PlayVPetiGran::handleClick(int x, int y)
             std::pair<int, int> coords = engine->getCoordsFromIndex(i);
             if (engine->move(indexCliked, coords.first, coords.second))
             {
+                moveCounter++;
+                if (moveCounter % moveToPlay == 0)
+                {
+                    moveToPlay = 4 + rand() % 4;
+                    int randomInt = rand() % 3 + 1;
+                    playAudio(loadAudio("petigran/petigran.play." + std::to_string(randomInt), 48), 6);
+                }
                 board = engine->getBoard();
                 if (engine->isWinner())
                 {
-                    board = engine->getBoard();
                     indexCliked = -1;
                     break;
                 }
-
+                
                 // Start AI thread
                 if (aiThread.joinable())
                 {
