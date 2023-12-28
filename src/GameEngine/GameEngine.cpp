@@ -115,7 +115,7 @@ bool GameEngine::isWinner()
 
 bool GameEngine::isRowWin(int row)
 {
-    const auto &firstSign = this->board->getBoard()[row][0].sign;
+    Tile::Sign firstSign = this->board->getBoard()[row][0].sign;
     if (firstSign == Tile::Blank)
         return false;
 
@@ -129,7 +129,7 @@ bool GameEngine::isRowWin(int row)
 
 bool GameEngine::isColumnWin(int column)
 {
-    const auto &firstSign = this->board->getBoard()[0][column].sign;
+    Tile::Sign firstSign = this->board->getBoard()[0][column].sign;
     if (firstSign == Tile::Blank)
         return false;
 
@@ -143,7 +143,7 @@ bool GameEngine::isColumnWin(int column)
 
 bool GameEngine::isMainDiagonalWin()
 {
-    const auto &firstSign = this->board->getBoard()[0][0].sign;
+    Tile::Sign firstSign = this->board->getBoard()[0][0].sign;
     if (firstSign == Tile::Blank)
         return false;
 
@@ -157,7 +157,7 @@ bool GameEngine::isMainDiagonalWin()
 
 bool GameEngine::isAntiDiagonalWin()
 {
-    const auto &firstSign = this->board->getBoard()[0][this->board->getBoard().size() - 1].sign;
+    Tile::Sign firstSign = this->board->getBoard()[0][this->board->getBoard().size() - 1].sign;
     if (firstSign == Tile::Blank)
         return false;
 
@@ -177,12 +177,10 @@ void GameEngine::makeIAmove()
         std::vector<int> play = aiPlayer->getPlay(this->board, this->whichPlay);
         if (this->move(play[0], play[1], play[2], play[3]))
         {
-            std::cout << "Great move BG{" <<play[0] << ", " << play[1]<< '} -> {'<< play[2] << ", " << play[3]<< '}' << std::endl;
             return;
         }
-        std::cout << "Invalid MOVE!!! {" <<play[0] << ", " << play[1]<< "} -> {" << play[2] << ", " << play[3]<< "}" << std::endl;
         printBoard();
-        //makeIAmove();
+        makeIAmove();
     }
     else
     {
