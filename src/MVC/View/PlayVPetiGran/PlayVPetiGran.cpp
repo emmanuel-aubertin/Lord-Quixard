@@ -22,7 +22,7 @@
 PlayVPetiGran::PlayVPetiGran(SDL_Window *win) : MageSMelee(win)
 {
     PlayerHuman *playerOne = new PlayerHuman("Thalira Mooncrest");
-    MinMaxAI *playerTwo = new MinMaxAI("Balthazard le Terryble", 6);
+    MinMaxAI *playerTwo = new MinMaxAI("PetiGran le savant", 6);
     engine = new GameEngine(*playerOne, *playerTwo);
     // Initialize SDL_mixer
     if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0)
@@ -34,7 +34,7 @@ PlayVPetiGran::PlayVPetiGran(SDL_Window *win) : MageSMelee(win)
 
     srand(time(NULL));
     int randomInt = rand() % 2 + 1;
-    playAudio(loadAudio("balthazard.hello." + std::to_string(randomInt), 48), 5);
+    playAudio(loadAudio("petigran.hello." + std::to_string(randomInt), 48), 5);
 }
 void PlayVPetiGran::runAI() {
     engine->makeIAmove();
