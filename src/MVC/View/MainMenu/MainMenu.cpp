@@ -1,6 +1,7 @@
 #include "MainMenu.hpp"
 #include "../MageSMelee/MageSMelee.hpp"
 #include "../PlayVAi/PlayVAi.hpp"
+#include "../PlayVPetiGran/PlayVPetiGran.hpp"
 #include <iostream>
 #include <array>
 #include <utility>
@@ -196,6 +197,15 @@ View *MainMenu::handleClick(int x, int y)
         }
         std::cout << "In cube" << std::endl;
         return new PlayVAi(window);
+    }
+    if (isPointInPoly(x, y, GIRL_POLY))
+    {
+        if (Mix_Playing(3))
+        {
+            Mix_HaltChannel(3);
+        }
+        std::cout << "In cube" << std::endl;
+        return new PlayVPetiGran(window);
     }
     return nullptr;
 }

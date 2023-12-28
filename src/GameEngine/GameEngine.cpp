@@ -19,10 +19,10 @@ Player GameEngine::getWinner()
     }
     if (this->whichPlay == Tile::X)
     {
-        //std::cout << "WINNER: O" << std::endl;
+        // std::cout << "WINNER: O" << std::endl;
         return playerTwo;
     }
-    //std::cout << "WINNER: X" << std::endl;
+    // std::cout << "WINNER: X" << std::endl;
     return playerOne;
 }
 
@@ -174,12 +174,15 @@ void GameEngine::makeIAmove()
     PlayerAI *aiPlayer = dynamic_cast<PlayerAI *>(&playerTwo);
     if (aiPlayer != nullptr)
     {
-        std::vector<int> play = aiPlayer->getPlay(this->board);
+        std::vector<int> play = aiPlayer->getPlay(this->board, this->whichPlay);
         if (this->move(play[0], play[1], play[2], play[3]))
         {
+            std::cout << "Great move BG{" <<play[0] << ", " << play[1]<< '} -> {'<< play[2] << ", " << play[3]<< '}' << std::endl;
             return;
         }
-        makeIAmove();
+        std::cout << "Invalid MOVE!!! {" <<play[0] << ", " << play[1]<< "} -> {" << play[2] << ", " << play[3]<< "}" << std::endl;
+        printBoard();
+        //makeIAmove();
     }
     else
     {

@@ -6,6 +6,6 @@ PlayerAI::PlayerAI(const std::string &name) : Player(name)
     // Here for a future feature :)
 }
 
-std::vector<int> PlayerAI::getPlay(GameBoard*) {
+std::vector<int> PlayerAI::getPlay(GameBoard*, Tile::Sign) {
     return std::vector<int>();
 }
