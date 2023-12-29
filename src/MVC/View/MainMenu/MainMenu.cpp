@@ -48,6 +48,7 @@ MainMenu::MainMenu(SDL_Window *win) : View(win)
 
     
 }
+bool MainMenu::hasUndo() { return false;}
 
 MainMenu::~MainMenu()
 {
@@ -164,15 +165,11 @@ playAudio(loadAudio("thalilaVpetit", 48), 3);
     // Clear the previous FPS text
     SDL_Rect fpsRect = {1792 - 80, 5, 100, 30};
     SDL_BlitSurface(this->gHelloWorld, &fpsRect, windowSurface, &fpsRect);
+
     SDL_Color textColor = {255, 255, 255};
     // Render the new FPS text
     std::string fpsText = "FPS: " + std::to_string(fps);
     renderText(fpsText, 1725, 5, textColor, 24);
-
-    renderText("Affrontement Magique", 700, 390, textColor, 64);
-    renderCenteredText("Repaire de Balthazard\nle Terryble", 2650, 100, textColor, 32);
-    renderCenteredText("PetiGran\nle savant", 750, 700, textColor, 32);
-    renderText("Lord Quixard", 20, 20, textColor, 124);
 }
 
 View *MainMenu::handleClick(int x, int y)

@@ -136,27 +136,3 @@ View *PlayVPetiGran::handleClick(int x, int y)
     }
     return nullptr;
 }
-
-/*
-// The following section is here to get all coords for a custom (not regular) grid.
-int tileNum = 0;
-int pointCounter = -1;
-View *MageSMelee::handleClick(int x, int y)
-{
-    pointCounter++;
-    if(pointCounter == 0){
-        std::cout <<"{{" << x << ", "<< y  << "}, ";
-        return nullptr;
-    }
-    if(pointCounter == 3){
-        std::cout << "{" << x << ", "<< y  << "}}, " << std::endl;
-        tileNum++;
-        pointCounter =-1 ;
-        return nullptr;
-    }
-    std::cout << "{" << x << ", "<< y  << "}, ";
-
-
-
-    return nullptr;
-}*/

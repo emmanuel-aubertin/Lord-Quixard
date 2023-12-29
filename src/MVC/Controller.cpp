@@ -1,6 +1,7 @@
 #include "Controller.hpp"
 #include <iostream>
 #include "View/MainMenu/MainMenu.hpp"
+#include "View/Loading/Loading.hpp"
 #include "../../Config.hpp"
 #include <typeinfo>
 #include <SDL2/SDL_mixer.h>
@@ -40,7 +41,6 @@ Controller::Controller()
         exit(-1);
     }
 
-    this->view = new MainMenu(window);
     isRunning = true;
 
     // Initialize SDL_mixer
@@ -71,8 +71,7 @@ Controller::Controller()
     }
     Mix_VolumeChunk(gWelcome, 32);
 
-
-    Mix_PlayChannel(-1, gWelcome, 0);
+    Mix_PlayChannel(1, gWelcome, 0);
 
     // Play music on a loop
     Mix_VolumeChunk(gMusic, 32);
@@ -89,6 +88,14 @@ Controller::~Controller()
 
 void Controller::run()
 {
+    this->view = new Loading(window);
+    while (Mix_Playing(1))
+    {
+        handleEvents();
+        view->render();
+        SDL_UpdateWindowSurface(window);
+    };
+    this->view = new MainMenu(window);
     while (isRunning)
     {
         handleEvents();
@@ -109,12 +116,28 @@ void Controller::handleEvents()
             break;
 
         case SDL_MOUSEBUTTONDOWN:
+        {
             int mouseX, mouseY;
             SDL_GetMouseState(&mouseX, &mouseY);
             View *tempView = view->handleClick(mouseX, mouseY);
             if (tempView != nullptr)
             {
                 updateView(tempView);
+            }
+        }
+        break;
+
+        case SDL_KEYDOWN: // Handle key press events
+#ifdef __APPLE__          // Check for Mac platform (CMD + z)
+            if (event.key.keysym.sym == SDLK_z && SDL_GetModState() & KMOD_GUI)
+#else // Ctrl+Z for Windows/Linux
+            if (event.key.keysym.sym == SDLK_z && SDL_GetModState() & KMOD_CTRL)
+#endif
+            {
+                if (this->view->hasUndo())
+                {
+                    std::cout << "Ctrl+Z pressed for undo" << std::endl;
+                }
             }
             break;
         }

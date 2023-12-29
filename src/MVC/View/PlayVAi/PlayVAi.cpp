@@ -35,12 +35,23 @@ PlayVAi::PlayVAi(SDL_Window *win) : MageSMelee(win)
     srand(time(NULL));
     int randomInt = rand() % 2 + 1;
     playAudio(loadAudio("balthazard/balthazard.hello." + std::to_string(randomInt), 48), 5);
+    moveCounter = 0;
+    moveToPlay = 4 + rand() % 4;
+}
+
+void PlayVAi::runAI()
+{
+    engine->makeIAmove();
+    board = engine->getBoard();
 }
 
 PlayVAi::~PlayVAi()
 {
+    if (aiThread.joinable())
+    {
+        aiThread.join();
+    }
 }
-
 void PlayVAi::render()
 {
     MageSMelee::render();
@@ -50,11 +61,11 @@ void PlayVAi::render()
 
         if (engine->getWichSignPlay() == Tile::O)
         {
-            playAudio(loadAudio("petigran/petigran.loose." + std::to_string(randomInt), 48), 6);
+            playAudio(loadAudio("balthazard/balthazard.loose." + std::to_string(randomInt), 48), 6);
         }
         else
         {
-            playAudio(loadAudio("petigran/petigran.win." + std::to_string(randomInt), 48), 6);
+            playAudio(loadAudio("balthazard/balthazard.win." + std::to_string(randomInt), 48), 6);
         }
         audioWin = true;
     }
@@ -71,10 +82,12 @@ View *PlayVAi::handleClick(int x, int y)
         }
         return new MainMenu(window);
     }
+
     if (engine->isWinner())
     {
         return nullptr;
     }
+
     for (int i = 0; i < NUM_TILES; ++i)
     {
         if (isPointInTile(clickedPoint, TILE_COORDS[i]))
@@ -87,19 +100,31 @@ View *PlayVAi::handleClick(int x, int y)
             std::pair<int, int> coords = engine->getCoordsFromIndex(i);
             if (engine->move(indexCliked, coords.first, coords.second))
             {
+                moveCounter++;
+                if (moveCounter % moveToPlay == 0)
+                {
+                    moveToPlay = 4 + rand() % 4;
+                    int randomInt = rand() % 3 + 1;
+                    playAudio(loadAudio("balthazard/balthazard.play." + std::to_string(randomInt), 48), 6);
+                }
+                board = engine->getBoard();
                 if (engine->isWinner())
                 {
-                    board = engine->getBoard();
                     indexCliked = -1;
                     break;
                 }
-                // TODO: wqit 2 sec without block ui
-                engine->makeIAmove();
-                engine->printBoard();
-                board = engine->getBoard();
+
+                // Start AI thread
+                if (aiThread.joinable())
+                {
+                    aiThread.join();
+                }
+                aiThread = std::thread(&PlayVAi::runAI, this);
+
                 indexCliked = -1;
                 break;
             }
+
             if (coords.first == 0 || coords.first == 4 || coords.second == 0 || coords.second == 4)
             {
                 indexCliked = i;
