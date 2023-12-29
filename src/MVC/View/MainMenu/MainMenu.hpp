@@ -12,7 +12,7 @@ class MainMenu : public View
 public:
     MainMenu(SDL_Window *win);
     virtual ~MainMenu();
-
+    bool hasUndo() override;
     void render() override;
 
 private:
@@ -21,8 +21,7 @@ private:
     SDL_Surface *gHelloWorld;
     SDL_Surface *textSurface;
     SDL_Surface *window_surface;
-    Mix_Chunk* gMageVmage;
-
+    Mix_Chunk *gMageVmage;
 
     View *handleClick(int, int) override;
     // For FPS tracking

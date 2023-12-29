@@ -12,7 +12,7 @@ Loading::Loading(SDL_Window *win) : View(win)
 Loading::~Loading()
 {
 }
-
+bool Loading::hasUndo() { return false; }
 void Loading::render()
 {
     Uint32 currentTime = SDL_GetTicks();

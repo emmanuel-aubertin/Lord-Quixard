@@ -14,6 +14,7 @@ public:
     virtual ~Loading();
 
     void render() override;
+    bool hasUndo() override;
 
 private:
     std::string getFramePath(int frameNumber);

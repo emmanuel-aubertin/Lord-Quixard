@@ -48,6 +48,7 @@ MainMenu::MainMenu(SDL_Window *win) : View(win)
 
     
 }
+bool MainMenu::hasUndo() { return false;}
 
 MainMenu::~MainMenu()
 {

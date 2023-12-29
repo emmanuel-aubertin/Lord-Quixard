@@ -172,6 +172,9 @@ bool MageSMelee::isPointInTile(const SDL_Point &point, const TileCoords &tile)
             point.y >= tile.topLeft.y && point.y <= tile.bottomLeft.y);
 }
 
+
+bool MageSMelee::hasUndo() { return true; }
+
 View *MageSMelee::handleClick(int x, int y)
 {
     // std::cout << "cliked : " << x << ", " << y << std::endl;
