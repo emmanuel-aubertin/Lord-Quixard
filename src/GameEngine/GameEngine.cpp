@@ -9,6 +9,7 @@ GameEngine::GameEngine(Player &playerOne, Player &playerTwo)
     this->playerOne = playerOne;
     this->playerTwo = playerTwo;
     this->whichPlay = Tile::X;
+    history.push_back(board->saveToMemento());
 }
 
 Player GameEngine::getWinner()
@@ -50,10 +51,25 @@ bool GameEngine::move(const int x, const int y, const int new_x, const int new_y
     }
     if (this->board->move(x, y, new_x, new_y, this->whichPlay))
     {
+        history.push_back(board->saveToMemento());
         this->toogleWichPlay();
         return true;
     }
     return false;
+}
+
+void GameEngine::undoMove()
+{
+    if (history.size() != 1)
+    {
+        std::cout << "History not empty" << std::endl;
+        std::cout << "History size: " << history.size() << std::endl;
+        history.pop_back();
+        board->restoreFromMemento(history.back());
+        this->toogleWichPlay();
+        std::cout << "Grid updated" << std::endl;
+    }
+    printBoard();
 }
 
 void GameEngine::printBoard()

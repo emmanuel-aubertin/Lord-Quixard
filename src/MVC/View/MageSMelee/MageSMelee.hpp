@@ -16,6 +16,7 @@ public:
     virtual ~MageSMelee();
     void render() override;
     bool hasUndo() override;
+    void undo() override;
 
 protected:
     static constexpr int NUM_TILES = 25; // Define NUM_TILES as a constant expression

@@ -72,6 +72,7 @@ void PlayVPetiGran::render()
     }
 }
 
+
 View *PlayVPetiGran::handleClick(int x, int y)
 {
     SDL_Point clickedPoint = {x, y};
@@ -114,7 +115,7 @@ View *PlayVPetiGran::handleClick(int x, int y)
                     indexCliked = -1;
                     break;
                 }
-                
+
                 // Start AI thread
                 if (aiThread.joinable())
                 {

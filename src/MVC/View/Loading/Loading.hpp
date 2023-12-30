@@ -12,7 +12,7 @@ class Loading : public View
 public:
     Loading(SDL_Window *win);
     virtual ~Loading();
-
+    void undo()override{};
     void render() override;
     bool hasUndo() override;
 
