@@ -14,7 +14,7 @@ public:
     virtual ~MainMenu();
     bool hasUndo() override;
     void render() override;
-
+    void undo()override {};
 private:
     bool isCube, isBal, isMinMax;
     TTF_Font *font;

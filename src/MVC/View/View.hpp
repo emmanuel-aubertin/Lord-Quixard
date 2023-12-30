@@ -28,10 +28,11 @@ protected:
     void playAudio(std::string filename, int level, int canal);
     void playAudio(Mix_Chunk *gAudio, int canal);
     std::string getWorkingDirectory();
-
+    
 public:
     View(SDL_Window *win);
     virtual ~View();
+    virtual void undo() = 0;
     virtual View *handleClick(int, int) = 0;
     virtual bool hasUndo() = 0;
     virtual void render() = 0;

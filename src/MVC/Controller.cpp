@@ -128,14 +128,15 @@ void Controller::handleEvents()
         break;
 
         case SDL_KEYDOWN: // Handle key press events
-#ifdef __APPLE__          // Check for Mac platform (CMD + z)
-            if (event.key.keysym.sym == SDLK_z && SDL_GetModState() & KMOD_GUI)
-#else // Ctrl+Z for Windows/Linux
-            if (event.key.keysym.sym == SDLK_z && SDL_GetModState() & KMOD_CTRL)
-#endif
+            #ifdef __APPLE__          // Check for Mac platform (CMD + z)
+                if (event.key.keysym.sym == SDLK_z && SDL_GetModState() & KMOD_GUI)
+            #else // Ctrl+Z for Windows/Linux
+                if (event.key.keysym.sym == SDLK_z && SDL_GetModState() & KMOD_CTRL)
+            #endif
             {
                 if (this->view->hasUndo())
                 {
+                    this->view->undo();
                     std::cout << "Ctrl+Z pressed for undo" << std::endl;
                 }
             }

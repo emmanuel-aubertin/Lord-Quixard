@@ -21,20 +21,21 @@ public:
     std::pair<int, int> getCoordsFromIndex(int index);
     int getIndexFromCoords(const int x, const int y);
     Player getWinner();
+    void undoMove();
 
 private:
+    std::vector<GameBoardMemento> history;
     GameBoard *board;
     Player &playerOne;
     Player &playerTwo;
     Tile::Sign whichPlay;
-
     bool isRowWin(int row);
     bool isColumnWin(int column);
     bool isMainDiagonalWin();
     bool isAntiDiagonalWin();
-
     void toogleWichPlay();
-
     bool isValidMove(const int x, const int y, const int new_x, const int new_y);
 };
+
+
 #endif
