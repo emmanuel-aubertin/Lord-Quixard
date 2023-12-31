@@ -67,8 +67,11 @@ void GameEngine::undoMove()
         history.pop_back();
         board->restoreFromMemento(history.back());
         this->toogleWichPlay();
-        if(whichPlay == Tile::O) {
-            undoMove();
+        PlayerAI* aiPlayer = dynamic_cast<PlayerAI*>(&playerTwo);
+        if (whichPlay == Tile::O && aiPlayer != nullptr)
+        {
+            // Undoing AI move...
+            undoMove(); 
         }
         std::cout << "Grid updated" << std::endl;
     }
