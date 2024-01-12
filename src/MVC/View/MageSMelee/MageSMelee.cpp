@@ -40,8 +40,8 @@ MageSMelee::MageSMelee(SDL_Window *win) : View(win)
 {
 
     indexCliked = -1;
-    PlayerHuman *playerOne = new PlayerHuman("Thalira Mooncrest");
-    PlayerHuman *playerTwo = new PlayerHuman("Cedric Frostshard");
+    PlayerHuman *playerOne = new PlayerHuman("Joueur X");
+    PlayerHuman *playerTwo = new PlayerHuman("Joueur O");
     engine = new GameEngine(*playerOne, *playerTwo);
 
     frameStart = SDL_GetTicks();

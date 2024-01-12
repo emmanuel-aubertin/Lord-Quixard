@@ -62,11 +62,11 @@ void PlayVPetiGran::render()
 
         if (engine->getWichSignPlay() == Tile::O)
         {
-            playAudio(loadAudio("petigran/petigran.win." + std::to_string(randomInt), 48), 6);
+            playAudio(loadAudio("petigran/petigran.loose." + std::to_string(randomInt), 48), 6);
         }
         else
         {
-            playAudio(loadAudio("petigran/petigran.loose." + std::to_string(randomInt), 48), 6);
+            playAudio(loadAudio("petigran/petigran.win." + std::to_string(randomInt), 48), 6);
         }
         audioWin = true;
     }
