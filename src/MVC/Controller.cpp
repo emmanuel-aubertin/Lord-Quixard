@@ -15,6 +15,8 @@
 #define GETCWD getcwd
 #endif
 
+Controller* Controller::instance = nullptr;
+
 Controller::Controller()
 {
     SDL_GetMouseState(&mouseX, &mouseY);
