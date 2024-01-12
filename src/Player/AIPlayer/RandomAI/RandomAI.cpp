@@ -3,11 +3,26 @@
 #include <random>
 #include <chrono>
 
+/**
+ * @brief Construct a new RandomAI object.
+ * Initializes the RandomAI player with the given name. The constructor is currently placeholder
+ * for potential future features specific to RandomAI.
+ *
+ * @param name The name of the RandomAI player.
+ */
 RandomAI::RandomAI(const std::string &name) : PlayerAI(name)
 {
     // Waiting for new feature
 }
 
+/**
+ * @brief Generates a random play for the AI player.
+ * Creates a random move using a uniform distribution. The move is determined by randomly
+ * selecting positions on the game board. If a randomly generated number is odd, the move
+ * is along the same row; otherwise, it's along the same column.
+ *
+ * @return std::vector<int> The AI player's randomly chosen move, represented as a vector {x, y, new_x, new_y}.
+ */
 std::vector<int> RandomAI::getPlay(GameBoard *, Tile::Sign)
 {
     std::vector<int> randomIntegers;
