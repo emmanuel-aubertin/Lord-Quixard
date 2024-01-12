@@ -7,16 +7,27 @@
 #include <SDL2/SDL_mixer.h>
 #include <cstdlib>
 #include <ctime>
+
 #ifdef _WIN32
-#include <direct.h>
-#define GETCWD _getcwd
+    #include <direct.h>
+    #define GETCWD _getcwd
 #else
-#include <unistd.h>
-#define GETCWD getcwd
+    #include <unistd.h>
+    #define GETCWD getcwd
 #endif
+
+/**
+ * @brief Singleton instance of the Controller class.
+ * Used to ensure that only one instance of the Controller class exists throughout the application.
+ */
 
 Controller* Controller::instance = nullptr;
 
+/**
+ * @brief Construct a new Controller object.
+ * Initializes SDL, SDL_ttf, and SDL_mixer. Creates the main window and loads initial audio resources.
+ * Exits the application with an error message if initialization fails or resources cannot be loaded.
+ */
 Controller::Controller()
 {
     SDL_GetMouseState(&mouseX, &mouseY);
@@ -80,6 +91,10 @@ Controller::Controller()
     Mix_PlayChannel(-1, gMusic, -1);
 }
 
+/**
+ * @brief Destructor for the Controller object.
+ * Cleans up resources, frees loaded audio chunks, destroys the window, and quits SDL.
+ */
 Controller::~Controller()
 {
     delete view;
@@ -88,6 +103,11 @@ Controller::~Controller()
     SDL_Quit();
 }
 
+/**
+ * @brief Main loop of the application.
+ * Manages the application flow, starting with the Loading screen, then moving to the MainMenu.
+ * Handles events and updates the window surface continuously until the application is closed.
+ */
 void Controller::run()
 {
     this->view = new Loading(window);
@@ -106,6 +126,11 @@ void Controller::run()
     }
 }
 
+/**
+ * @brief Handles user input and system events.
+ * Processes all SDL events, such as quitting the application, mouse button presses, and keydown events.
+ * Updates the view based on user interactions or system commands.
+ */
 void Controller::handleEvents()
 {
     SDL_Event event;
@@ -147,6 +172,13 @@ void Controller::handleEvents()
     }
 }
 
+/**
+ * @brief Updates the current view.
+ * Clears the current window surface, deletes the old view, and replaces it with a new view.
+ * This method is typically called in response to user interactions.
+ *
+ * @param newView Pointer to the new view that will replace the current view.
+ */
 void Controller::updateView(View *newView)
 {
     SDL_FillRect(SDL_GetWindowSurface(window), NULL, SDL_MapRGB(SDL_GetWindowSurface(window)->format, 0, 0, 0));
