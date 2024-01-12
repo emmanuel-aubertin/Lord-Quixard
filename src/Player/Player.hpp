@@ -15,4 +15,4 @@ protected:
     void setName(const std::string &name);
     std::string name;
 };
-#endif 
+#endif

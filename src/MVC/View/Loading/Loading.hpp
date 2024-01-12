@@ -19,7 +19,7 @@ public:
 private:
     std::string getFramePath(int frameNumber);
     int imgCounter, frameDuration, lastUpdateTime;
-    View *handleClick(int, int);
+    View *handleClick(int, int) override;
 };
 
 #endif

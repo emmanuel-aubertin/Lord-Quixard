@@ -4,7 +4,6 @@
 /*----- Contact :       https://athomisos.fr                                        ****/
 /***************************************************************************************/
 
-
 // ANSI escape codes for text color
 #define RESET "\033[0m"
 #define RED "\033[31m"
@@ -92,9 +91,10 @@ int main(int argc, char **argv)
         }
     }
 
-    Controller* c = new Controller();
-    
+    Controller *c = Controller::getInstance();
+
+    // Use the instance
     c->run();
-    
+
     return 0;
 }

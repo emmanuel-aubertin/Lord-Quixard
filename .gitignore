@@ -21,3 +21,11 @@ music.wav
 *.aup3*
 
 *.xcf
+
+.idea
+
+html
+
+latex
+
+*.mdj

@@ -10,7 +10,7 @@ class PlayerAI : public Player
 public:
     PlayerAI(const std::string &name);
     virtual ~PlayerAI() = default;
-    virtual std::vector<int> getPlay(GameBoard*, Tile::Sign);
+    virtual std::vector<int> getPlay(GameBoard *, Tile::Sign);
 };
 
 #endif
