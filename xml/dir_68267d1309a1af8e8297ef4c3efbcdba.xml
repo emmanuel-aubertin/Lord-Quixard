@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>src</compoundname>
+    <innerdir refid="dir_79597dd5a35883b43462c88000739c69">src/GameBoard</innerdir>
+    <innerdir refid="dir_1b0ee1df51920bca43d2d7c09fefb787">src/GameEngine</innerdir>
+    <innerdir refid="dir_cdd7cbbb349e8c8a5f05b939e270c19d">src/MVC</innerdir>
+    <innerdir refid="dir_4998621c1c5dc7c07a022c0c5b821bc6">src/Player</innerdir>
+    <innerfile refid="_tile_8cpp">Tile.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,340 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="class_main_menu" kind="class" language="C++" prot="public">
+    <compoundname>MainMenu</compoundname>
+    <basecompoundref refid="class_view" prot="public" virt="non-virtual">View</basecompoundref>
+    <includes refid="_main_menu_8hpp" local="no">MainMenu.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_main_menu_1a893bcee662069b085bc06ebb9b35085a" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool MainMenu::isCube</definition>
+        <argsstring></argsstring>
+        <name>isCube</name>
+        <qualifiedname>MainMenu::isCube</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MainMenu/MainMenu.hpp" line="19" column="10" bodyfile="src/MVC/View/MainMenu/MainMenu.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_menu_1ac3a1e2421b83654abc478898098bbc7e" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool MainMenu::isBal</definition>
+        <argsstring></argsstring>
+        <name>isBal</name>
+        <qualifiedname>MainMenu::isBal</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MainMenu/MainMenu.hpp" line="19" column="17" bodyfile="src/MVC/View/MainMenu/MainMenu.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_menu_1a0dc42547a26aeb68e11be55cf13b6e55" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool MainMenu::isMinMax</definition>
+        <argsstring></argsstring>
+        <name>isMinMax</name>
+        <qualifiedname>MainMenu::isMinMax</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MainMenu/MainMenu.hpp" line="19" column="23" bodyfile="src/MVC/View/MainMenu/MainMenu.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_menu_1a27e4d7a7cba13145a531d988ad9f72ea" prot="private" static="no" mutable="no">
+        <type>TTF_Font *</type>
+        <definition>TTF_Font* MainMenu::font</definition>
+        <argsstring></argsstring>
+        <name>font</name>
+        <qualifiedname>MainMenu::font</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MainMenu/MainMenu.hpp" line="20" column="14" bodyfile="src/MVC/View/MainMenu/MainMenu.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_menu_1a5a1797b8b5776cfe0d0c2072db6a60b6" prot="private" static="no" mutable="no">
+        <type>SDL_Surface *</type>
+        <definition>SDL_Surface* MainMenu::gHelloWorld</definition>
+        <argsstring></argsstring>
+        <name>gHelloWorld</name>
+        <qualifiedname>MainMenu::gHelloWorld</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MainMenu/MainMenu.hpp" line="21" column="17" bodyfile="src/MVC/View/MainMenu/MainMenu.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_menu_1a2f375d5bed1b31d5461bea65338a4374" prot="private" static="no" mutable="no">
+        <type>SDL_Surface *</type>
+        <definition>SDL_Surface* MainMenu::textSurface</definition>
+        <argsstring></argsstring>
+        <name>textSurface</name>
+        <qualifiedname>MainMenu::textSurface</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MainMenu/MainMenu.hpp" line="22" column="17" bodyfile="src/MVC/View/MainMenu/MainMenu.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_menu_1a7b2ce509fe4774effd87939170cc473b" prot="private" static="no" mutable="no">
+        <type>SDL_Surface *</type>
+        <definition>SDL_Surface* MainMenu::window_surface</definition>
+        <argsstring></argsstring>
+        <name>window_surface</name>
+        <qualifiedname>MainMenu::window_surface</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MainMenu/MainMenu.hpp" line="23" column="17" bodyfile="src/MVC/View/MainMenu/MainMenu.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_menu_1ad163afdb270ad80d6f3b14e8b1eb5bdc" prot="private" static="no" mutable="no">
+        <type>Mix_Chunk *</type>
+        <definition>Mix_Chunk* MainMenu::gMageVmage</definition>
+        <argsstring></argsstring>
+        <name>gMageVmage</name>
+        <qualifiedname>MainMenu::gMageVmage</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MainMenu/MainMenu.hpp" line="24" column="15" bodyfile="src/MVC/View/MainMenu/MainMenu.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_menu_1a1b14a8272f419b6e9efedf29c95963ae" prot="private" static="no" mutable="no">
+        <type>Uint32</type>
+        <definition>Uint32 MainMenu::frameStart</definition>
+        <argsstring></argsstring>
+        <name>frameStart</name>
+        <qualifiedname>MainMenu::frameStart</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MainMenu/MainMenu.hpp" line="28" column="12" bodyfile="src/MVC/View/MainMenu/MainMenu.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_menu_1a32d1d9cde331883a9f7158924c6d0906" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MainMenu::frameCount</definition>
+        <argsstring></argsstring>
+        <name>frameCount</name>
+        <qualifiedname>MainMenu::frameCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MainMenu/MainMenu.hpp" line="29" column="9" bodyfile="src/MVC/View/MainMenu/MainMenu.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_menu_1a6e96dcbb62724ab87afccdfaa19b9498" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MainMenu::fps</definition>
+        <argsstring></argsstring>
+        <name>fps</name>
+        <qualifiedname>MainMenu::fps</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MainMenu/MainMenu.hpp" line="30" column="9" bodyfile="src/MVC/View/MainMenu/MainMenu.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_main_menu_1a87c011a5b1a0817805c931919b51ba3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MainMenu::MainMenu</definition>
+        <argsstring>(SDL_Window *win)</argsstring>
+        <name>MainMenu</name>
+        <qualifiedname>MainMenu::MainMenu</qualifiedname>
+        <param>
+          <type>SDL_Window *</type>
+          <declname>win</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MainMenu/MainMenu.hpp" line="13" column="5" bodyfile="src/MVC/View/MainMenu/MainMenu.cpp" bodystart="26" bodyend="50"/>
+        <references refid="class_view_1a5f0736c22c13c2a80880e81598f477ad" compoundref="_view_8cpp" startline="67" endline="72">View::getWorkingDirectory</references>
+        <references refid="class_view_1aa5b491173ee12319fca81e1306c215fb" compoundref="_view_8hpp" startline="23">View::windowSurface</references>
+      </memberdef>
+      <memberdef kind="function" id="class_main_menu_1a0a19ddba3ac52bf39c09b579171c98f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>MainMenu::~MainMenu</definition>
+        <argsstring>()</argsstring>
+        <name>~MainMenu</name>
+        <qualifiedname>MainMenu::~MainMenu</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MainMenu/MainMenu.hpp" line="14" column="13" bodyfile="src/MVC/View/MainMenu/MainMenu.cpp" bodystart="53" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_menu_1ab2c563b663aedc492872c3733b2582ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool MainMenu::hasUndo</definition>
+        <argsstring>() override</argsstring>
+        <name>hasUndo</name>
+        <qualifiedname>MainMenu::hasUndo</qualifiedname>
+        <reimplements refid="class_view_1ae6cd92d2b38bd02d6f3e27a1d4aa52b0">hasUndo</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MainMenu/MainMenu.hpp" line="15" column="10" bodyfile="src/MVC/View/MainMenu/MainMenu.cpp" bodystart="51" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_menu_1a1ee3711eb4cc53af6e9ee1a7516eaf58" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void MainMenu::render</definition>
+        <argsstring>() override</argsstring>
+        <name>render</name>
+        <qualifiedname>MainMenu::render</qualifiedname>
+        <reimplements refid="class_view_1aadd18a025bf4c867dc29f7c7b9cddb71">render</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MainMenu/MainMenu.hpp" line="16" column="10" bodyfile="src/MVC/View/MainMenu/MainMenu.cpp" bodystart="61" bodyend="173"/>
+        <references refid="_main_menu_8cpp_1a4e773cbf5d0d0aba3a51072055bc5827" compoundref="_main_menu_8cpp" startline="18" endline="19">CASTEL_POLY</references>
+        <references refid="_main_menu_8cpp_1a6f269151756d75b6524aa1e295f94c10" compoundref="_main_menu_8cpp" startline="21" endline="22">CUBE_POLY</references>
+        <references refid="class_view_1a5f0736c22c13c2a80880e81598f477ad" compoundref="_view_8cpp" startline="67" endline="72">View::getWorkingDirectory</references>
+        <references refid="_main_menu_8cpp_1aa9d94a1ce0e02379d71cf613c2863666" compoundref="_main_menu_8cpp" startline="24" endline="24">GIRL_POLY</references>
+        <references refid="class_view_1ad052ecdacd422790fa4a4ded799c41b2" compoundref="_view_8cpp" startline="84" endline="99">View::isPointInPoly</references>
+        <references refid="class_view_1af6f6c1ea574a36be900071605e57fe63" compoundref="_view_8cpp" startline="203" endline="214">View::loadAudio</references>
+        <references refid="class_view_1ab198b5eafe0638b8f842929ac52c06a5" compoundref="_view_8cpp" startline="236" endline="239">View::playAudio</references>
+        <references refid="class_view_1ac1c8210656b4e7e3b7ab5ed08c188210" compoundref="_view_8cpp" startline="112" endline="143">View::renderText</references>
+        <references refid="class_view_1aa5b491173ee12319fca81e1306c215fb" compoundref="_view_8hpp" startline="23">View::windowSurface</references>
+      </memberdef>
+      <memberdef kind="function" id="class_main_menu_1ad3666117cb906bb858b4b747b179219a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void MainMenu::undo</definition>
+        <argsstring>() override</argsstring>
+        <name>undo</name>
+        <qualifiedname>MainMenu::undo</qualifiedname>
+        <reimplements refid="class_view_1ab058a8e2c0326cf34cfdf65e4ab74a3d">undo</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MainMenu/MainMenu.hpp" line="17" column="10" bodyfile="src/MVC/View/MainMenu/MainMenu.hpp" bodystart="17" bodyend="17"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_main_menu_1a9597dcb1cf5af2dad3f55a14ba4abd82" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_view" kindref="compound">View</ref> *</type>
+        <definition>View * MainMenu::handleClick</definition>
+        <argsstring>(int, int) override</argsstring>
+        <name>handleClick</name>
+        <qualifiedname>MainMenu::handleClick</qualifiedname>
+        <reimplements refid="class_view_1a1179d0967f12f59f2f7c8fcf9e9f9777">handleClick</reimplements>
+        <param>
+          <type>int</type>
+          <defname>x</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>y</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MainMenu/MainMenu.hpp" line="26" column="10" bodyfile="src/MVC/View/MainMenu/MainMenu.cpp" bodystart="175" bodyend="208"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>MainMenu</label>
+        <link refid="class_main_menu"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>View</label>
+        <link refid="class_view"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>MainMenu</label>
+        <link refid="class_main_menu"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>View</label>
+        <link refid="class_view"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/MVC/View/MainMenu/MainMenu.hpp" line="10" column="1" bodyfile="src/MVC/View/MainMenu/MainMenu.hpp" bodystart="11" bodyend="31"/>
+    <listofallmembers>
+      <member refid="class_view_1ad13ef8a915eefe21242979e08391068f" prot="public" virt="non-virtual"><scope>MainMenu</scope><name>clear</name></member>
+      <member refid="class_view_1a6d56a0ed7565f87b2b6fb8c4f3d928c9" prot="public" virt="non-virtual"><scope>MainMenu</scope><name>display</name></member>
+      <member refid="class_main_menu_1a27e4d7a7cba13145a531d988ad9f72ea" prot="private" virt="non-virtual"><scope>MainMenu</scope><name>font</name></member>
+      <member refid="class_main_menu_1a6e96dcbb62724ab87afccdfaa19b9498" prot="private" virt="non-virtual"><scope>MainMenu</scope><name>fps</name></member>
+      <member refid="class_main_menu_1a32d1d9cde331883a9f7158924c6d0906" prot="private" virt="non-virtual"><scope>MainMenu</scope><name>frameCount</name></member>
+      <member refid="class_main_menu_1a1b14a8272f419b6e9efedf29c95963ae" prot="private" virt="non-virtual"><scope>MainMenu</scope><name>frameStart</name></member>
+      <member refid="class_view_1a5f0736c22c13c2a80880e81598f477ad" prot="protected" virt="non-virtual"><scope>MainMenu</scope><name>getWorkingDirectory</name></member>
+      <member refid="class_main_menu_1a5a1797b8b5776cfe0d0c2072db6a60b6" prot="private" virt="non-virtual"><scope>MainMenu</scope><name>gHelloWorld</name></member>
+      <member refid="class_main_menu_1ad163afdb270ad80d6f3b14e8b1eb5bdc" prot="private" virt="non-virtual"><scope>MainMenu</scope><name>gMageVmage</name></member>
+      <member refid="class_main_menu_1a9597dcb1cf5af2dad3f55a14ba4abd82" prot="private" virt="virtual"><scope>MainMenu</scope><name>handleClick</name></member>
+      <member refid="class_main_menu_1ab2c563b663aedc492872c3733b2582ca" prot="public" virt="virtual"><scope>MainMenu</scope><name>hasUndo</name></member>
+      <member refid="class_main_menu_1ac3a1e2421b83654abc478898098bbc7e" prot="private" virt="non-virtual"><scope>MainMenu</scope><name>isBal</name></member>
+      <member refid="class_main_menu_1a893bcee662069b085bc06ebb9b35085a" prot="private" virt="non-virtual"><scope>MainMenu</scope><name>isCube</name></member>
+      <member refid="class_main_menu_1a0dc42547a26aeb68e11be55cf13b6e55" prot="private" virt="non-virtual"><scope>MainMenu</scope><name>isMinMax</name></member>
+      <member refid="class_view_1ad052ecdacd422790fa4a4ded799c41b2" prot="protected" virt="non-virtual"><scope>MainMenu</scope><name>isPointInPoly</name></member>
+      <member refid="class_view_1af6f6c1ea574a36be900071605e57fe63" prot="protected" virt="non-virtual"><scope>MainMenu</scope><name>loadAudio</name></member>
+      <member refid="class_main_menu_1a87c011a5b1a0817805c931919b51ba3f" prot="public" virt="non-virtual"><scope>MainMenu</scope><name>MainMenu</name></member>
+      <member refid="class_view_1ab198b5eafe0638b8f842929ac52c06a5" prot="protected" virt="non-virtual"><scope>MainMenu</scope><name>playAudio</name></member>
+      <member refid="class_view_1a1b10b2fb05b3502c748d051c330d8ce3" prot="protected" virt="non-virtual"><scope>MainMenu</scope><name>playAudio</name></member>
+      <member refid="class_main_menu_1a1ee3711eb4cc53af6e9ee1a7516eaf58" prot="public" virt="virtual"><scope>MainMenu</scope><name>render</name></member>
+      <member refid="class_view_1ae6c0fae7b8cd50858eb320c711916f70" prot="protected" virt="non-virtual"><scope>MainMenu</scope><name>renderCenteredText</name></member>
+      <member refid="class_view_1ac1c8210656b4e7e3b7ab5ed08c188210" prot="protected" virt="non-virtual"><scope>MainMenu</scope><name>renderText</name></member>
+      <member refid="class_main_menu_1a2f375d5bed1b31d5461bea65338a4374" prot="private" virt="non-virtual"><scope>MainMenu</scope><name>textSurface</name></member>
+      <member refid="class_main_menu_1ad3666117cb906bb858b4b747b179219a" prot="public" virt="virtual"><scope>MainMenu</scope><name>undo</name></member>
+      <member refid="class_view_1af8120cd4045de81b85544972f68ad58e" prot="public" virt="non-virtual"><scope>MainMenu</scope><name>View</name></member>
+      <member refid="class_view_1a35f57e296a4643edae6424c7f9569f8d" prot="protected" virt="non-virtual"><scope>MainMenu</scope><name>window</name></member>
+      <member refid="class_main_menu_1a7b2ce509fe4774effd87939170cc473b" prot="private" virt="non-virtual"><scope>MainMenu</scope><name>window_surface</name></member>
+      <member refid="class_view_1aa5b491173ee12319fca81e1306c215fb" prot="protected" virt="non-virtual"><scope>MainMenu</scope><name>windowSurface</name></member>
+      <member refid="class_main_menu_1a0a19ddba3ac52bf39c09b579171c98f2" prot="public" virt="virtual"><scope>MainMenu</scope><name>~MainMenu</name></member>
+      <member refid="class_view_1ad0dc854db9aabbea98a334dec89f785c" prot="public" virt="virtual"><scope>MainMenu</scope><name>~View</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

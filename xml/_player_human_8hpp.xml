@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="_player_human_8hpp" kind="file" language="C++">
+    <compoundname>PlayerHuman.hpp</compoundname>
+    <includes refid="_player_8hpp" local="yes">../Player.hpp</includes>
+    <includedby refid="main_8cpp" local="yes">main.cpp</includedby>
+    <includedby refid="_mage_s_melee_8cpp" local="yes">src/MVC/View/MageSMelee/MageSMelee.cpp</includedby>
+    <includedby refid="_play_v_ai_8cpp" local="yes">src/MVC/View/PlayVAi/PlayVAi.cpp</includedby>
+    <includedby refid="_play_v_peti_gran_8cpp" local="yes">src/MVC/View/PlayVPetiGran/PlayVPetiGran.cpp</includedby>
+    <includedby refid="_player_human_8cpp" local="yes">src/Player/PlayerHuman/PlayerHuman.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>../Player.hpp</label>
+        <link refid="_player_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/Player/PlayerHuman/PlayerHuman.hpp</label>
+        <link refid="_player_human_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>iostream</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="3">
+        <label>src/MVC/View/MageSMelee/MageSMelee.cpp</label>
+        <link refid="_mage_s_melee_8cpp"/>
+      </node>
+      <node id="4">
+        <label>src/MVC/View/PlayVAi/PlayVAi.cpp</label>
+        <link refid="_play_v_ai_8cpp"/>
+      </node>
+      <node id="5">
+        <label>src/MVC/View/PlayVPetiGran/PlayVPetiGran.cpp</label>
+        <link refid="_play_v_peti_gran_8cpp"/>
+      </node>
+      <node id="6">
+        <label>src/Player/PlayerHuman/PlayerHuman.cpp</label>
+        <link refid="_player_human_8cpp"/>
+      </node>
+      <node id="1">
+        <label>src/Player/PlayerHuman/PlayerHuman.hpp</label>
+        <link refid="_player_human_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_player_human" prot="public">PlayerHuman</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>PLAYERHUMAN_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PLAYERHUMAN_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_player_8hpp" kindref="compound">../Player.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="class_player_human" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_player_human" kindref="compound">PlayerHuman</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_player" kindref="compound">Player</ref></highlight></codeline>
+<codeline lineno="6"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_player_human_1ad2439e150f51406b9357abd46eac2738" kindref="member">PlayerHuman</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<ref refid="class_player_1af9c920fabaafdeb7961a645315b521ff" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="src/Player/PlayerHuman/PlayerHuman.hpp"/>
+  </compounddef>
+</doxygen>

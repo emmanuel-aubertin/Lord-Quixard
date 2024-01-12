@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="_min_max_a_i_8hpp" kind="file" language="C++">
+    <compoundname>MinMaxAI.hpp</compoundname>
+    <includes refid="_player_a_i_8hpp" local="yes">../PlayerAI.hpp</includes>
+    <includes local="no">vector</includes>
+    <includes refid="_game_board_8hpp" local="yes">../../../GameBoard/GameBoard.hpp</includes>
+    <includedby refid="_play_v_peti_gran_8cpp" local="yes">src/MVC/View/PlayVPetiGran/PlayVPetiGran.cpp</includedby>
+    <includedby refid="_min_max_a_i_8cpp" local="yes">src/Player/AIPlayer/MinMaxAI/MinMaxAI.cpp</includedby>
+    <incdepgraph>
+      <node id="7">
+        <label>../../GameBoard/GameBoard.hpp</label>
+        <link refid="_game_board_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/Player/AIPlayer/MinMaxAI/MinMaxAI.hpp</label>
+        <link refid="_min_max_a_i_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>../PlayerAI.hpp</label>
+        <link refid="_player_a_i_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>../Player.hpp</label>
+        <link refid="_player_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>./../Tile.cpp</label>
+        <link refid="_tile_8cpp"/>
+      </node>
+      <node id="4">
+        <label>iostream</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="6">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/MVC/View/PlayVPetiGran/PlayVPetiGran.cpp</label>
+        <link refid="_play_v_peti_gran_8cpp"/>
+      </node>
+      <node id="3">
+        <label>src/Player/AIPlayer/MinMaxAI/MinMaxAI.cpp</label>
+        <link refid="_min_max_a_i_8cpp"/>
+      </node>
+      <node id="1">
+        <label>src/Player/AIPlayer/MinMaxAI/MinMaxAI.hpp</label>
+        <link refid="_min_max_a_i_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_min_max_a_i" prot="public">MinMaxAI</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>MINMAX_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MINMAX_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_player_a_i_8hpp" kindref="compound">../PlayerAI.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_game_board_8hpp" kindref="compound">../../../GameBoard/GameBoard.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="class_min_max_a_i" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_min_max_a_i" kindref="compound">MinMaxAI</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_player_a_i" kindref="compound">PlayerAI</ref></highlight></codeline>
+<codeline lineno="9"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_min_max_a_i_1abc25efd924ba1d851f204116406faa16" kindref="member">MinMaxAI</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<ref refid="class_player_1af9c920fabaafdeb7961a645315b521ff" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_min_max_a_i_1abc25efd924ba1d851f204116406faa16" kindref="member">MinMaxAI</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<ref refid="class_player_1af9c920fabaafdeb7961a645315b521ff" kindref="member">name</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>depth);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_min_max_a_i_1a44cd9b1c809e1d53eba52d5f1a21c7ef" kindref="member">~MinMaxAI</ref>();</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/><ref refid="class_min_max_a_i_1a34cf1f0e14ffd2563002b8c7403f4bdb" kindref="member">getPlay</ref>(<ref refid="class_game_board" kindref="compound">GameBoard</ref><sp/>*,<sp/><ref refid="struct_tile_1aafb31e1fb33692cca3b88e4099247305" kindref="member">Tile::Sign</ref>);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_tile_1aafb31e1fb33692cca3b88e4099247305" kindref="member">Tile::Sign</ref><sp/>oppositeSign(<ref refid="struct_tile_1aafb31e1fb33692cca3b88e4099247305" kindref="member">Tile::Sign</ref><sp/>sign);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>minimax(<ref refid="class_game_board" kindref="compound">GameBoard</ref><sp/>*board,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>depth,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isMaximizingPlayer,<sp/><ref refid="struct_tile_1aafb31e1fb33692cca3b88e4099247305" kindref="member">Tile::Sign</ref><sp/>sign);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>evaluateBoard(<ref refid="class_game_board" kindref="compound">GameBoard</ref><sp/>*board,<sp/><ref refid="struct_tile_1aafb31e1fb33692cca3b88e4099247305" kindref="member">Tile::Sign</ref><sp/>sign);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>depth;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>evaluateLine(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::array&lt;std::array&lt;Tile,<sp/>5&gt;,<sp/>5&gt;<sp/>&amp;board,</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>xStart,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>yStart,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>xStep,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>yStep,</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_tile_1aafb31e1fb33692cca3b88e4099247305" kindref="member">Tile::Sign</ref><sp/>sign);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="src/Player/AIPlayer/MinMaxAI/MinMaxAI.hpp"/>
+  </compounddef>
+</doxygen>

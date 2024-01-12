@@ -1,0 +1,545 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="class_game_engine" kind="class" language="C++" prot="public">
+    <compoundname>GameEngine</compoundname>
+    <includes refid="_game_engine_8hpp" local="no">GameEngine.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_game_engine_1a178e4476ec2abba19ef62c31b11417b6" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_game_board_memento" kindref="compound">GameBoardMemento</ref> &gt;</type>
+        <definition>std::vector&lt;GameBoardMemento&gt; GameEngine::history</definition>
+        <argsstring></argsstring>
+        <name>history</name>
+        <qualifiedname>GameEngine::history</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GameEngine/GameEngine.hpp" line="27" column="17" bodyfile="src/GameEngine/GameEngine.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_engine_1a5f8aa74c84def59bdbb6ebfaa524fcc1" prot="private" static="no" mutable="no">
+        <type><ref refid="class_game_board" kindref="compound">GameBoard</ref> *</type>
+        <definition>GameBoard* GameEngine::board</definition>
+        <argsstring></argsstring>
+        <name>board</name>
+        <qualifiedname>GameEngine::board</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GameEngine/GameEngine.hpp" line="28" column="15" bodyfile="src/GameEngine/GameEngine.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_engine_1acf2aaec78dfb713ca1bfdb57a82c19e4" prot="private" static="no" mutable="no">
+        <type><ref refid="class_player" kindref="compound">Player</ref> &amp;</type>
+        <definition>Player&amp; GameEngine::playerOne</definition>
+        <argsstring></argsstring>
+        <name>playerOne</name>
+        <qualifiedname>GameEngine::playerOne</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GameEngine/GameEngine.hpp" line="29" column="12" bodyfile="src/GameEngine/GameEngine.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_engine_1a54a1574a5e1ff6d85dc09be3749dc2a4" prot="private" static="no" mutable="no">
+        <type><ref refid="class_player" kindref="compound">Player</ref> &amp;</type>
+        <definition>Player&amp; GameEngine::playerTwo</definition>
+        <argsstring></argsstring>
+        <name>playerTwo</name>
+        <qualifiedname>GameEngine::playerTwo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GameEngine/GameEngine.hpp" line="30" column="12" bodyfile="src/GameEngine/GameEngine.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_engine_1ac936ac91a796d046b4637bcd02183482" prot="private" static="no" mutable="no">
+        <type><ref refid="struct_tile_1aafb31e1fb33692cca3b88e4099247305" kindref="member">Tile::Sign</ref></type>
+        <definition>Tile::Sign GameEngine::whichPlay</definition>
+        <argsstring></argsstring>
+        <name>whichPlay</name>
+        <qualifiedname>GameEngine::whichPlay</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GameEngine/GameEngine.hpp" line="31" column="16" bodyfile="src/GameEngine/GameEngine.hpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_game_engine_1a6066180bec6f2b090addf2efcca66fe2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GameEngine::GameEngine</definition>
+        <argsstring>(Player &amp;playerOne, Player &amp;playerTwo)</argsstring>
+        <name>GameEngine</name>
+        <qualifiedname>GameEngine::GameEngine</qualifiedname>
+        <param>
+          <type><ref refid="class_player" kindref="compound">Player</ref> &amp;</type>
+          <declname>playerOne</declname>
+        </param>
+        <param>
+          <type><ref refid="class_player" kindref="compound">Player</ref> &amp;</type>
+          <declname>playerTwo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GameEngine/GameEngine.hpp" line="12" column="5" bodyfile="src/GameEngine/GameEngine.cpp" bodystart="5" bodyend="13"/>
+        <references refid="class_game_board_1a2cd5735250d2c46750f0fb9fd94230b9" compoundref="_game_board_8hpp" startline="31" endline="34">GameBoard::saveToMemento</references>
+        <references refid="struct_tile_1aafb31e1fb33692cca3b88e4099247305adf141bb3f83331473a28e74837c99d31" compoundref="_tile_8cpp" startline="6">Tile::X</references>
+      </memberdef>
+      <memberdef kind="function" id="class_game_engine_1a36ce03ed1a7e52e7c2ae86c6aa1c9374" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool GameEngine::move</definition>
+        <argsstring>(const int x, const int y, const int new_x, const int new_y)</argsstring>
+        <name>move</name>
+        <qualifiedname>GameEngine::move</qualifiedname>
+        <param>
+          <type>const int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>new_x</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>new_y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GameEngine/GameEngine.hpp" line="13" column="10" bodyfile="src/GameEngine/GameEngine.cpp" bodystart="46" bodyend="59"/>
+        <references refid="class_game_board_1af65e2b2c2177485d486c2afd7c6617ef" compoundref="_game_board_8cpp" startline="128" endline="177">GameBoard::move</references>
+        <references refid="class_game_board_1a2cd5735250d2c46750f0fb9fd94230b9" compoundref="_game_board_8hpp" startline="31" endline="34">GameBoard::saveToMemento</references>
+        <referencedby refid="class_mage_s_melee_1a4e9f1727ce98bca9080746efd1471fd7" compoundref="_mage_s_melee_8cpp" startline="182" endline="225">MageSMelee::handleClick</referencedby>
+        <referencedby refid="class_game_engine_1ab12180f7abf3e1fc39407fad7257972b" compoundref="_game_engine_8cpp" startline="194" endline="211">makeIAmove</referencedby>
+        <referencedby refid="class_game_engine_1a0f6fcebe53d4164729d578463bfb3011" compoundref="_game_engine_8cpp" startline="40" endline="44">move</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_game_engine_1a0f6fcebe53d4164729d578463bfb3011" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool GameEngine::move</definition>
+        <argsstring>(const int index, const int new_x, const int new_y)</argsstring>
+        <name>move</name>
+        <qualifiedname>GameEngine::move</qualifiedname>
+        <param>
+          <type>const int</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>new_x</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>new_y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GameEngine/GameEngine.hpp" line="14" column="10" bodyfile="src/GameEngine/GameEngine.cpp" bodystart="40" bodyend="44"/>
+        <references refid="class_game_engine_1ace888c08461583425b890bb369fc1e5e" compoundref="_game_engine_8cpp" startline="91" endline="96">getCoordsFromIndex</references>
+        <references refid="class_game_engine_1a36ce03ed1a7e52e7c2ae86c6aa1c9374" compoundref="_game_engine_8cpp" startline="46" endline="59">move</references>
+      </memberdef>
+      <memberdef kind="function" id="class_game_engine_1a1a3afaae3d906d88f1d344497671550c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameEngine::printBoard</definition>
+        <argsstring>()</argsstring>
+        <name>printBoard</name>
+        <qualifiedname>GameEngine::printBoard</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GameEngine/GameEngine.hpp" line="15" column="10" bodyfile="src/GameEngine/GameEngine.cpp" bodystart="81" bodyend="84"/>
+        <references refid="class_game_board_1abbcd432d62ac889c57ac94758358365a" compoundref="_game_board_8cpp" startline="20" endline="41">GameBoard::printBoard</references>
+        <referencedby refid="class_mage_s_melee_1a4e9f1727ce98bca9080746efd1471fd7" compoundref="_mage_s_melee_8cpp" startline="182" endline="225">MageSMelee::handleClick</referencedby>
+        <referencedby refid="class_game_engine_1ab12180f7abf3e1fc39407fad7257972b" compoundref="_game_engine_8cpp" startline="194" endline="211">makeIAmove</referencedby>
+        <referencedby refid="class_game_engine_1a98a153133811eebf83c49b698053d8a0" compoundref="_game_engine_8cpp" startline="61" endline="79">undoMove</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_game_engine_1ab12180f7abf3e1fc39407fad7257972b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameEngine::makeIAmove</definition>
+        <argsstring>()</argsstring>
+        <name>makeIAmove</name>
+        <qualifiedname>GameEngine::makeIAmove</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GameEngine/GameEngine.hpp" line="16" column="10" bodyfile="src/GameEngine/GameEngine.cpp" bodystart="194" bodyend="211"/>
+        <references refid="class_player_a_i_1a2d60e5fb3d3d6a97bc73af0f43b5859e" compoundref="_player_a_i_8cpp" startline="25" endline="28">PlayerAI::getPlay</references>
+        <references refid="class_game_engine_1ab12180f7abf3e1fc39407fad7257972b" compoundref="_game_engine_8cpp" startline="194" endline="211">makeIAmove</references>
+        <references refid="class_game_engine_1a36ce03ed1a7e52e7c2ae86c6aa1c9374" compoundref="_game_engine_8cpp" startline="46" endline="59">move</references>
+        <references refid="class_game_engine_1a1a3afaae3d906d88f1d344497671550c" compoundref="_game_engine_8cpp" startline="81" endline="84">printBoard</references>
+        <referencedby refid="class_game_engine_1ab12180f7abf3e1fc39407fad7257972b" compoundref="_game_engine_8cpp" startline="194" endline="211">makeIAmove</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_game_engine_1a83c9b6668f8e83200bc22df7fea0b710" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool GameEngine::isWinner</definition>
+        <argsstring>()</argsstring>
+        <name>isWinner</name>
+        <qualifiedname>GameEngine::isWinner</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GameEngine/GameEngine.hpp" line="17" column="10" bodyfile="src/GameEngine/GameEngine.cpp" bodystart="126" bodyend="136"/>
+        <references refid="class_game_board_1a61f90f41bc79a5462dd06b625747e227" compoundref="_game_board_8cpp" startline="220" endline="223">GameBoard::getBoard</references>
+        <referencedby refid="class_game_engine_1ad404bb893f4df79c3070e8a6b5042d75" compoundref="_game_engine_8cpp" startline="15" endline="28">getWinner</referencedby>
+        <referencedby refid="class_mage_s_melee_1a445ad48b4ff1c950358908ea5b03b768" compoundref="_mage_s_melee_8cpp" startline="84" endline="167">MageSMelee::render</referencedby>
+        <referencedby refid="class_play_v_ai_1a1df49f27221983b7101b304cb679f928" compoundref="_play_v_ai_8cpp" startline="55" endline="72">PlayVAi::render</referencedby>
+        <referencedby refid="class_play_v_peti_gran_1a1bbfc4b4b6d1dd12ece2d634725d6357" compoundref="_play_v_peti_gran_8cpp" startline="56" endline="73">PlayVPetiGran::render</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_game_engine_1a99ad1e6afca252c61da4850b16826549" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_tile_1aafb31e1fb33692cca3b88e4099247305" kindref="member">Tile::Sign</ref></type>
+        <definition>Tile::Sign GameEngine::getWichSignPlay</definition>
+        <argsstring>()</argsstring>
+        <name>getWichSignPlay</name>
+        <qualifiedname>GameEngine::getWichSignPlay</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GameEngine/GameEngine.hpp" line="18" column="16" bodyfile="src/GameEngine/GameEngine.cpp" bodystart="86" bodyend="89"/>
+        <referencedby refid="class_mage_s_melee_1a445ad48b4ff1c950358908ea5b03b768" compoundref="_mage_s_melee_8cpp" startline="84" endline="167">MageSMelee::render</referencedby>
+        <referencedby refid="class_play_v_ai_1a1df49f27221983b7101b304cb679f928" compoundref="_play_v_ai_8cpp" startline="55" endline="72">PlayVAi::render</referencedby>
+        <referencedby refid="class_play_v_peti_gran_1a1bbfc4b4b6d1dd12ece2d634725d6357" compoundref="_play_v_peti_gran_8cpp" startline="56" endline="73">PlayVPetiGran::render</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_game_engine_1a240bd6ba9896a74d8d6a391d68321f65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::array&lt; std::array&lt; <ref refid="struct_tile" kindref="compound">Tile</ref>, 5 &gt;, 5 &gt;</type>
+        <definition>std::array&lt; std::array&lt; Tile, 5 &gt;, 5 &gt; GameEngine::getBoard</definition>
+        <argsstring>()</argsstring>
+        <name>getBoard</name>
+        <qualifiedname>GameEngine::getBoard</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GameEngine/GameEngine.hpp" line="19" column="16" bodyfile="src/GameEngine/GameEngine.cpp" bodystart="103" bodyend="106"/>
+        <references refid="class_game_board_1a61f90f41bc79a5462dd06b625747e227" compoundref="_game_board_8cpp" startline="220" endline="223">GameBoard::getBoard</references>
+        <referencedby refid="class_mage_s_melee_1a4e9f1727ce98bca9080746efd1471fd7" compoundref="_mage_s_melee_8cpp" startline="182" endline="225">MageSMelee::handleClick</referencedby>
+        <referencedby refid="class_mage_s_melee_1adee4d5570b7c39471faf16a1f0479d77" compoundref="_mage_s_melee_8cpp" startline="175" endline="178">MageSMelee::undo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_game_engine_1a8dbea5b905fc04ab641c33a0fb206f94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::pair&lt; int, int &gt; &gt;</type>
+        <definition>std::vector&lt; std::pair&lt; int, int &gt; &gt; GameEngine::getPlayableFrom</definition>
+        <argsstring>(int x, int y)</argsstring>
+        <name>getPlayableFrom</name>
+        <qualifiedname>GameEngine::getPlayableFrom</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GameEngine/GameEngine.hpp" line="20" column="17" bodyfile="src/GameEngine/GameEngine.cpp" bodystart="108" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_engine_1ace888c08461583425b890bb369fc1e5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::pair&lt; int, int &gt;</type>
+        <definition>std::pair&lt; int, int &gt; GameEngine::getCoordsFromIndex</definition>
+        <argsstring>(int index)</argsstring>
+        <name>getCoordsFromIndex</name>
+        <qualifiedname>GameEngine::getCoordsFromIndex</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GameEngine/GameEngine.hpp" line="21" column="15" bodyfile="src/GameEngine/GameEngine.cpp" bodystart="91" bodyend="96"/>
+        <referencedby refid="class_mage_s_melee_1a4e9f1727ce98bca9080746efd1471fd7" compoundref="_mage_s_melee_8cpp" startline="182" endline="225">MageSMelee::handleClick</referencedby>
+        <referencedby refid="class_game_engine_1a0f6fcebe53d4164729d578463bfb3011" compoundref="_game_engine_8cpp" startline="40" endline="44">move</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_game_engine_1af14621552522a441bf7abdc73d46f865" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int GameEngine::getIndexFromCoords</definition>
+        <argsstring>(const int x, const int y)</argsstring>
+        <name>getIndexFromCoords</name>
+        <qualifiedname>GameEngine::getIndexFromCoords</qualifiedname>
+        <param>
+          <type>const int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GameEngine/GameEngine.hpp" line="22" column="9" bodyfile="src/GameEngine/GameEngine.cpp" bodystart="98" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_engine_1ad404bb893f4df79c3070e8a6b5042d75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_player" kindref="compound">Player</ref></type>
+        <definition>Player GameEngine::getWinner</definition>
+        <argsstring>()</argsstring>
+        <name>getWinner</name>
+        <qualifiedname>GameEngine::getWinner</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GameEngine/GameEngine.hpp" line="23" column="12" bodyfile="src/GameEngine/GameEngine.cpp" bodystart="15" bodyend="28"/>
+        <references refid="class_game_engine_1a83c9b6668f8e83200bc22df7fea0b710" compoundref="_game_engine_8cpp" startline="126" endline="136">isWinner</references>
+        <references refid="struct_tile_1aafb31e1fb33692cca3b88e4099247305adf141bb3f83331473a28e74837c99d31" compoundref="_tile_8cpp" startline="6">Tile::X</references>
+        <referencedby refid="class_mage_s_melee_1a445ad48b4ff1c950358908ea5b03b768" compoundref="_mage_s_melee_8cpp" startline="84" endline="167">MageSMelee::render</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_game_engine_1a98a153133811eebf83c49b698053d8a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameEngine::undoMove</definition>
+        <argsstring>()</argsstring>
+        <name>undoMove</name>
+        <qualifiedname>GameEngine::undoMove</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GameEngine/GameEngine.hpp" line="24" column="10" bodyfile="src/GameEngine/GameEngine.cpp" bodystart="61" bodyend="79"/>
+        <references refid="struct_tile_1aafb31e1fb33692cca3b88e4099247305a8d02d2d250080ae6f6ef5a0e26691671" compoundref="_tile_8cpp" startline="6">Tile::O</references>
+        <references refid="class_game_engine_1a1a3afaae3d906d88f1d344497671550c" compoundref="_game_engine_8cpp" startline="81" endline="84">printBoard</references>
+        <references refid="class_game_board_1aee0736a70e7b7297791bd4bb40560c4e" compoundref="_game_board_8hpp" startline="36" endline="39">GameBoard::restoreFromMemento</references>
+        <references refid="class_game_engine_1a98a153133811eebf83c49b698053d8a0" compoundref="_game_engine_8cpp" startline="61" endline="79">undoMove</references>
+        <referencedby refid="class_mage_s_melee_1adee4d5570b7c39471faf16a1f0479d77" compoundref="_mage_s_melee_8cpp" startline="175" endline="178">MageSMelee::undo</referencedby>
+        <referencedby refid="class_game_engine_1a98a153133811eebf83c49b698053d8a0" compoundref="_game_engine_8cpp" startline="61" endline="79">undoMove</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_game_engine_1a6b6347d1f9edda4f12580282d00f981e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool GameEngine::isRowWin</definition>
+        <argsstring>(int row)</argsstring>
+        <name>isRowWin</name>
+        <qualifiedname>GameEngine::isRowWin</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>row</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GameEngine/GameEngine.hpp" line="32" column="10" bodyfile="src/GameEngine/GameEngine.cpp" bodystart="138" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_engine_1a6224e57b1ba5a789692eaa41a6004d95" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool GameEngine::isColumnWin</definition>
+        <argsstring>(int column)</argsstring>
+        <name>isColumnWin</name>
+        <qualifiedname>GameEngine::isColumnWin</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>column</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GameEngine/GameEngine.hpp" line="33" column="10" bodyfile="src/GameEngine/GameEngine.cpp" bodystart="152" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_engine_1a8b7d7854e1ebe424e7980eca01336edf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool GameEngine::isMainDiagonalWin</definition>
+        <argsstring>()</argsstring>
+        <name>isMainDiagonalWin</name>
+        <qualifiedname>GameEngine::isMainDiagonalWin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GameEngine/GameEngine.hpp" line="34" column="10" bodyfile="src/GameEngine/GameEngine.cpp" bodystart="166" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_engine_1a4cabaf884ec7bb0c730a5defbf49d9a3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool GameEngine::isAntiDiagonalWin</definition>
+        <argsstring>()</argsstring>
+        <name>isAntiDiagonalWin</name>
+        <qualifiedname>GameEngine::isAntiDiagonalWin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GameEngine/GameEngine.hpp" line="35" column="10" bodyfile="src/GameEngine/GameEngine.cpp" bodystart="180" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_engine_1a5d6e5029b25e0e1c34e7883673cc7403" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameEngine::toogleWichPlay</definition>
+        <argsstring>()</argsstring>
+        <name>toogleWichPlay</name>
+        <qualifiedname>GameEngine::toogleWichPlay</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GameEngine/GameEngine.hpp" line="36" column="10" bodyfile="src/GameEngine/GameEngine.cpp" bodystart="30" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_engine_1a7edeb9848e759ffea312aef4bc6d06a2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool GameEngine::isValidMove</definition>
+        <argsstring>(const int x, const int y, const int new_x, const int new_y)</argsstring>
+        <name>isValidMove</name>
+        <qualifiedname>GameEngine::isValidMove</qualifiedname>
+        <param>
+          <type>const int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>new_x</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>new_y</declname>
+        </param>
+        <briefdescription>
+<para>Know if a move is legal or not. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>new_x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>new_y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the move is legal </para>
+</simplesect>
+<simplesect kind="return"><para>false if the move isn&apos;t legal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GameEngine/GameEngine.hpp" line="37" column="10" bodyfile="src/GameEngine/GameEngine.cpp" bodystart="223" bodyend="267"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>GameEngine</label>
+        <link refid="class_game_engine"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/GameEngine/GameEngine.hpp" line="9" column="1" bodyfile="src/GameEngine/GameEngine.hpp" bodystart="10" bodyend="38"/>
+    <listofallmembers>
+      <member refid="class_game_engine_1a5f8aa74c84def59bdbb6ebfaa524fcc1" prot="private" virt="non-virtual"><scope>GameEngine</scope><name>board</name></member>
+      <member refid="class_game_engine_1a6066180bec6f2b090addf2efcca66fe2" prot="public" virt="non-virtual"><scope>GameEngine</scope><name>GameEngine</name></member>
+      <member refid="class_game_engine_1a240bd6ba9896a74d8d6a391d68321f65" prot="public" virt="non-virtual"><scope>GameEngine</scope><name>getBoard</name></member>
+      <member refid="class_game_engine_1ace888c08461583425b890bb369fc1e5e" prot="public" virt="non-virtual"><scope>GameEngine</scope><name>getCoordsFromIndex</name></member>
+      <member refid="class_game_engine_1af14621552522a441bf7abdc73d46f865" prot="public" virt="non-virtual"><scope>GameEngine</scope><name>getIndexFromCoords</name></member>
+      <member refid="class_game_engine_1a8dbea5b905fc04ab641c33a0fb206f94" prot="public" virt="non-virtual"><scope>GameEngine</scope><name>getPlayableFrom</name></member>
+      <member refid="class_game_engine_1a99ad1e6afca252c61da4850b16826549" prot="public" virt="non-virtual"><scope>GameEngine</scope><name>getWichSignPlay</name></member>
+      <member refid="class_game_engine_1ad404bb893f4df79c3070e8a6b5042d75" prot="public" virt="non-virtual"><scope>GameEngine</scope><name>getWinner</name></member>
+      <member refid="class_game_engine_1a178e4476ec2abba19ef62c31b11417b6" prot="private" virt="non-virtual"><scope>GameEngine</scope><name>history</name></member>
+      <member refid="class_game_engine_1a4cabaf884ec7bb0c730a5defbf49d9a3" prot="private" virt="non-virtual"><scope>GameEngine</scope><name>isAntiDiagonalWin</name></member>
+      <member refid="class_game_engine_1a6224e57b1ba5a789692eaa41a6004d95" prot="private" virt="non-virtual"><scope>GameEngine</scope><name>isColumnWin</name></member>
+      <member refid="class_game_engine_1a8b7d7854e1ebe424e7980eca01336edf" prot="private" virt="non-virtual"><scope>GameEngine</scope><name>isMainDiagonalWin</name></member>
+      <member refid="class_game_engine_1a6b6347d1f9edda4f12580282d00f981e" prot="private" virt="non-virtual"><scope>GameEngine</scope><name>isRowWin</name></member>
+      <member refid="class_game_engine_1a7edeb9848e759ffea312aef4bc6d06a2" prot="private" virt="non-virtual"><scope>GameEngine</scope><name>isValidMove</name></member>
+      <member refid="class_game_engine_1a83c9b6668f8e83200bc22df7fea0b710" prot="public" virt="non-virtual"><scope>GameEngine</scope><name>isWinner</name></member>
+      <member refid="class_game_engine_1ab12180f7abf3e1fc39407fad7257972b" prot="public" virt="non-virtual"><scope>GameEngine</scope><name>makeIAmove</name></member>
+      <member refid="class_game_engine_1a36ce03ed1a7e52e7c2ae86c6aa1c9374" prot="public" virt="non-virtual"><scope>GameEngine</scope><name>move</name></member>
+      <member refid="class_game_engine_1a0f6fcebe53d4164729d578463bfb3011" prot="public" virt="non-virtual"><scope>GameEngine</scope><name>move</name></member>
+      <member refid="class_game_engine_1acf2aaec78dfb713ca1bfdb57a82c19e4" prot="private" virt="non-virtual"><scope>GameEngine</scope><name>playerOne</name></member>
+      <member refid="class_game_engine_1a54a1574a5e1ff6d85dc09be3749dc2a4" prot="private" virt="non-virtual"><scope>GameEngine</scope><name>playerTwo</name></member>
+      <member refid="class_game_engine_1a1a3afaae3d906d88f1d344497671550c" prot="public" virt="non-virtual"><scope>GameEngine</scope><name>printBoard</name></member>
+      <member refid="class_game_engine_1a5d6e5029b25e0e1c34e7883673cc7403" prot="private" virt="non-virtual"><scope>GameEngine</scope><name>toogleWichPlay</name></member>
+      <member refid="class_game_engine_1a98a153133811eebf83c49b698053d8a0" prot="public" virt="non-virtual"><scope>GameEngine</scope><name>undoMove</name></member>
+      <member refid="class_game_engine_1ac936ac91a796d046b4637bcd02183482" prot="private" virt="non-virtual"><scope>GameEngine</scope><name>whichPlay</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

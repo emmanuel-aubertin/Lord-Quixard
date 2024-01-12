@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="_config_8cpp" kind="file" language="C++">
+    <compoundname>Config.cpp</compoundname>
+    <includes refid="_config_8hpp" local="yes">Config.hpp</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>Config.cpp</label>
+        <link refid="_config_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Config.hpp</label>
+        <link refid="_config_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_config_8hpp" kindref="compound">Config.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Name<sp/>of<sp/>the<sp/>program</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="class_config_1a6f4755319bd46402e33b001debbac608" kindref="member">Config::PROGNAME</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Lord<sp/>Quixard&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>file<sp/>name<sp/>where<sp/>this<sp/>constant<sp/>is<sp/>defined</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="class_config_1abc018ce0ccfce1af4fb7b14168a8ce84" kindref="member">Config::FILE_NAME</ref><sp/>=<sp/>__FILE__;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Release<sp/>information<sp/>of<sp/>the<sp/>program,<sp/>including<sp/>version<sp/>and<sp/>last<sp/>update<sp/>date</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="class_config_1af11860661407835d3093f4202dfdcefe" kindref="member">Config::RELEASE</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Revision<sp/>1.0<sp/>|<sp/>Last<sp/>update<sp/>13<sp/>December<sp/>2023&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Author<sp/>of<sp/>the<sp/>program</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="class_config_1ab188b3ccb545a69493296f518cde6fb0" kindref="member">Config::AUTHOR</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Aubertin<sp/>Emmanuel&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>information<sp/>for<sp/>the<sp/>program,<sp/>including<sp/>the<sp/>year<sp/>and<sp/>the<sp/>author&apos;s<sp/>name</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="class_config_1a18ad2712990f6a39d1386abe1ccafe36" kindref="member">Config::COPYRIGHT</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;(c)<sp/>2023<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="class_config_1ab188b3ccb545a69493296f518cde6fb0" kindref="member">Config::AUTHOR</ref><sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>more<sp/>at<sp/>github.com/emmanuel-aubertin&quot;</highlight><highlight class="normal">;</highlight></codeline>
+    </programlisting>
+    <location file="Config.cpp"/>
+  </compounddef>
+</doxygen>

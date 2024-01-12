@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="struct_tile" kind="struct" language="C++" prot="public">
+    <compoundname>Tile</compoundname>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="struct_tile_1aafb31e1fb33692cca3b88e4099247305" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Sign</name>
+        <qualifiedname>Tile::Sign</qualifiedname>
+        <enumvalue id="struct_tile_1aafb31e1fb33692cca3b88e4099247305adf141bb3f83331473a28e74837c99d31" prot="public">
+          <name>X</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="struct_tile_1aafb31e1fb33692cca3b88e4099247305a8d02d2d250080ae6f6ef5a0e26691671" prot="public">
+          <name>O</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="struct_tile_1aafb31e1fb33692cca3b88e4099247305adb856a73d6fcc8db6d64395f5f199232" prot="public">
+          <name>Blank</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Tile.cpp" line="6" column="5" bodyfile="src/Tile.cpp" bodystart="6" bodyend="6"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_tile_1a54ceeb5eea55a3268d9a0e471fdce400" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_tile_1aafb31e1fb33692cca3b88e4099247305" kindref="member">Sign</ref></type>
+        <definition>Sign Tile::sign</definition>
+        <argsstring></argsstring>
+        <name>sign</name>
+        <qualifiedname>Tile::sign</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Tile.cpp" line="7" column="10" bodyfile="src/Tile.cpp" bodystart="7" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_tile_1aeeb5593bb6b75aae2edfcccbc84ab378" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tile::Tile</definition>
+        <argsstring>()</argsstring>
+        <name>Tile</name>
+        <qualifiedname>Tile::Tile</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Tile.cpp" line="9" column="5" bodyfile="src/Tile.cpp" bodystart="9" bodyend="9"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Tile</label>
+        <link refid="struct_tile"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/Tile.cpp" line="4" column="1" bodyfile="src/Tile.cpp" bodystart="5" bodyend="10"/>
+    <listofallmembers>
+      <member refid="struct_tile_1aafb31e1fb33692cca3b88e4099247305adb856a73d6fcc8db6d64395f5f199232" prot="public" virt="non-virtual"><scope>Tile</scope><name>Blank</name></member>
+      <member refid="struct_tile_1aafb31e1fb33692cca3b88e4099247305a8d02d2d250080ae6f6ef5a0e26691671" prot="public" virt="non-virtual"><scope>Tile</scope><name>O</name></member>
+      <member refid="struct_tile_1aafb31e1fb33692cca3b88e4099247305" prot="public" virt="non-virtual"><scope>Tile</scope><name>Sign</name></member>
+      <member refid="struct_tile_1a54ceeb5eea55a3268d9a0e471fdce400" prot="public" virt="non-virtual"><scope>Tile</scope><name>sign</name></member>
+      <member refid="struct_tile_1aeeb5593bb6b75aae2edfcccbc84ab378" prot="public" virt="non-virtual"><scope>Tile</scope><name>Tile</name></member>
+      <member refid="struct_tile_1aafb31e1fb33692cca3b88e4099247305adf141bb3f83331473a28e74837c99d31" prot="public" virt="non-virtual"><scope>Tile</scope><name>X</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

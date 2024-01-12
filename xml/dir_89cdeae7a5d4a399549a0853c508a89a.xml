@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="dir_89cdeae7a5d4a399549a0853c508a89a" kind="dir">
+    <compoundname>src/MVC/View/PlayVAi</compoundname>
+    <innerfile refid="_play_v_ai_8cpp">PlayVAi.cpp</innerfile>
+    <innerfile refid="_play_v_ai_8hpp">PlayVAi.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/MVC/View/PlayVAi/"/>
+  </compounddef>
+</doxygen>

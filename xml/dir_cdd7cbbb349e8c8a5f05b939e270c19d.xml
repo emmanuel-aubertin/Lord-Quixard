@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="dir_cdd7cbbb349e8c8a5f05b939e270c19d" kind="dir">
+    <compoundname>src/MVC</compoundname>
+    <innerdir refid="dir_53765256155ab3460e586353602dbdee">src/MVC/View</innerdir>
+    <innerfile refid="_controller_8cpp">Controller.cpp</innerfile>
+    <innerfile refid="_controller_8hpp">Controller.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/MVC/"/>
+  </compounddef>
+</doxygen>

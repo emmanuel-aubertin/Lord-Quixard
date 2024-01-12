@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="md__read_me" kind="page">
+    <compoundname>md__read_me</compoundname>
+    <title>Lord Quixard: Thalila Mooncrest&apos;s Quest</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><anchor id="md__read_me_1autotoc_md0"/></para>
+<para>Welcome to the immersive world of Quixo, brought to life in this digital adaptation. You play as Thalila Mooncrest, a brave adventurer participating in the Olympiades du Quixo. This game is not just about strategy; it&apos;s a journey through a rich narrative where you confront characters like Balthazard the Terryble and PetitGran the Wise, representing different AI strategies. Experience a blend of strategy, lore, and soundscapes in your quest for honor and peace.</para>
+<para><blockquote><para><zwj/>**_NOTE:_** The game is only avaible in 🇫🇷 French 🇫🇷 </para>
+</blockquote></para>
+<sect1 id="md__read_me_1autotoc_md1">
+<title>Features</title><para><itemizedlist>
+<listitem><para>Engaging storyline with unique characters</para>
+</listitem><listitem><para>AI opponents with different strategies</para>
+</listitem><listitem><para>Immersive sound design – best experienced with sound on</para>
+</listitem><listitem><para>Magical Duel mode for settling scores in Quixo</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="md__read_me_1autotoc_md2">
+<title>Installation</title><sect2 id="md__read_me_1autotoc_md3">
+<title>Prerequisites</title><para><itemizedlist>
+<listitem><para>macOS with Homebrew installed</para>
+</listitem><listitem><para>CMake for building the project</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md__read_me_1autotoc_md4">
+<title>Dependencies</title><para><programlisting filename=".bash"><codeline><highlight class="normal">brew<sp/>install<sp/>sdl2<sp/>sdl2_mixer<sp/>sdl2_ttf</highlight></codeline>
+</programlisting></para>
+</sect2>
+</sect1>
+<sect1 id="md__read_me_1autotoc_md5">
+<title>Building the Project</title><para><programlisting filename=".bash"><codeline><highlight class="normal">cmake<sp/>.</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+</programlisting></para>
+</sect1>
+<sect1 id="md__read_me_1autotoc_md6">
+<title>Playing the Game</title><para>Run the executable to start your adventure as Thalila Mooncrest in the Olympiades du Quixo.</para>
+</sect1>
+<sect1 id="md__read_me_1autotoc_md7">
+<title>License</title><para>This project is under <computeroutput>GENERAL PUBLIC LICENSE</computeroutput>. See <computeroutput>LICENSE</computeroutput> for more details.</para>
+</sect1>
+<sect1 id="md__read_me_1autotoc_md8">
+<title>Acknowledgements</title><para>Special thanks to Jérémie LOHYER (as PetiGran) and Terry (as Balthazard). </para>
+</sect1>
+    </detaileddescription>
+    <location file="ReadMe.md"/>
+  </compounddef>
+</doxygen>

@@ -149,20 +149,42 @@ void MageSMelee::render()
     }
 
     SDL_Color textColor = {255, 255, 255};
+    SDL_Color green = {0, 255, 0}; // RGBA for green color
+
+    if (indexCliked > -1)
+    {
+        std::pair<int, int> coorCliked = engine->getCoordsFromIndex(indexCliked);
+        std::vector<std::pair<int, int>> playable = engine->getPlayableFrom(coorCliked.first, coorCliked.second);
+
+        for (const auto &e : playable)
+        {
+            int index = engine->getIndexFromCoords(e.second, e.first);
+            SDL_Rect greenRect = {
+                TILE_COORDS[index].topLeft.x,
+                TILE_COORDS[index].topLeft.y,
+                TILE_COORDS[index].topRight.x - TILE_COORDS[index].topLeft.x,
+                TILE_COORDS[index].bottomLeft.y - TILE_COORDS[index].topLeft.y};
+
+            // Create a temporary surface for the green rectangle
+            SDL_Surface *greenSurface = SDL_CreateRGBSurface(0, greenRect.w, greenRect.h, 32, 0, 0, 0, 0);
+            SDL_FillRect(greenSurface, NULL, SDL_MapRGB(greenSurface->format, green.r, green.g, green.b));
+            SDL_BlitSurface(greenSurface, NULL, windowSurface, &greenRect);
+            SDL_FreeSurface(greenSurface);
+        }
+    }
 
     // Clear the previous FPS text
     SDL_Rect fpsRect = {1792 - 80, 5, 100, 30};
     SDL_BlitSurface(this->backgroundSuface, &fpsRect, windowSurface, &fpsRect);
 
     // Render the new FPS text
-
     std::string fpsText = "FPS: " + std::to_string(fps);
     renderText(fpsText, 1725, 5, textColor, 24);
 
     renderText("Back to artifact valley", 20, 20, textColor, 32);
     if (engine->isWinner())
     {
-        renderText("GG " + engine->getWinner().getName() , 500, 20, textColor, 64);
+        renderText("GG " + engine->getWinner().getName(), 500, 20, textColor, 64);
     }
 }
 
@@ -172,7 +194,8 @@ bool MageSMelee::isPointInTile(const SDL_Point &point, const TileCoords &tile)
             point.y >= tile.topLeft.y && point.y <= tile.bottomLeft.y);
 }
 
-void MageSMelee::undo() {
+void MageSMelee::undo()
+{
     this->engine->undoMove();
     this->board = engine->getBoard();
 }

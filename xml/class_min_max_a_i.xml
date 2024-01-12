@@ -1,0 +1,450 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="class_min_max_a_i" kind="class" language="C++" prot="public">
+    <compoundname>MinMaxAI</compoundname>
+    <basecompoundref refid="class_player_a_i" prot="public" virt="non-virtual">PlayerAI</basecompoundref>
+    <includes refid="_min_max_a_i_8hpp" local="no">MinMaxAI.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_min_max_a_i_1a553dde3f8038f1fc3c02fd74be1dc04f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MinMaxAI::depth</definition>
+        <argsstring></argsstring>
+        <name>depth</name>
+        <qualifiedname>MinMaxAI::depth</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Player/AIPlayer/MinMaxAI/MinMaxAI.hpp" line="20" column="9" bodyfile="src/Player/AIPlayer/MinMaxAI/MinMaxAI.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_min_max_a_i_1abc25efd924ba1d851f204116406faa16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MinMaxAI::MinMaxAI</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>MinMaxAI</name>
+        <qualifiedname>MinMaxAI::MinMaxAI</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Construct a new <ref refid="class_min_max_a_i" kindref="compound">MinMaxAI</ref> object with default depth. Initializes the <ref refid="class_min_max_a_i" kindref="compound">MinMaxAI</ref> player with the given name and sets the depth of the Minimax algorithm to a default value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the <ref refid="class_min_max_a_i" kindref="compound">MinMaxAI</ref> player. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Player/AIPlayer/MinMaxAI/MinMaxAI.hpp" line="11" column="5" bodyfile="src/Player/AIPlayer/MinMaxAI/MinMaxAI.cpp" bodystart="13" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_min_max_a_i_1a32b6bf31d035ed87057f5c423a1ac6c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MinMaxAI::MinMaxAI</definition>
+        <argsstring>(const std::string &amp;name, int depth)</argsstring>
+        <name>MinMaxAI</name>
+        <qualifiedname>MinMaxAI::MinMaxAI</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>depth</declname>
+        </param>
+        <briefdescription>
+<para>Construct a new <ref refid="class_min_max_a_i" kindref="compound">MinMaxAI</ref> object with specified depth. Initializes the <ref refid="class_min_max_a_i" kindref="compound">MinMaxAI</ref> player with the given name and sets the depth of the Minimax algorithm to the specified value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the <ref refid="class_min_max_a_i" kindref="compound">MinMaxAI</ref> player. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>depth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The depth for the Minimax algorithm. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Player/AIPlayer/MinMaxAI/MinMaxAI.hpp" line="12" column="5" bodyfile="src/Player/AIPlayer/MinMaxAI/MinMaxAI.cpp" bodystart="25" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_min_max_a_i_1a44cd9b1c809e1d53eba52d5f1a21c7ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>MinMaxAI::~MinMaxAI</definition>
+        <argsstring>()</argsstring>
+        <name>~MinMaxAI</name>
+        <qualifiedname>MinMaxAI::~MinMaxAI</qualifiedname>
+        <briefdescription>
+<para>Destructor for the <ref refid="class_min_max_a_i" kindref="compound">MinMaxAI</ref> object. Cleans up resources, if necessary, when the <ref refid="class_min_max_a_i" kindref="compound">MinMaxAI</ref> object is destroyed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Player/AIPlayer/MinMaxAI/MinMaxAI.hpp" line="13" column="13" bodyfile="src/Player/AIPlayer/MinMaxAI/MinMaxAI.cpp" bodystart="34" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="class_min_max_a_i_1a34cf1f0e14ffd2563002b8c7403f4bdb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt; int &gt; MinMaxAI::getPlay</definition>
+        <argsstring>(GameBoard *, Tile::Sign)</argsstring>
+        <name>getPlay</name>
+        <qualifiedname>MinMaxAI::getPlay</qualifiedname>
+        <reimplements refid="class_player_a_i_1a2d60e5fb3d3d6a97bc73af0f43b5859e">getPlay</reimplements>
+        <param>
+          <type><ref refid="class_game_board" kindref="compound">GameBoard</ref> *</type>
+          <defname>board</defname>
+        </param>
+        <param>
+          <type><ref refid="struct_tile_1aafb31e1fb33692cca3b88e4099247305" kindref="member">Tile::Sign</ref></type>
+          <defname>sign</defname>
+        </param>
+        <briefdescription>
+<para>Determines the best play for the AI using the Minimax algorithm. Evaluates all possible moves using the Minimax algorithm asynchronously and selects the move with the best score. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>board</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the current game board. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sign</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The AI player&apos;s sign (X or O). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::vector&lt;int&gt; The AI player&apos;s best move, represented as a vector {x, y, new_x, new_y}. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Player/AIPlayer/MinMaxAI/MinMaxAI.hpp" line="14" column="17" bodyfile="src/Player/AIPlayer/MinMaxAI/MinMaxAI.cpp" bodystart="171" bodyend="203"/>
+        <references refid="class_game_board_1a35e27d8d446a0a16620697ab45a5a552" compoundref="_game_board_8cpp" startline="50" endline="97">GameBoard::getPossibleMoves</references>
+        <references refid="class_game_board_1af65e2b2c2177485d486c2afd7c6617ef" compoundref="_game_board_8cpp" startline="128" endline="177">GameBoard::move</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_min_max_a_i_1aa0bb7cd80d5c42336ea006ee6b5786f4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_tile_1aafb31e1fb33692cca3b88e4099247305" kindref="member">Tile::Sign</ref></type>
+        <definition>Tile::Sign MinMaxAI::oppositeSign</definition>
+        <argsstring>(Tile::Sign sign)</argsstring>
+        <name>oppositeSign</name>
+        <qualifiedname>MinMaxAI::oppositeSign</qualifiedname>
+        <param>
+          <type><ref refid="struct_tile_1aafb31e1fb33692cca3b88e4099247305" kindref="member">Tile::Sign</ref></type>
+          <declname>sign</declname>
+        </param>
+        <briefdescription>
+<para>Returns the opposite sign of the given player&apos;s sign. Useful for switching between players in the Minimax algorithm. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sign</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current player&apos;s sign (X or O). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="struct_tile_1aafb31e1fb33692cca3b88e4099247305" kindref="member">Tile::Sign</ref> The opposite sign of the given sign. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Player/AIPlayer/MinMaxAI/MinMaxAI.hpp" line="17" column="16" bodyfile="src/Player/AIPlayer/MinMaxAI/MinMaxAI.cpp" bodystart="158" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="class_min_max_a_i_1a81fed3e92598f0e09a65fdc91649fae5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int MinMaxAI::minimax</definition>
+        <argsstring>(GameBoard *board, int depth, bool isMaximizingPlayer, Tile::Sign sign)</argsstring>
+        <name>minimax</name>
+        <qualifiedname>MinMaxAI::minimax</qualifiedname>
+        <param>
+          <type><ref refid="class_game_board" kindref="compound">GameBoard</ref> *</type>
+          <declname>board</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>depth</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isMaximizingPlayer</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_tile_1aafb31e1fb33692cca3b88e4099247305" kindref="member">Tile::Sign</ref></type>
+          <declname>sign</declname>
+        </param>
+        <briefdescription>
+<para>The Minimax algorithm implementation. Recursively evaluates game board states to determine the optimal move for the AI. Alternates between maximizing and minimizing players based on the current depth. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>board</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the current game board. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>depth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current depth in the Minimax algorithm. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isMaximizingPlayer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean indicating if the current player is maximizing. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sign</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The player&apos;s sign (X or O) for the current turn. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int The best evaluated score for the current player at this depth. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Player/AIPlayer/MinMaxAI/MinMaxAI.hpp" line="18" column="9" bodyfile="src/Player/AIPlayer/MinMaxAI/MinMaxAI.cpp" bodystart="115" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="class_min_max_a_i_1a6ffafd7632bcf9f0b8312a51697fd0b9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int MinMaxAI::evaluateBoard</definition>
+        <argsstring>(GameBoard *board, Tile::Sign sign)</argsstring>
+        <name>evaluateBoard</name>
+        <qualifiedname>MinMaxAI::evaluateBoard</qualifiedname>
+        <param>
+          <type><ref refid="class_game_board" kindref="compound">GameBoard</ref> *</type>
+          <declname>board</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_tile_1aafb31e1fb33692cca3b88e4099247305" kindref="member">Tile::Sign</ref></type>
+          <declname>sign</declname>
+        </param>
+        <briefdescription>
+<para>Evaluates the game board from the perspective of the given sign. Calculates a score for the board based on the current state, favoring positions beneficial to the specified sign. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>board</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the current game board. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sign</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The player&apos;s sign (X or O) for whom the board is being evaluated. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int The evaluation score of the board. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Player/AIPlayer/MinMaxAI/MinMaxAI.hpp" line="19" column="9" bodyfile="src/Player/AIPlayer/MinMaxAI/MinMaxAI.cpp" bodystart="47" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_min_max_a_i_1aafe05467957d7218550e72c0cf33d993" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int MinMaxAI::evaluateLine</definition>
+        <argsstring>(const std::array&lt; std::array&lt; Tile, 5 &gt;, 5 &gt; &amp;board, int xStart, int yStart, int xStep, int yStep, Tile::Sign sign)</argsstring>
+        <name>evaluateLine</name>
+        <qualifiedname>MinMaxAI::evaluateLine</qualifiedname>
+        <param>
+          <type>const std::array&lt; std::array&lt; <ref refid="struct_tile" kindref="compound">Tile</ref>, 5 &gt;, 5 &gt; &amp;</type>
+          <declname>board</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>xStart</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>yStart</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>xStep</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>yStep</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_tile_1aafb31e1fb33692cca3b88e4099247305" kindref="member">Tile::Sign</ref></type>
+          <declname>sign</declname>
+        </param>
+        <briefdescription>
+<para>Evaluates a line (row, column, or diagonal) on the board. Counts the number of tiles matching the given sign and those of the opponent, calculating a score based on these counts. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>board</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current game board. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xStart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting x-coordinate for evaluation. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>yStart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting y-coordinate for evaluation. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xStep</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Step size in the x-direction. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>yStep</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Step size in the y-direction. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sign</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The player&apos;s sign (X or O) to evaluate for. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int The evaluation score of the line. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Player/AIPlayer/MinMaxAI/MinMaxAI.hpp" line="21" column="9" bodyfile="src/Player/AIPlayer/MinMaxAI/MinMaxAI.cpp" bodystart="76" bodyend="102"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>MinMaxAI</label>
+        <link refid="class_min_max_a_i"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Player</label>
+        <link refid="class_player"/>
+      </node>
+      <node id="2">
+        <label>PlayerAI</label>
+        <link refid="class_player_a_i"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>MinMaxAI</label>
+        <link refid="class_min_max_a_i"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Player</label>
+        <link refid="class_player"/>
+      </node>
+      <node id="2">
+        <label>PlayerAI</label>
+        <link refid="class_player_a_i"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/Player/AIPlayer/MinMaxAI/MinMaxAI.hpp" line="8" column="1" bodyfile="src/Player/AIPlayer/MinMaxAI/MinMaxAI.hpp" bodystart="9" bodyend="24"/>
+    <listofallmembers>
+      <member refid="class_min_max_a_i_1a553dde3f8038f1fc3c02fd74be1dc04f" prot="private" virt="non-virtual"><scope>MinMaxAI</scope><name>depth</name></member>
+      <member refid="class_min_max_a_i_1a6ffafd7632bcf9f0b8312a51697fd0b9" prot="private" virt="non-virtual"><scope>MinMaxAI</scope><name>evaluateBoard</name></member>
+      <member refid="class_min_max_a_i_1aafe05467957d7218550e72c0cf33d993" prot="private" virt="non-virtual"><scope>MinMaxAI</scope><name>evaluateLine</name></member>
+      <member refid="class_player_1af1aa472885d589516f483e26e786600e" prot="public" virt="non-virtual"><scope>MinMaxAI</scope><name>getName</name></member>
+      <member refid="class_min_max_a_i_1a34cf1f0e14ffd2563002b8c7403f4bdb" prot="public" virt="virtual"><scope>MinMaxAI</scope><name>getPlay</name></member>
+      <member refid="class_min_max_a_i_1a81fed3e92598f0e09a65fdc91649fae5" prot="private" virt="non-virtual"><scope>MinMaxAI</scope><name>minimax</name></member>
+      <member refid="class_min_max_a_i_1abc25efd924ba1d851f204116406faa16" prot="public" virt="non-virtual"><scope>MinMaxAI</scope><name>MinMaxAI</name></member>
+      <member refid="class_min_max_a_i_1a32b6bf31d035ed87057f5c423a1ac6c2" prot="public" virt="non-virtual"><scope>MinMaxAI</scope><name>MinMaxAI</name></member>
+      <member refid="class_player_1af9c920fabaafdeb7961a645315b521ff" prot="protected" virt="non-virtual"><scope>MinMaxAI</scope><name>name</name></member>
+      <member refid="class_min_max_a_i_1aa0bb7cd80d5c42336ea006ee6b5786f4" prot="private" virt="non-virtual"><scope>MinMaxAI</scope><name>oppositeSign</name></member>
+      <member refid="class_player_1a45fa04a2a4ff9235e6c100b7c6ab232a" prot="public" virt="non-virtual"><scope>MinMaxAI</scope><name>Player</name></member>
+      <member refid="class_player_a_i_1a8a7d49d494914bbb3938934acbcd5912" prot="public" virt="non-virtual"><scope>MinMaxAI</scope><name>PlayerAI</name></member>
+      <member refid="class_player_1a77cfdb8708c16a0726d5bdd9e7b356d1" prot="protected" virt="non-virtual"><scope>MinMaxAI</scope><name>setName</name></member>
+      <member refid="class_min_max_a_i_1a44cd9b1c809e1d53eba52d5f1a21c7ef" prot="public" virt="virtual"><scope>MinMaxAI</scope><name>~MinMaxAI</name></member>
+      <member refid="class_player_1a11017c0ed8a639f3b1308ab167fbeca2" prot="public" virt="virtual"><scope>MinMaxAI</scope><name>~Player</name></member>
+      <member refid="class_player_a_i_1a2f188586bb2be4ea74d67960dee2ef18" prot="public" virt="virtual"><scope>MinMaxAI</scope><name>~PlayerAI</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

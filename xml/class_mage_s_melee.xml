@@ -1,0 +1,549 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="class_mage_s_melee" kind="class" language="C++" prot="public">
+    <compoundname>MageSMelee</compoundname>
+    <basecompoundref refid="class_view" prot="public" virt="non-virtual">View</basecompoundref>
+    <derivedcompoundref refid="class_play_v_ai" prot="public" virt="non-virtual">PlayVAi</derivedcompoundref>
+    <derivedcompoundref refid="class_play_v_peti_gran" prot="public" virt="non-virtual">PlayVPetiGran</derivedcompoundref>
+    <includes refid="_mage_s_melee_8hpp" local="no">MageSMelee.hpp</includes>
+    <sectiondef kind="protected-static-attrib">
+      <memberdef kind="variable" id="class_mage_s_melee_1a6ce8033fe2ebd4aeaec9b1121f93c129" prot="protected" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr int</type>
+        <definition>constexpr int MageSMelee::NUM_TILES</definition>
+        <argsstring></argsstring>
+        <name>NUM_TILES</name>
+        <qualifiedname>MageSMelee::NUM_TILES</qualifiedname>
+        <initializer>= 25</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MageSMelee/MageSMelee.hpp" line="22" column="26" bodyfile="src/MVC/View/MageSMelee/MageSMelee.hpp" bodystart="22" bodyend="-1"/>
+        <referencedby refid="class_mage_s_melee_1a4e9f1727ce98bca9080746efd1471fd7" compoundref="_mage_s_melee_8cpp" startline="182" endline="225">handleClick</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_mage_s_melee_1a6d8b18d3bb8b525880961dc8df335797" prot="protected" static="yes" mutable="no">
+        <type><ref refid="struct_tile_coords" kindref="compound">TileCoords</ref></type>
+        <definition>TileCoords MageSMelee::BACK_BTN</definition>
+        <argsstring></argsstring>
+        <name>BACK_BTN</name>
+        <qualifiedname>MageSMelee::BACK_BTN</qualifiedname>
+        <initializer>= {{0, 0}, {278, 0}, {0, 55}, {278, 55}}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MageSMelee/MageSMelee.hpp" line="23" column="23" bodyfile="src/MVC/View/MageSMelee/MageSMelee.hpp" bodystart="11" bodyend="11"/>
+        <referencedby refid="class_mage_s_melee_1a4e9f1727ce98bca9080746efd1471fd7" compoundref="_mage_s_melee_8cpp" startline="182" endline="225">handleClick</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_mage_s_melee_1abf4ee004c5a881940484da796170386e" prot="protected" static="yes" mutable="no">
+        <type><ref refid="struct_tile_coords" kindref="compound">TileCoords</ref></type>
+        <definition>TileCoords MageSMelee::TILE_COORDS</definition>
+        <argsstring>[NUM_TILES]</argsstring>
+        <name>TILE_COORDS</name>
+        <qualifiedname>MageSMelee::TILE_COORDS</qualifiedname>
+        <initializer>= {
+    {{753, 323}, {813, 323}, {812, 363}, {749, 366}},
+    {{815, 325}, {875, 324}, {873, 365}, {812, 365}},
+    {{877, 324}, {935, 325}, {937, 365}, {876, 365}},
+    {{938, 324}, {997, 325}, {1000, 366}, {941, 366}},
+    {{999, 326}, {1059, 324}, {1065, 366}, {1002, 365}},
+    {{749, 368}, {811, 367}, {809, 409}, {743, 408}},
+    {{812, 368}, {873, 367}, {872, 408}, {810, 408}},
+    {{875, 367}, {937, 367}, {938, 407}, {875, 408}},
+    {{939, 367}, {1000, 366}, {1003, 407}, {940, 407}},
+    {{1002, 366}, {1063, 367}, {1068, 407}, {1005, 406}},
+    {{742, 411}, {804, 409}, {801, 457}, {735, 457}},
+    {{809, 410}, {871, 410}, {870, 457}, {805, 456}},
+    {{875, 410}, {938, 411}, {938, 456}, {873, 456}},
+    {{940, 409}, {1003, 409}, {1007, 457}, {940, 456}},
+    {{1005, 411}, {1068, 412}, {1075, 456}, {1008, 457}},
+    {{735, 460}, {801, 460}, {797, 511}, {728, 510}},
+    {{804, 459}, {869, 458}, {868, 512}, {802, 511}},
+    {{873, 459}, {938, 459}, {940, 510}, {871, 510}},
+    {{941, 459}, {1007, 459}, {1011, 512}, {942, 509}},
+    {{1009, 459}, {1073, 459}, {1080, 511}, {1013, 510}},
+    {{728, 513}, {796, 514}, {792, 567}, {718, 566}},
+    {{799, 513}, {866, 512}, {866, 566}, {796, 566}},
+    {{870, 512}, {938, 511}, {940, 565}, {869, 565}},
+    {{942, 511}, {1011, 512}, {1014, 565}, {944, 564}},
+    {{1012, 512}, {1081, 513}, {1088, 565}, {1017, 565}}}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MageSMelee/MageSMelee.hpp" line="24" column="23" bodyfile="src/MVC/View/MageSMelee/MageSMelee.hpp" bodystart="12" bodyend="37"/>
+        <referencedby refid="class_mage_s_melee_1a4e9f1727ce98bca9080746efd1471fd7" compoundref="_mage_s_melee_8cpp" startline="182" endline="225">handleClick</referencedby>
+        <referencedby refid="class_mage_s_melee_1a445ad48b4ff1c950358908ea5b03b768" compoundref="_mage_s_melee_8cpp" startline="84" endline="167">render</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_mage_s_melee_1a06b70fa53acf60f8d5821c254b681642" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MageSMelee::indexCliked</definition>
+        <argsstring></argsstring>
+        <name>indexCliked</name>
+        <qualifiedname>MageSMelee::indexCliked</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MageSMelee/MageSMelee.hpp" line="25" column="9" bodyfile="src/MVC/View/MageSMelee/MageSMelee.hpp" bodystart="25" bodyend="-1"/>
+        <referencedby refid="class_mage_s_melee_1a4e9f1727ce98bca9080746efd1471fd7" compoundref="_mage_s_melee_8cpp" startline="182" endline="225">handleClick</referencedby>
+        <referencedby refid="class_mage_s_melee_1aacea6ddbcd8b54ac89660dbd22ce1c26" compoundref="_mage_s_melee_8cpp" startline="39" endline="66">MageSMelee</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_mage_s_melee_1a36fd2d7de64a5e40fdc568a2c721a8f0" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_game_engine" kindref="compound">GameEngine</ref> *</type>
+        <definition>GameEngine* MageSMelee::engine</definition>
+        <argsstring></argsstring>
+        <name>engine</name>
+        <qualifiedname>MageSMelee::engine</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MageSMelee/MageSMelee.hpp" line="26" column="16" bodyfile="src/MVC/View/MageSMelee/MageSMelee.hpp" bodystart="26" bodyend="-1"/>
+        <referencedby refid="class_mage_s_melee_1a4e9f1727ce98bca9080746efd1471fd7" compoundref="_mage_s_melee_8cpp" startline="182" endline="225">handleClick</referencedby>
+        <referencedby refid="class_mage_s_melee_1aacea6ddbcd8b54ac89660dbd22ce1c26" compoundref="_mage_s_melee_8cpp" startline="39" endline="66">MageSMelee</referencedby>
+        <referencedby refid="class_play_v_ai_1a30c73e2d8a03608d8087b9a4e866605d" compoundref="_play_v_ai_8cpp" startline="22" endline="40">PlayVAi::PlayVAi</referencedby>
+        <referencedby refid="class_play_v_peti_gran_1ae768342d6b9506700ce8a05701591f9f" compoundref="_play_v_peti_gran_8cpp" startline="22" endline="40">PlayVPetiGran::PlayVPetiGran</referencedby>
+        <referencedby refid="class_mage_s_melee_1a445ad48b4ff1c950358908ea5b03b768" compoundref="_mage_s_melee_8cpp" startline="84" endline="167">render</referencedby>
+        <referencedby refid="class_play_v_ai_1a1df49f27221983b7101b304cb679f928" compoundref="_play_v_ai_8cpp" startline="55" endline="72">PlayVAi::render</referencedby>
+        <referencedby refid="class_play_v_peti_gran_1a1bbfc4b4b6d1dd12ece2d634725d6357" compoundref="_play_v_peti_gran_8cpp" startline="56" endline="73">PlayVPetiGran::render</referencedby>
+        <referencedby refid="class_mage_s_melee_1adee4d5570b7c39471faf16a1f0479d77" compoundref="_mage_s_melee_8cpp" startline="175" endline="178">undo</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_mage_s_melee_1add3fb4a284482edb2ca9b4b69b3ccf37" prot="protected" static="no" mutable="no">
+        <type>SDL_Surface *</type>
+        <definition>SDL_Surface* MageSMelee::backgroundSuface</definition>
+        <argsstring></argsstring>
+        <name>backgroundSuface</name>
+        <qualifiedname>MageSMelee::backgroundSuface</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MageSMelee/MageSMelee.hpp" line="29" column="17" bodyfile="src/MVC/View/MageSMelee/MageSMelee.hpp" bodystart="29" bodyend="-1"/>
+        <referencedby refid="class_mage_s_melee_1aacea6ddbcd8b54ac89660dbd22ce1c26" compoundref="_mage_s_melee_8cpp" startline="39" endline="66">MageSMelee</referencedby>
+        <referencedby refid="class_mage_s_melee_1a445ad48b4ff1c950358908ea5b03b768" compoundref="_mage_s_melee_8cpp" startline="84" endline="167">render</referencedby>
+        <referencedby refid="class_mage_s_melee_1a3564915cfc67a4ae2ac57d67e199fe00" compoundref="_mage_s_melee_8cpp" startline="68" endline="82">~MageSMelee</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_mage_s_melee_1a56743f6a19fa75226df7c563174e7dd9" prot="protected" static="no" mutable="no">
+        <type>SDL_Surface *</type>
+        <definition>SDL_Surface* MageSMelee::window_surface</definition>
+        <argsstring></argsstring>
+        <name>window_surface</name>
+        <qualifiedname>MageSMelee::window_surface</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MageSMelee/MageSMelee.hpp" line="30" column="17" bodyfile="src/MVC/View/MageSMelee/MageSMelee.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mage_s_melee_1aa139742008884e702089960f474b3bf7" prot="protected" static="no" mutable="no">
+        <type>SDL_Surface *</type>
+        <definition>SDL_Surface* MageSMelee::tileSurface</definition>
+        <argsstring></argsstring>
+        <name>tileSurface</name>
+        <qualifiedname>MageSMelee::tileSurface</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MageSMelee/MageSMelee.hpp" line="31" column="17" bodyfile="src/MVC/View/MageSMelee/MageSMelee.hpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mage_s_melee_1acdd2e4e268dae1cbef8536bef3578e5f" prot="protected" static="no" mutable="no">
+        <type>SDL_Surface *</type>
+        <definition>SDL_Surface* MageSMelee::oSprite</definition>
+        <argsstring></argsstring>
+        <name>oSprite</name>
+        <qualifiedname>MageSMelee::oSprite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MageSMelee/MageSMelee.hpp" line="32" column="17" bodyfile="src/MVC/View/MageSMelee/MageSMelee.hpp" bodystart="32" bodyend="-1"/>
+        <referencedby refid="class_mage_s_melee_1aacea6ddbcd8b54ac89660dbd22ce1c26" compoundref="_mage_s_melee_8cpp" startline="39" endline="66">MageSMelee</referencedby>
+        <referencedby refid="class_mage_s_melee_1a445ad48b4ff1c950358908ea5b03b768" compoundref="_mage_s_melee_8cpp" startline="84" endline="167">render</referencedby>
+        <referencedby refid="class_mage_s_melee_1a3564915cfc67a4ae2ac57d67e199fe00" compoundref="_mage_s_melee_8cpp" startline="68" endline="82">~MageSMelee</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_mage_s_melee_1a4072c67b15750590b948cd97990eabdc" prot="protected" static="no" mutable="no">
+        <type>SDL_Surface *</type>
+        <definition>SDL_Surface* MageSMelee::xSprite</definition>
+        <argsstring></argsstring>
+        <name>xSprite</name>
+        <qualifiedname>MageSMelee::xSprite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MageSMelee/MageSMelee.hpp" line="33" column="17" bodyfile="src/MVC/View/MageSMelee/MageSMelee.hpp" bodystart="33" bodyend="-1"/>
+        <referencedby refid="class_mage_s_melee_1aacea6ddbcd8b54ac89660dbd22ce1c26" compoundref="_mage_s_melee_8cpp" startline="39" endline="66">MageSMelee</referencedby>
+        <referencedby refid="class_mage_s_melee_1a445ad48b4ff1c950358908ea5b03b768" compoundref="_mage_s_melee_8cpp" startline="84" endline="167">render</referencedby>
+        <referencedby refid="class_mage_s_melee_1a3564915cfc67a4ae2ac57d67e199fe00" compoundref="_mage_s_melee_8cpp" startline="68" endline="82">~MageSMelee</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_mage_s_melee_1a7e231e08da5c35f949063eb52586e228" prot="protected" static="no" mutable="no">
+        <type>std::array&lt; std::array&lt; <ref refid="struct_tile" kindref="compound">Tile</ref>, 5 &gt;, 5 &gt;</type>
+        <definition>std::array&lt;std::array&lt;Tile, 5&gt;, 5&gt; MageSMelee::board</definition>
+        <argsstring></argsstring>
+        <name>board</name>
+        <qualifiedname>MageSMelee::board</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MageSMelee/MageSMelee.hpp" line="34" column="16" bodyfile="src/MVC/View/MageSMelee/MageSMelee.hpp" bodystart="34" bodyend="-1"/>
+        <referencedby refid="class_mage_s_melee_1a4e9f1727ce98bca9080746efd1471fd7" compoundref="_mage_s_melee_8cpp" startline="182" endline="225">handleClick</referencedby>
+        <referencedby refid="class_mage_s_melee_1a445ad48b4ff1c950358908ea5b03b768" compoundref="_mage_s_melee_8cpp" startline="84" endline="167">render</referencedby>
+        <referencedby refid="class_mage_s_melee_1adee4d5570b7c39471faf16a1f0479d77" compoundref="_mage_s_melee_8cpp" startline="175" endline="178">undo</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_mage_s_melee_1a154cb7bc59d2a35d0cd1b8aaa519e7f3" prot="protected" static="no" mutable="no">
+        <type>Uint32</type>
+        <definition>Uint32 MageSMelee::frameStart</definition>
+        <argsstring></argsstring>
+        <name>frameStart</name>
+        <qualifiedname>MageSMelee::frameStart</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MageSMelee/MageSMelee.hpp" line="36" column="12" bodyfile="src/MVC/View/MageSMelee/MageSMelee.hpp" bodystart="36" bodyend="-1"/>
+        <referencedby refid="class_mage_s_melee_1aacea6ddbcd8b54ac89660dbd22ce1c26" compoundref="_mage_s_melee_8cpp" startline="39" endline="66">MageSMelee</referencedby>
+        <referencedby refid="class_mage_s_melee_1a445ad48b4ff1c950358908ea5b03b768" compoundref="_mage_s_melee_8cpp" startline="84" endline="167">render</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_mage_s_melee_1a94e7acba1608ff9b1ce0e6f4b52534a3" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MageSMelee::frameCount</definition>
+        <argsstring></argsstring>
+        <name>frameCount</name>
+        <qualifiedname>MageSMelee::frameCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MageSMelee/MageSMelee.hpp" line="37" column="9" bodyfile="src/MVC/View/MageSMelee/MageSMelee.hpp" bodystart="37" bodyend="-1"/>
+        <referencedby refid="class_mage_s_melee_1aacea6ddbcd8b54ac89660dbd22ce1c26" compoundref="_mage_s_melee_8cpp" startline="39" endline="66">MageSMelee</referencedby>
+        <referencedby refid="class_mage_s_melee_1a445ad48b4ff1c950358908ea5b03b768" compoundref="_mage_s_melee_8cpp" startline="84" endline="167">render</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_mage_s_melee_1ad9161b2c805a108ee141e77bf47d9415" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MageSMelee::fps</definition>
+        <argsstring></argsstring>
+        <name>fps</name>
+        <qualifiedname>MageSMelee::fps</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MageSMelee/MageSMelee.hpp" line="38" column="9" bodyfile="src/MVC/View/MageSMelee/MageSMelee.hpp" bodystart="38" bodyend="-1"/>
+        <referencedby refid="class_mage_s_melee_1aacea6ddbcd8b54ac89660dbd22ce1c26" compoundref="_mage_s_melee_8cpp" startline="39" endline="66">MageSMelee</referencedby>
+        <referencedby refid="class_mage_s_melee_1a445ad48b4ff1c950358908ea5b03b768" compoundref="_mage_s_melee_8cpp" startline="84" endline="167">render</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_mage_s_melee_1aacea6ddbcd8b54ac89660dbd22ce1c26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MageSMelee::MageSMelee</definition>
+        <argsstring>(SDL_Window *win)</argsstring>
+        <name>MageSMelee</name>
+        <qualifiedname>MageSMelee::MageSMelee</qualifiedname>
+        <param>
+          <type>SDL_Window *</type>
+          <declname>win</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MageSMelee/MageSMelee.hpp" line="15" column="5" bodyfile="src/MVC/View/MageSMelee/MageSMelee.cpp" bodystart="39" bodyend="66"/>
+        <references refid="class_mage_s_melee_1add3fb4a284482edb2ca9b4b69b3ccf37" compoundref="_mage_s_melee_8hpp" startline="29">backgroundSuface</references>
+        <references refid="class_mage_s_melee_1a36fd2d7de64a5e40fdc568a2c721a8f0" compoundref="_mage_s_melee_8hpp" startline="26">engine</references>
+        <references refid="class_mage_s_melee_1ad9161b2c805a108ee141e77bf47d9415" compoundref="_mage_s_melee_8hpp" startline="38">fps</references>
+        <references refid="class_mage_s_melee_1a94e7acba1608ff9b1ce0e6f4b52534a3" compoundref="_mage_s_melee_8hpp" startline="37">frameCount</references>
+        <references refid="class_mage_s_melee_1a154cb7bc59d2a35d0cd1b8aaa519e7f3" compoundref="_mage_s_melee_8hpp" startline="36">frameStart</references>
+        <references refid="class_view_1a5f0736c22c13c2a80880e81598f477ad" compoundref="_view_8cpp" startline="67" endline="72">View::getWorkingDirectory</references>
+        <references refid="class_mage_s_melee_1a06b70fa53acf60f8d5821c254b681642" compoundref="_mage_s_melee_8hpp" startline="25">indexCliked</references>
+        <references refid="class_mage_s_melee_1acdd2e4e268dae1cbef8536bef3578e5f" compoundref="_mage_s_melee_8hpp" startline="32">oSprite</references>
+        <references refid="class_view_1aa5b491173ee12319fca81e1306c215fb" compoundref="_view_8hpp" startline="23">View::windowSurface</references>
+        <references refid="class_mage_s_melee_1a4072c67b15750590b948cd97990eabdc" compoundref="_mage_s_melee_8hpp" startline="33">xSprite</references>
+      </memberdef>
+      <memberdef kind="function" id="class_mage_s_melee_1a3564915cfc67a4ae2ac57d67e199fe00" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>MageSMelee::~MageSMelee</definition>
+        <argsstring>()</argsstring>
+        <name>~MageSMelee</name>
+        <qualifiedname>MageSMelee::~MageSMelee</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MageSMelee/MageSMelee.hpp" line="16" column="13" bodyfile="src/MVC/View/MageSMelee/MageSMelee.cpp" bodystart="68" bodyend="82"/>
+        <references refid="class_mage_s_melee_1add3fb4a284482edb2ca9b4b69b3ccf37" compoundref="_mage_s_melee_8hpp" startline="29">backgroundSuface</references>
+        <references refid="class_mage_s_melee_1acdd2e4e268dae1cbef8536bef3578e5f" compoundref="_mage_s_melee_8hpp" startline="32">oSprite</references>
+        <references refid="class_mage_s_melee_1a4072c67b15750590b948cd97990eabdc" compoundref="_mage_s_melee_8hpp" startline="33">xSprite</references>
+      </memberdef>
+      <memberdef kind="function" id="class_mage_s_melee_1a445ad48b4ff1c950358908ea5b03b768" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void MageSMelee::render</definition>
+        <argsstring>() override</argsstring>
+        <name>render</name>
+        <qualifiedname>MageSMelee::render</qualifiedname>
+        <reimplements refid="class_view_1aadd18a025bf4c867dc29f7c7b9cddb71">render</reimplements>
+        <reimplementedby refid="class_play_v_ai_1a1df49f27221983b7101b304cb679f928">render</reimplementedby>
+        <reimplementedby refid="class_play_v_peti_gran_1a1bbfc4b4b6d1dd12ece2d634725d6357">render</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MageSMelee/MageSMelee.hpp" line="17" column="10" bodyfile="src/MVC/View/MageSMelee/MageSMelee.cpp" bodystart="84" bodyend="167"/>
+        <references refid="class_mage_s_melee_1add3fb4a284482edb2ca9b4b69b3ccf37" compoundref="_mage_s_melee_8hpp" startline="29">backgroundSuface</references>
+        <references refid="struct_tile_1aafb31e1fb33692cca3b88e4099247305adb856a73d6fcc8db6d64395f5f199232" compoundref="_tile_8cpp" startline="6">Tile::Blank</references>
+        <references refid="class_mage_s_melee_1a7e231e08da5c35f949063eb52586e228" compoundref="_mage_s_melee_8hpp" startline="34">board</references>
+        <references refid="struct_tile_coords_1a9fc2681b1ec60e5eb8fba9895831591f" compoundref="_view_8hpp" startline="16">TileCoords::bottomLeft</references>
+        <references refid="class_mage_s_melee_1a36fd2d7de64a5e40fdc568a2c721a8f0" compoundref="_mage_s_melee_8hpp" startline="26">engine</references>
+        <references refid="class_mage_s_melee_1ad9161b2c805a108ee141e77bf47d9415" compoundref="_mage_s_melee_8hpp" startline="38">fps</references>
+        <references refid="class_mage_s_melee_1a94e7acba1608ff9b1ce0e6f4b52534a3" compoundref="_mage_s_melee_8hpp" startline="37">frameCount</references>
+        <references refid="class_mage_s_melee_1a154cb7bc59d2a35d0cd1b8aaa519e7f3" compoundref="_mage_s_melee_8hpp" startline="36">frameStart</references>
+        <references refid="class_player_1af1aa472885d589516f483e26e786600e" compoundref="_player_8cpp" startline="31" endline="34">Player::getName</references>
+        <references refid="class_game_engine_1a99ad1e6afca252c61da4850b16826549" compoundref="_game_engine_8cpp" startline="86" endline="89">GameEngine::getWichSignPlay</references>
+        <references refid="class_game_engine_1ad404bb893f4df79c3070e8a6b5042d75" compoundref="_game_engine_8cpp" startline="15" endline="28">GameEngine::getWinner</references>
+        <references refid="class_game_engine_1a83c9b6668f8e83200bc22df7fea0b710" compoundref="_game_engine_8cpp" startline="126" endline="136">GameEngine::isWinner</references>
+        <references refid="struct_tile_1aafb31e1fb33692cca3b88e4099247305a8d02d2d250080ae6f6ef5a0e26691671" compoundref="_tile_8cpp" startline="6">Tile::O</references>
+        <references refid="class_mage_s_melee_1acdd2e4e268dae1cbef8536bef3578e5f" compoundref="_mage_s_melee_8hpp" startline="32">oSprite</references>
+        <references refid="class_view_1ac1c8210656b4e7e3b7ab5ed08c188210" compoundref="_view_8cpp" startline="112" endline="143">View::renderText</references>
+        <references refid="class_mage_s_melee_1abf4ee004c5a881940484da796170386e" compoundref="_mage_s_melee_8hpp" startline="12" endline="37">TILE_COORDS</references>
+        <references refid="struct_tile_coords_1a0e01e82cc3047eb0662f0f13c13cc428" compoundref="_view_8hpp" startline="13">TileCoords::topLeft</references>
+        <references refid="struct_tile_coords_1a070b19d844fdf497900f0bc9bc281b56" compoundref="_view_8hpp" startline="14">TileCoords::topRight</references>
+        <references refid="class_view_1aa5b491173ee12319fca81e1306c215fb" compoundref="_view_8hpp" startline="23">View::windowSurface</references>
+        <references refid="struct_tile_1aafb31e1fb33692cca3b88e4099247305adf141bb3f83331473a28e74837c99d31" compoundref="_tile_8cpp" startline="6">Tile::X</references>
+        <references refid="class_mage_s_melee_1a4072c67b15750590b948cd97990eabdc" compoundref="_mage_s_melee_8hpp" startline="33">xSprite</references>
+        <referencedby refid="class_play_v_ai_1a1df49f27221983b7101b304cb679f928" compoundref="_play_v_ai_8cpp" startline="55" endline="72">PlayVAi::render</referencedby>
+        <referencedby refid="class_play_v_peti_gran_1a1bbfc4b4b6d1dd12ece2d634725d6357" compoundref="_play_v_peti_gran_8cpp" startline="56" endline="73">PlayVPetiGran::render</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_mage_s_melee_1aba8695ed017b52a977aa4342f68d642e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool MageSMelee::hasUndo</definition>
+        <argsstring>() override</argsstring>
+        <name>hasUndo</name>
+        <qualifiedname>MageSMelee::hasUndo</qualifiedname>
+        <reimplements refid="class_view_1ae6cd92d2b38bd02d6f3e27a1d4aa52b0">hasUndo</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MageSMelee/MageSMelee.hpp" line="18" column="10" bodyfile="src/MVC/View/MageSMelee/MageSMelee.cpp" bodystart="180" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mage_s_melee_1adee4d5570b7c39471faf16a1f0479d77" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void MageSMelee::undo</definition>
+        <argsstring>() override</argsstring>
+        <name>undo</name>
+        <qualifiedname>MageSMelee::undo</qualifiedname>
+        <reimplements refid="class_view_1ab058a8e2c0326cf34cfdf65e4ab74a3d">undo</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MageSMelee/MageSMelee.hpp" line="19" column="10" bodyfile="src/MVC/View/MageSMelee/MageSMelee.cpp" bodystart="175" bodyend="178"/>
+        <references refid="class_mage_s_melee_1a7e231e08da5c35f949063eb52586e228" compoundref="_mage_s_melee_8hpp" startline="34">board</references>
+        <references refid="class_mage_s_melee_1a36fd2d7de64a5e40fdc568a2c721a8f0" compoundref="_mage_s_melee_8hpp" startline="26">engine</references>
+        <references refid="class_game_engine_1a240bd6ba9896a74d8d6a391d68321f65" compoundref="_game_engine_8cpp" startline="103" endline="106">GameEngine::getBoard</references>
+        <references refid="class_game_engine_1a98a153133811eebf83c49b698053d8a0" compoundref="_game_engine_8cpp" startline="61" endline="79">GameEngine::undoMove</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_mage_s_melee_1a6699c8f7cb32851b49e2e5b69cd81c66" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool MageSMelee::isPointInTile</definition>
+        <argsstring>(const SDL_Point &amp;point, const TileCoords &amp;tile)</argsstring>
+        <name>isPointInTile</name>
+        <qualifiedname>MageSMelee::isPointInTile</qualifiedname>
+        <param>
+          <type>const SDL_Point &amp;</type>
+          <declname>point</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_tile_coords" kindref="compound">TileCoords</ref> &amp;</type>
+          <declname>tile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MageSMelee/MageSMelee.hpp" line="27" column="10" bodyfile="src/MVC/View/MageSMelee/MageSMelee.cpp" bodystart="169" bodyend="173"/>
+        <references refid="struct_tile_coords_1a9fc2681b1ec60e5eb8fba9895831591f" compoundref="_view_8hpp" startline="16">TileCoords::bottomLeft</references>
+        <references refid="struct_tile_coords_1a0e01e82cc3047eb0662f0f13c13cc428" compoundref="_view_8hpp" startline="13">TileCoords::topLeft</references>
+        <references refid="struct_tile_coords_1a070b19d844fdf497900f0bc9bc281b56" compoundref="_view_8hpp" startline="14">TileCoords::topRight</references>
+        <referencedby refid="class_mage_s_melee_1a4e9f1727ce98bca9080746efd1471fd7" compoundref="_mage_s_melee_8cpp" startline="182" endline="225">handleClick</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_mage_s_melee_1a4e9f1727ce98bca9080746efd1471fd7" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_view" kindref="compound">View</ref> *</type>
+        <definition>View * MageSMelee::handleClick</definition>
+        <argsstring>(int, int) override</argsstring>
+        <name>handleClick</name>
+        <qualifiedname>MageSMelee::handleClick</qualifiedname>
+        <reimplements refid="class_view_1a1179d0967f12f59f2f7c8fcf9e9f9777">handleClick</reimplements>
+        <reimplementedby refid="class_play_v_ai_1a20c80281be15f3b032e9bb29a44ca4dc">handleClick</reimplementedby>
+        <reimplementedby refid="class_play_v_peti_gran_1a96a5923a615c1c4faa74390afa85dba9">handleClick</reimplementedby>
+        <param>
+          <type>int</type>
+          <defname>x</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>y</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/View/MageSMelee/MageSMelee.hpp" line="28" column="10" bodyfile="src/MVC/View/MageSMelee/MageSMelee.cpp" bodystart="182" bodyend="225"/>
+        <references refid="class_mage_s_melee_1a6d8b18d3bb8b525880961dc8df335797" compoundref="_mage_s_melee_8hpp" startline="11" endline="11">BACK_BTN</references>
+        <references refid="class_mage_s_melee_1a7e231e08da5c35f949063eb52586e228" compoundref="_mage_s_melee_8hpp" startline="34">board</references>
+        <references refid="class_mage_s_melee_1a36fd2d7de64a5e40fdc568a2c721a8f0" compoundref="_mage_s_melee_8hpp" startline="26">engine</references>
+        <references refid="class_game_engine_1a240bd6ba9896a74d8d6a391d68321f65" compoundref="_game_engine_8cpp" startline="103" endline="106">GameEngine::getBoard</references>
+        <references refid="class_game_engine_1ace888c08461583425b890bb369fc1e5e" compoundref="_game_engine_8cpp" startline="91" endline="96">GameEngine::getCoordsFromIndex</references>
+        <references refid="class_view_1a5f0736c22c13c2a80880e81598f477ad" compoundref="_view_8cpp" startline="67" endline="72">View::getWorkingDirectory</references>
+        <references refid="class_mage_s_melee_1a06b70fa53acf60f8d5821c254b681642" compoundref="_mage_s_melee_8hpp" startline="25">indexCliked</references>
+        <references refid="class_mage_s_melee_1a6699c8f7cb32851b49e2e5b69cd81c66" compoundref="_mage_s_melee_8cpp" startline="169" endline="173">isPointInTile</references>
+        <references refid="class_game_engine_1a36ce03ed1a7e52e7c2ae86c6aa1c9374" compoundref="_game_engine_8cpp" startline="46" endline="59">GameEngine::move</references>
+        <references refid="class_mage_s_melee_1a6ce8033fe2ebd4aeaec9b1121f93c129" compoundref="_mage_s_melee_8hpp" startline="22">NUM_TILES</references>
+        <references refid="class_game_engine_1a1a3afaae3d906d88f1d344497671550c" compoundref="_game_engine_8cpp" startline="81" endline="84">GameEngine::printBoard</references>
+        <references refid="class_mage_s_melee_1abf4ee004c5a881940484da796170386e" compoundref="_mage_s_melee_8hpp" startline="12" endline="37">TILE_COORDS</references>
+        <references refid="class_view_1a35f57e296a4643edae6424c7f9569f8d" compoundref="_view_8hpp" startline="22">View::window</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>MageSMelee</label>
+        <link refid="class_mage_s_melee"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>PlayVAi</label>
+        <link refid="class_play_v_ai"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>PlayVPetiGran</label>
+        <link refid="class_play_v_peti_gran"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>View</label>
+        <link refid="class_view"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4">
+        <label>GameEngine</label>
+        <link refid="class_game_engine"/>
+      </node>
+      <node id="1">
+        <label>MageSMelee</label>
+        <link refid="class_mage_s_melee"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>#BACK_BTN</edgelabel>
+          <edgelabel>#TILE_COORDS</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>#engine</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>TileCoords</label>
+        <link refid="struct_tile_coords"/>
+      </node>
+      <node id="2">
+        <label>View</label>
+        <link refid="class_view"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/MVC/View/MageSMelee/MageSMelee.hpp" line="12" column="1" bodyfile="src/MVC/View/MageSMelee/MageSMelee.hpp" bodystart="13" bodyend="39"/>
+    <listofallmembers>
+      <member refid="class_mage_s_melee_1a6d8b18d3bb8b525880961dc8df335797" prot="protected" virt="non-virtual"><scope>MageSMelee</scope><name>BACK_BTN</name></member>
+      <member refid="class_mage_s_melee_1add3fb4a284482edb2ca9b4b69b3ccf37" prot="protected" virt="non-virtual"><scope>MageSMelee</scope><name>backgroundSuface</name></member>
+      <member refid="class_mage_s_melee_1a7e231e08da5c35f949063eb52586e228" prot="protected" virt="non-virtual"><scope>MageSMelee</scope><name>board</name></member>
+      <member refid="class_view_1ad13ef8a915eefe21242979e08391068f" prot="public" virt="non-virtual"><scope>MageSMelee</scope><name>clear</name></member>
+      <member refid="class_view_1a6d56a0ed7565f87b2b6fb8c4f3d928c9" prot="public" virt="non-virtual"><scope>MageSMelee</scope><name>display</name></member>
+      <member refid="class_mage_s_melee_1a36fd2d7de64a5e40fdc568a2c721a8f0" prot="protected" virt="non-virtual"><scope>MageSMelee</scope><name>engine</name></member>
+      <member refid="class_mage_s_melee_1ad9161b2c805a108ee141e77bf47d9415" prot="protected" virt="non-virtual"><scope>MageSMelee</scope><name>fps</name></member>
+      <member refid="class_mage_s_melee_1a94e7acba1608ff9b1ce0e6f4b52534a3" prot="protected" virt="non-virtual"><scope>MageSMelee</scope><name>frameCount</name></member>
+      <member refid="class_mage_s_melee_1a154cb7bc59d2a35d0cd1b8aaa519e7f3" prot="protected" virt="non-virtual"><scope>MageSMelee</scope><name>frameStart</name></member>
+      <member refid="class_view_1a5f0736c22c13c2a80880e81598f477ad" prot="protected" virt="non-virtual"><scope>MageSMelee</scope><name>getWorkingDirectory</name></member>
+      <member refid="class_mage_s_melee_1a4e9f1727ce98bca9080746efd1471fd7" prot="protected" virt="virtual"><scope>MageSMelee</scope><name>handleClick</name></member>
+      <member refid="class_mage_s_melee_1aba8695ed017b52a977aa4342f68d642e" prot="public" virt="virtual"><scope>MageSMelee</scope><name>hasUndo</name></member>
+      <member refid="class_mage_s_melee_1a06b70fa53acf60f8d5821c254b681642" prot="protected" virt="non-virtual"><scope>MageSMelee</scope><name>indexCliked</name></member>
+      <member refid="class_view_1ad052ecdacd422790fa4a4ded799c41b2" prot="protected" virt="non-virtual"><scope>MageSMelee</scope><name>isPointInPoly</name></member>
+      <member refid="class_mage_s_melee_1a6699c8f7cb32851b49e2e5b69cd81c66" prot="protected" virt="non-virtual"><scope>MageSMelee</scope><name>isPointInTile</name></member>
+      <member refid="class_view_1af6f6c1ea574a36be900071605e57fe63" prot="protected" virt="non-virtual"><scope>MageSMelee</scope><name>loadAudio</name></member>
+      <member refid="class_mage_s_melee_1aacea6ddbcd8b54ac89660dbd22ce1c26" prot="public" virt="non-virtual"><scope>MageSMelee</scope><name>MageSMelee</name></member>
+      <member refid="class_mage_s_melee_1a6ce8033fe2ebd4aeaec9b1121f93c129" prot="protected" virt="non-virtual"><scope>MageSMelee</scope><name>NUM_TILES</name></member>
+      <member refid="class_mage_s_melee_1acdd2e4e268dae1cbef8536bef3578e5f" prot="protected" virt="non-virtual"><scope>MageSMelee</scope><name>oSprite</name></member>
+      <member refid="class_view_1ab198b5eafe0638b8f842929ac52c06a5" prot="protected" virt="non-virtual"><scope>MageSMelee</scope><name>playAudio</name></member>
+      <member refid="class_view_1a1b10b2fb05b3502c748d051c330d8ce3" prot="protected" virt="non-virtual"><scope>MageSMelee</scope><name>playAudio</name></member>
+      <member refid="class_mage_s_melee_1a445ad48b4ff1c950358908ea5b03b768" prot="public" virt="virtual"><scope>MageSMelee</scope><name>render</name></member>
+      <member refid="class_view_1ae6c0fae7b8cd50858eb320c711916f70" prot="protected" virt="non-virtual"><scope>MageSMelee</scope><name>renderCenteredText</name></member>
+      <member refid="class_view_1ac1c8210656b4e7e3b7ab5ed08c188210" prot="protected" virt="non-virtual"><scope>MageSMelee</scope><name>renderText</name></member>
+      <member refid="class_mage_s_melee_1abf4ee004c5a881940484da796170386e" prot="protected" virt="non-virtual"><scope>MageSMelee</scope><name>TILE_COORDS</name></member>
+      <member refid="class_mage_s_melee_1aa139742008884e702089960f474b3bf7" prot="protected" virt="non-virtual"><scope>MageSMelee</scope><name>tileSurface</name></member>
+      <member refid="class_mage_s_melee_1adee4d5570b7c39471faf16a1f0479d77" prot="public" virt="virtual"><scope>MageSMelee</scope><name>undo</name></member>
+      <member refid="class_view_1af8120cd4045de81b85544972f68ad58e" prot="public" virt="non-virtual"><scope>MageSMelee</scope><name>View</name></member>
+      <member refid="class_view_1a35f57e296a4643edae6424c7f9569f8d" prot="protected" virt="non-virtual"><scope>MageSMelee</scope><name>window</name></member>
+      <member refid="class_mage_s_melee_1a56743f6a19fa75226df7c563174e7dd9" prot="protected" virt="non-virtual"><scope>MageSMelee</scope><name>window_surface</name></member>
+      <member refid="class_view_1aa5b491173ee12319fca81e1306c215fb" prot="protected" virt="non-virtual"><scope>MageSMelee</scope><name>windowSurface</name></member>
+      <member refid="class_mage_s_melee_1a4072c67b15750590b948cd97990eabdc" prot="protected" virt="non-virtual"><scope>MageSMelee</scope><name>xSprite</name></member>
+      <member refid="class_mage_s_melee_1a3564915cfc67a4ae2ac57d67e199fe00" prot="public" virt="virtual"><scope>MageSMelee</scope><name>~MageSMelee</name></member>
+      <member refid="class_view_1ad0dc854db9aabbea98a334dec89f785c" prot="public" virt="virtual"><scope>MageSMelee</scope><name>~View</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

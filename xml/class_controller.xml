@@ -1,0 +1,290 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="class_controller" kind="class" language="C++" prot="public">
+    <compoundname>Controller</compoundname>
+    <includes refid="_controller_8hpp" local="no">Controller.hpp</includes>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_controller_1aa292f09e22fa12f3c34bf21db2bce0b3" prot="private" static="yes" mutable="no">
+        <type><ref refid="class_controller" kindref="compound">Controller</ref> *</type>
+        <definition>Controller * Controller::instance</definition>
+        <argsstring></argsstring>
+        <name>instance</name>
+        <qualifiedname>Controller::instance</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>Singleton instance of the <ref refid="class_controller" kindref="compound">Controller</ref> class. Used to ensure that only one instance of the <ref refid="class_controller" kindref="compound">Controller</ref> class exists throughout the application. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/Controller.hpp" line="12" column="23" bodyfile="src/MVC/Controller.hpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_controller_1a2b3ddd68cad16fa37c1aa4b528c54a49" prot="private" static="no" mutable="no">
+        <type><ref refid="class_view" kindref="compound">View</ref> *</type>
+        <definition>View* Controller::view</definition>
+        <argsstring></argsstring>
+        <name>view</name>
+        <qualifiedname>Controller::view</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/Controller.hpp" line="13" column="10" bodyfile="src/MVC/Controller.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_controller_1a038c4afbd18386e3ed915d3061ca25fe" prot="private" static="no" mutable="no">
+        <type>SDL_Window *</type>
+        <definition>SDL_Window* Controller::window</definition>
+        <argsstring></argsstring>
+        <name>window</name>
+        <qualifiedname>Controller::window</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/Controller.hpp" line="14" column="16" bodyfile="src/MVC/Controller.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_controller_1a983ef6feab5eada8700b164164d15974" prot="private" static="no" mutable="no">
+        <type>Mix_Chunk *</type>
+        <definition>Mix_Chunk* Controller::gMusic</definition>
+        <argsstring></argsstring>
+        <name>gMusic</name>
+        <qualifiedname>Controller::gMusic</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/Controller.hpp" line="15" column="15" bodyfile="src/MVC/Controller.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_controller_1adb37f9abead4d042d6b03a7e46a9d99b" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Controller::isRunning</definition>
+        <argsstring></argsstring>
+        <name>isRunning</name>
+        <qualifiedname>Controller::isRunning</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/Controller.hpp" line="16" column="10" bodyfile="src/MVC/Controller.hpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_controller_1a660859c6eb7197692f4adce077fab8e4" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Controller::mouseX</definition>
+        <argsstring></argsstring>
+        <name>mouseX</name>
+        <qualifiedname>Controller::mouseX</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/Controller.hpp" line="17" column="9" bodyfile="src/MVC/Controller.hpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_controller_1a242c358a946eef2c997ce83ff10b7f29" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Controller::mouseY</definition>
+        <argsstring></argsstring>
+        <name>mouseY</name>
+        <qualifiedname>Controller::mouseY</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/Controller.hpp" line="17" column="16" bodyfile="src/MVC/Controller.hpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_controller_1a95c56822d667e94b031451729ce069a9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Controller::Controller</definition>
+        <argsstring>()</argsstring>
+        <name>Controller</name>
+        <qualifiedname>Controller::Controller</qualifiedname>
+        <briefdescription>
+<para>Construct a new <ref refid="class_controller" kindref="compound">Controller</ref> object. Initializes SDL, SDL_ttf, and SDL_mixer. Creates the main window and loads initial audio resources. Exits the application with an error message if initialization fails or resources cannot be loaded. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/Controller.hpp" line="11" column="5" bodyfile="src/MVC/Controller.cpp" bodystart="31" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="class_controller_1a9bcd90a3849740a0026f7105469bf006" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Controller::updateView</definition>
+        <argsstring>(View *newView)</argsstring>
+        <name>updateView</name>
+        <qualifiedname>Controller::updateView</qualifiedname>
+        <param>
+          <type><ref refid="class_view" kindref="compound">View</ref> *</type>
+          <declname>newView</declname>
+        </param>
+        <briefdescription>
+<para>Updates the current view. Clears the current window surface, deletes the old view, and replaces it with a new view. This method is typically called in response to user interactions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>newView</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the new view that will replace the current view. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/Controller.hpp" line="18" column="10" bodyfile="src/MVC/Controller.cpp" bodystart="182" bodyend="187"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_controller_1ab2ccfb3fcbabdd1307d10436b0d7131d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Controller::Controller</definition>
+        <argsstring>(const Controller &amp;)=delete</argsstring>
+        <name>Controller</name>
+        <qualifiedname>Controller::Controller</qualifiedname>
+        <param>
+          <type>const <ref refid="class_controller" kindref="compound">Controller</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/Controller.hpp" line="21" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_controller_1a462f7689320e5dd6e41f51dd9f41a254" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_controller" kindref="compound">Controller</ref> &amp;</type>
+        <definition>Controller &amp; Controller::operator=</definition>
+        <argsstring>(const Controller &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Controller::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_controller" kindref="compound">Controller</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/Controller.hpp" line="22" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_controller_1a0ab87934c4f7a266cfdb86e0f36bc1b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Controller::~Controller</definition>
+        <argsstring>()</argsstring>
+        <name>~Controller</name>
+        <qualifiedname>Controller::~Controller</qualifiedname>
+        <briefdescription>
+<para>Destructor for the <ref refid="class_controller" kindref="compound">Controller</ref> object. Cleans up resources, frees loaded audio chunks, destroys the window, and quits SDL. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/Controller.hpp" line="34" column="5" bodyfile="src/MVC/Controller.cpp" bodystart="98" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="class_controller_1a692f0f5dc600cdcb79786a31cf283ce1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Controller::run</definition>
+        <argsstring>()</argsstring>
+        <name>run</name>
+        <qualifiedname>Controller::run</qualifiedname>
+        <briefdescription>
+<para>Main loop of the application. Manages the application flow, starting with the <ref refid="class_loading" kindref="compound">Loading</ref> screen, then moving to the <ref refid="class_main_menu" kindref="compound">MainMenu</ref>. Handles events and updates the window surface continuously until the application is closed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/Controller.hpp" line="35" column="10" bodyfile="src/MVC/Controller.cpp" bodystart="111" bodyend="127"/>
+        <references refid="class_controller_1a89fb29e4ea90c5eaf00a76fa065c7f58" compoundref="_controller_8cpp" startline="134" endline="173">handleEvents</references>
+        <references refid="class_view_1aadd18a025bf4c867dc29f7c7b9cddb71">View::render</references>
+        <referencedby refid="main_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" compoundref="main_8cpp" startline="57" endline="100">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_controller_1a89fb29e4ea90c5eaf00a76fa065c7f58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Controller::handleEvents</definition>
+        <argsstring>()</argsstring>
+        <name>handleEvents</name>
+        <qualifiedname>Controller::handleEvents</qualifiedname>
+        <briefdescription>
+<para>Handles user input and system events. Processes all SDL events, such as quitting the application, mouse button presses, and keydown events. Updates the view based on user interactions or system commands. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/Controller.hpp" line="36" column="10" bodyfile="src/MVC/Controller.cpp" bodystart="134" bodyend="173"/>
+        <references refid="class_view_1a1179d0967f12f59f2f7c8fcf9e9f9777">View::handleClick</references>
+        <references refid="class_view_1ae6cd92d2b38bd02d6f3e27a1d4aa52b0">View::hasUndo</references>
+        <references refid="class_view_1ab058a8e2c0326cf34cfdf65e4ab74a3d">View::undo</references>
+        <referencedby refid="class_controller_1a692f0f5dc600cdcb79786a31cf283ce1" compoundref="_controller_8cpp" startline="111" endline="127">run</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_controller_1a2d97dc215140c17f3239fbf368b04eb3" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_controller" kindref="compound">Controller</ref> *</type>
+        <definition>static Controller * Controller::getInstance</definition>
+        <argsstring>()</argsstring>
+        <name>getInstance</name>
+        <qualifiedname>Controller::getInstance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MVC/Controller.hpp" line="25" column="23" bodyfile="src/MVC/Controller.hpp" bodystart="25" bodyend="32"/>
+        <referencedby refid="main_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" compoundref="main_8cpp" startline="57" endline="100">main</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Controller</label>
+        <link refid="class_controller"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/MVC/Controller.hpp" line="8" column="1" bodyfile="src/MVC/Controller.hpp" bodystart="9" bodyend="37"/>
+    <listofallmembers>
+      <member refid="class_controller_1a95c56822d667e94b031451729ce069a9" prot="private" virt="non-virtual"><scope>Controller</scope><name>Controller</name></member>
+      <member refid="class_controller_1ab2ccfb3fcbabdd1307d10436b0d7131d" prot="public" virt="non-virtual"><scope>Controller</scope><name>Controller</name></member>
+      <member refid="class_controller_1a2d97dc215140c17f3239fbf368b04eb3" prot="public" virt="non-virtual"><scope>Controller</scope><name>getInstance</name></member>
+      <member refid="class_controller_1a983ef6feab5eada8700b164164d15974" prot="private" virt="non-virtual"><scope>Controller</scope><name>gMusic</name></member>
+      <member refid="class_controller_1a89fb29e4ea90c5eaf00a76fa065c7f58" prot="public" virt="non-virtual"><scope>Controller</scope><name>handleEvents</name></member>
+      <member refid="class_controller_1aa292f09e22fa12f3c34bf21db2bce0b3" prot="private" virt="non-virtual"><scope>Controller</scope><name>instance</name></member>
+      <member refid="class_controller_1adb37f9abead4d042d6b03a7e46a9d99b" prot="private" virt="non-virtual"><scope>Controller</scope><name>isRunning</name></member>
+      <member refid="class_controller_1a660859c6eb7197692f4adce077fab8e4" prot="private" virt="non-virtual"><scope>Controller</scope><name>mouseX</name></member>
+      <member refid="class_controller_1a242c358a946eef2c997ce83ff10b7f29" prot="private" virt="non-virtual"><scope>Controller</scope><name>mouseY</name></member>
+      <member refid="class_controller_1a462f7689320e5dd6e41f51dd9f41a254" prot="public" virt="non-virtual"><scope>Controller</scope><name>operator=</name></member>
+      <member refid="class_controller_1a692f0f5dc600cdcb79786a31cf283ce1" prot="public" virt="non-virtual"><scope>Controller</scope><name>run</name></member>
+      <member refid="class_controller_1a9bcd90a3849740a0026f7105469bf006" prot="private" virt="non-virtual"><scope>Controller</scope><name>updateView</name></member>
+      <member refid="class_controller_1a2b3ddd68cad16fa37c1aa4b528c54a49" prot="private" virt="non-virtual"><scope>Controller</scope><name>view</name></member>
+      <member refid="class_controller_1a038c4afbd18386e3ed915d3061ca25fe" prot="private" virt="non-virtual"><scope>Controller</scope><name>window</name></member>
+      <member refid="class_controller_1a0ab87934c4f7a266cfdb86e0f36bc1b5" prot="public" virt="non-virtual"><scope>Controller</scope><name>~Controller</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

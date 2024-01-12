@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="class_player" kind="class" language="C++" prot="public">
+    <compoundname>Player</compoundname>
+    <derivedcompoundref refid="class_player_a_i" prot="public" virt="non-virtual">PlayerAI</derivedcompoundref>
+    <derivedcompoundref refid="class_player_human" prot="public" virt="non-virtual">PlayerHuman</derivedcompoundref>
+    <includes refid="_player_8hpp" local="no">Player.hpp</includes>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_player_1af9c920fabaafdeb7961a645315b521ff" prot="protected" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Player::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>Player::name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Player/Player.hpp" line="16" column="17" bodyfile="src/Player/Player.hpp" bodystart="16" bodyend="-1"/>
+        <referencedby refid="class_player_1af1aa472885d589516f483e26e786600e" compoundref="_player_8cpp" startline="31" endline="34">getName</referencedby>
+        <referencedby refid="class_player_1a45fa04a2a4ff9235e6c100b7c6ab232a" compoundref="_player_8cpp" startline="9" endline="12">Player</referencedby>
+        <referencedby refid="class_player_a_i_1a8a7d49d494914bbb3938934acbcd5912" compoundref="_player_a_i_8cpp" startline="10" endline="14">PlayerAI::PlayerAI</referencedby>
+        <referencedby refid="class_player_human_1ad2439e150f51406b9357abd46eac2738" compoundref="_player_human_8cpp" startline="3" endline="7">PlayerHuman::PlayerHuman</referencedby>
+        <referencedby refid="class_player_1a77cfdb8708c16a0726d5bdd9e7b356d1" compoundref="_player_8cpp" startline="20" endline="23">setName</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_player_1a45fa04a2a4ff9235e6c100b7c6ab232a" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Player::Player</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>Player</name>
+        <qualifiedname>Player::Player</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Construct a new <ref refid="class_player" kindref="compound">Player</ref> object. Initializes the player with the provided name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the player. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Player/Player.hpp" line="10" column="14" bodyfile="src/Player/Player.cpp" bodystart="9" bodyend="12"/>
+        <references refid="class_player_1af9c920fabaafdeb7961a645315b521ff" compoundref="_player_8hpp" startline="16">name</references>
+        <references refid="class_player_1a77cfdb8708c16a0726d5bdd9e7b356d1" compoundref="_player_8cpp" startline="20" endline="23">setName</references>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a11017c0ed8a639f3b1308ab167fbeca2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual Player::~Player</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Player</name>
+        <qualifiedname>Player::~Player</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Player/Player.hpp" line="11" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1af1aa472885d589516f483e26e786600e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Player::getName</definition>
+        <argsstring>()</argsstring>
+        <name>getName</name>
+        <qualifiedname>Player::getName</qualifiedname>
+        <briefdescription>
+<para>Gets the name of the player. Returns the current name of the player. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>std::string The name of the player. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Player/Player.hpp" line="12" column="17" bodyfile="src/Player/Player.cpp" bodystart="31" bodyend="34"/>
+        <references refid="class_player_1af9c920fabaafdeb7961a645315b521ff" compoundref="_player_8hpp" startline="16">name</references>
+        <referencedby refid="class_mage_s_melee_1a445ad48b4ff1c950358908ea5b03b768" compoundref="_mage_s_melee_8cpp" startline="84" endline="167">MageSMelee::render</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_player_1a77cfdb8708c16a0726d5bdd9e7b356d1" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player::setName</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>setName</name>
+        <qualifiedname>Player::setName</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Sets the name of the player. Updates the player&apos;s name to the provided string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new name to be set for the player. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/Player/Player.hpp" line="15" column="10" bodyfile="src/Player/Player.cpp" bodystart="20" bodyend="23"/>
+        <references refid="class_player_1af9c920fabaafdeb7961a645315b521ff" compoundref="_player_8hpp" startline="16">name</references>
+        <referencedby refid="class_player_1a45fa04a2a4ff9235e6c100b7c6ab232a" compoundref="_player_8cpp" startline="9" endline="12">Player</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>MinMaxAI</label>
+        <link refid="class_min_max_a_i"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Player</label>
+        <link refid="class_player"/>
+      </node>
+      <node id="2">
+        <label>PlayerAI</label>
+        <link refid="class_player_a_i"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>PlayerHuman</label>
+        <link refid="class_player_human"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>RandomAI</label>
+        <link refid="class_random_a_i"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Player</label>
+        <link refid="class_player"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/Player/Player.hpp" line="7" column="1" bodyfile="src/Player/Player.hpp" bodystart="8" bodyend="17"/>
+    <listofallmembers>
+      <member refid="class_player_1af1aa472885d589516f483e26e786600e" prot="public" virt="non-virtual"><scope>Player</scope><name>getName</name></member>
+      <member refid="class_player_1af9c920fabaafdeb7961a645315b521ff" prot="protected" virt="non-virtual"><scope>Player</scope><name>name</name></member>
+      <member refid="class_player_1a45fa04a2a4ff9235e6c100b7c6ab232a" prot="public" virt="non-virtual"><scope>Player</scope><name>Player</name></member>
+      <member refid="class_player_1a77cfdb8708c16a0726d5bdd9e7b356d1" prot="protected" virt="non-virtual"><scope>Player</scope><name>setName</name></member>
+      <member refid="class_player_1a11017c0ed8a639f3b1308ab167fbeca2" prot="public" virt="virtual"><scope>Player</scope><name>~Player</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

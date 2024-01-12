@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="dir_5dfbce9017d3549fb3c3027e814645ca" kind="dir">
+    <compoundname>src/Player/AIPlayer</compoundname>
+    <innerdir refid="dir_55e54ea84429cd466c3306213891ead9">src/Player/AIPlayer/MinMaxAI</innerdir>
+    <innerdir refid="dir_ffd95f9e4685e6e8d5ebe2439ae707cc">src/Player/AIPlayer/RandomAI</innerdir>
+    <innerfile refid="_player_a_i_8cpp">PlayerAI.cpp</innerfile>
+    <innerfile refid="_player_a_i_8hpp">PlayerAI.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/Player/AIPlayer/"/>
+  </compounddef>
+</doxygen>

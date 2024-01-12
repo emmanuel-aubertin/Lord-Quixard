@@ -104,7 +104,7 @@ Controller::~Controller()
 }
 
 /**
- * @brief Main loop of the application.
+ * @brief Main loƒop of the application.
  * Manages the application flow, starting with the Loading screen, then moving to the MainMenu.
  * Handles events and updates the window surface continuously until the application is closed.
  */
@@ -144,7 +144,6 @@ void Controller::handleEvents()
 
         case SDL_MOUSEBUTTONDOWN:
         {
-            int mouseX, mouseY;
             SDL_GetMouseState(&mouseX, &mouseY);
             View *tempView = view->handleClick(mouseX, mouseY);
             if (tempView != nullptr)

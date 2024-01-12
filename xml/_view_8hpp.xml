@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="_view_8hpp" kind="file" language="C++">
+    <compoundname>View.hpp</compoundname>
+    <includes local="no">SDL2/SDL.h</includes>
+    <includes local="no">SDL2/SDL_ttf.h</includes>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">utility</includes>
+    <includes local="no">SDL2/SDL_mixer.h</includes>
+    <includedby refid="_controller_8hpp" local="yes">src/MVC/Controller.hpp</includedby>
+    <includedby refid="_loading_8hpp" local="yes">src/MVC/View/Loading/Loading.hpp</includedby>
+    <includedby refid="_mage_s_melee_8cpp" local="yes">src/MVC/View/MageSMelee/MageSMelee.cpp</includedby>
+    <includedby refid="_mage_s_melee_8hpp" local="yes">src/MVC/View/MageSMelee/MageSMelee.hpp</includedby>
+    <includedby refid="_main_menu_8hpp" local="yes">src/MVC/View/MainMenu/MainMenu.hpp</includedby>
+    <includedby refid="_play_v_ai_8cpp" local="yes">src/MVC/View/PlayVAi/PlayVAi.cpp</includedby>
+    <includedby refid="_play_v_ai_8hpp" local="yes">src/MVC/View/PlayVAi/PlayVAi.hpp</includedby>
+    <includedby refid="_play_v_peti_gran_8cpp" local="yes">src/MVC/View/PlayVPetiGran/PlayVPetiGran.cpp</includedby>
+    <includedby refid="_play_v_peti_gran_8hpp" local="yes">src/MVC/View/PlayVPetiGran/PlayVPetiGran.hpp</includedby>
+    <includedby refid="_view_8cpp" local="yes">src/MVC/View/View.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/MVC/View/View.hpp</label>
+        <link refid="_view_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SDL2/SDL.h</label>
+      </node>
+      <node id="7">
+        <label>SDL2/SDL_mixer.h</label>
+      </node>
+      <node id="3">
+        <label>SDL2/SDL_ttf.h</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+      <node id="6">
+        <label>utility</label>
+      </node>
+      <node id="5">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="4">
+        <label>src/MVC/Controller.cpp</label>
+        <link refid="_controller_8cpp"/>
+      </node>
+      <node id="2">
+        <label>src/MVC/Controller.hpp</label>
+        <link refid="_controller_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>src/MVC/View/Loading/Loading.cpp</label>
+        <link refid="_loading_8cpp"/>
+      </node>
+      <node id="5">
+        <label>src/MVC/View/Loading/Loading.hpp</label>
+        <link refid="_loading_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>src/MVC/View/MageSMelee/MageSMelee.cpp</label>
+        <link refid="_mage_s_melee_8cpp"/>
+      </node>
+      <node id="8">
+        <label>src/MVC/View/MageSMelee/MageSMelee.hpp</label>
+        <link refid="_mage_s_melee_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>src/MVC/View/MainMenu/MainMenu.cpp</label>
+        <link refid="_main_menu_8cpp"/>
+      </node>
+      <node id="14">
+        <label>src/MVC/View/MainMenu/MainMenu.hpp</label>
+        <link refid="_main_menu_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>src/MVC/View/PlayVAi/PlayVAi.cpp</label>
+        <link refid="_play_v_ai_8cpp"/>
+      </node>
+      <node id="11">
+        <label>src/MVC/View/PlayVAi/PlayVAi.hpp</label>
+        <link refid="_play_v_ai_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>src/MVC/View/PlayVPetiGran/PlayVPetiGran.cpp</label>
+        <link refid="_play_v_peti_gran_8cpp"/>
+      </node>
+      <node id="13">
+        <label>src/MVC/View/PlayVPetiGran/PlayVPetiGran.hpp</label>
+        <link refid="_play_v_peti_gran_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>src/MVC/View/View.cpp</label>
+        <link refid="_view_8cpp"/>
+      </node>
+      <node id="1">
+        <label>src/MVC/View/View.hpp</label>
+        <link refid="_view_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_tile_coords" prot="public">TileCoords</innerclass>
+    <innerclass refid="class_view" prot="public">View</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>VIEW_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VIEW_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SDL2/SDL.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SDL2/SDL_ttf.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SDL2/SDL_mixer.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="struct_tile_coords" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_tile_coords" kindref="compound">TileCoords</ref></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13" refid="struct_tile_coords_1a0e01e82cc3047eb0662f0f13c13cc428" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Point<sp/><ref refid="struct_tile_coords_1a0e01e82cc3047eb0662f0f13c13cc428" kindref="member">topLeft</ref>;</highlight></codeline>
+<codeline lineno="14" refid="struct_tile_coords_1a070b19d844fdf497900f0bc9bc281b56" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Point<sp/><ref refid="struct_tile_coords_1a070b19d844fdf497900f0bc9bc281b56" kindref="member">topRight</ref>;</highlight></codeline>
+<codeline lineno="15" refid="struct_tile_coords_1ac716ddc1085ccafb326760309c2b0418" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Point<sp/><ref refid="struct_tile_coords_1ac716ddc1085ccafb326760309c2b0418" kindref="member">bottomRight</ref>;</highlight></codeline>
+<codeline lineno="16" refid="struct_tile_coords_1a9fc2681b1ec60e5eb8fba9895831591f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Point<sp/><ref refid="struct_tile_coords_1a9fc2681b1ec60e5eb8fba9895831591f" kindref="member">bottomLeft</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="class_view" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_view" kindref="compound">View</ref></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="22" refid="class_view_1a35f57e296a4643edae6424c7f9569f8d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Window<sp/>*<ref refid="class_view_1a35f57e296a4643edae6424c7f9569f8d" kindref="member">window</ref>;</highlight></codeline>
+<codeline lineno="23" refid="class_view_1aa5b491173ee12319fca81e1306c215fb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Surface<sp/>*<ref refid="class_view_1aa5b491173ee12319fca81e1306c215fb" kindref="member">windowSurface</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_view_1ac1c8210656b4e7e3b7ab5ed08c188210" kindref="member">renderText</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;text,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y,<sp/>SDL_Color<sp/>color,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_view_1ad052ecdacd422790fa4a4ded799c41b2" kindref="member">isPointInPoly</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::pair&lt;int,<sp/>int&gt;&gt;<sp/>&amp;poly);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_view_1ae6c0fae7b8cd50858eb320c711916f70" kindref="member">renderCenteredText</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;text,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>winWidth,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>startY,<sp/>SDL_Color<sp/>color,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fontSize);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>Mix_Chunk<sp/>*<ref refid="class_view_1af6f6c1ea574a36be900071605e57fe63" kindref="member">loadAudio</ref>(std::string<sp/>filename,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>level);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_view_1ab198b5eafe0638b8f842929ac52c06a5" kindref="member">playAudio</ref>(std::string<sp/>filename,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>level,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>canal);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_view_1ab198b5eafe0638b8f842929ac52c06a5" kindref="member">playAudio</ref>(Mix_Chunk<sp/>*gAudio,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>canal);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="class_view_1a5f0736c22c13c2a80880e81598f477ad" kindref="member">getWorkingDirectory</ref>();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_view_1af8120cd4045de81b85544972f68ad58e" kindref="member">View</ref>(SDL_Window<sp/>*win);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_view_1ad0dc854db9aabbea98a334dec89f785c" kindref="member">~View</ref>();</highlight></codeline>
+<codeline lineno="35" refid="class_view_1ab058a8e2c0326cf34cfdf65e4ab74a3d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_view_1ab058a8e2c0326cf34cfdf65e4ab74a3d" kindref="member">undo</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="36" refid="class_view_1a1179d0967f12f59f2f7c8fcf9e9f9777" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_view" kindref="compound">View</ref><sp/>*<ref refid="class_view_1a1179d0967f12f59f2f7c8fcf9e9f9777" kindref="member">handleClick</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="37" refid="class_view_1ae6cd92d2b38bd02d6f3e27a1d4aa52b0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_view_1ae6cd92d2b38bd02d6f3e27a1d4aa52b0" kindref="member">hasUndo</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="38" refid="class_view_1aadd18a025bf4c867dc29f7c7b9cddb71" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_view_1aadd18a025bf4c867dc29f7c7b9cddb71" kindref="member">render</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_view_1ad13ef8a915eefe21242979e08391068f" kindref="member">clear</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_view_1a6d56a0ed7565f87b2b6fb8c4f3d928c9" kindref="member">display</ref>();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="src/MVC/View/View.hpp"/>
+  </compounddef>
+</doxygen>

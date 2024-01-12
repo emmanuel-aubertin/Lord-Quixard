@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="_config_8hpp" kind="file" language="C++">
+    <compoundname>Config.hpp</compoundname>
+    <includes local="no">string</includes>
+    <includedby refid="_config_8cpp" local="yes">Config.cpp</includedby>
+    <includedby refid="main_8cpp" local="yes">main.cpp</includedby>
+    <includedby refid="_controller_8cpp" local="yes">src/MVC/Controller.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>Config.hpp</label>
+        <link refid="_config_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>Config.cpp</label>
+        <link refid="_config_8cpp"/>
+      </node>
+      <node id="1">
+        <label>Config.hpp</label>
+        <link refid="_config_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="4">
+        <label>src/MVC/Controller.cpp</label>
+        <link refid="_controller_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_config" prot="public">Config</innerclass>
+    <briefdescription>
+<para>Provides configuration constants for the application. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This header file contains constant definitions used throughout the application. These constants include program name, file information, release details, author information, and copyright. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>CONFIG_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="class_config" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_config" kindref="compound">Config</ref><sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="8" refid="class_config_1a6f4755319bd46402e33b001debbac608" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="class_config_1a6f4755319bd46402e33b001debbac608" kindref="member">PROGNAME</ref>;</highlight></codeline>
+<codeline lineno="9" refid="class_config_1abc018ce0ccfce1af4fb7b14168a8ce84" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="class_config_1abc018ce0ccfce1af4fb7b14168a8ce84" kindref="member">FILE_NAME</ref>;</highlight></codeline>
+<codeline lineno="10" refid="class_config_1af11860661407835d3093f4202dfdcefe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="class_config_1af11860661407835d3093f4202dfdcefe" kindref="member">RELEASE</ref>;</highlight></codeline>
+<codeline lineno="11" refid="class_config_1ab188b3ccb545a69493296f518cde6fb0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="class_config_1ab188b3ccb545a69493296f518cde6fb0" kindref="member">AUTHOR</ref>;</highlight></codeline>
+<codeline lineno="12" refid="class_config_1a18ad2712990f6a39d1386abe1ccafe36" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="class_config_1a18ad2712990f6a39d1386abe1ccafe36" kindref="member">COPYRIGHT</ref>;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Config.hpp"/>
+  </compounddef>
+</doxygen>
