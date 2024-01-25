@@ -4,13 +4,7 @@
 #include <sstream>
 #include <vector>
 #include <utility>
-#ifdef _WIN32
-#include <direct.h>
-#define GETCWD _getcwd
-#else
-#include <unistd.h>
-#define GETCWD getcwd
-#endif
+
 
 /**
  * @brief Construct a new View object.
@@ -66,9 +60,7 @@ void View::display()
  */
 std::string View::getWorkingDirectory()
 {
-    char buff[FILENAME_MAX];
-    GETCWD(buff, FILENAME_MAX);
-    return std::string(buff);
+    return "/opt/lord_quixard";
 }
 
 /**

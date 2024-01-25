@@ -62,9 +62,8 @@ Controller::Controller()
         printf("SDL_mixer could not initialize! SDL_mixer Error: %s\n", Mix_GetError());
     }
 
-    char buff[FILENAME_MAX];
-    GETCWD(buff, FILENAME_MAX);
-    std::string pathMusic = std::string(buff) + "/static/audio/music.wav";
+
+    std::string pathMusic = "/opt/lord_quixard/static/audio/music.wav";
 
     gMusic = Mix_LoadWAV(pathMusic.c_str());
     if (gMusic == NULL)
@@ -75,7 +74,7 @@ Controller::Controller()
     // Generate a random int between 1 and 3
     int randomInt = rand() % 3 + 1;
 
-    std::string pathWelcome = std::string(buff) + "/static/audio/welcome." + std::to_string(randomInt) + ".wav";
+    std::string pathWelcome = "/opt/lord_quixard/static/audio/welcome." + std::to_string(randomInt) + ".wav";
 
     Mix_Chunk *gWelcome = Mix_LoadWAV(pathWelcome.c_str());
     if (gWelcome == NULL)
@@ -104,7 +103,7 @@ Controller::~Controller()
 }
 
 /**
- * @brief Main loop of the application.
+ * @brief Main loƒop of the application.
  * Manages the application flow, starting with the Loading screen, then moving to the MainMenu.
  * Handles events and updates the window surface continuously until the application is closed.
  */
@@ -144,7 +143,6 @@ void Controller::handleEvents()
 
         case SDL_MOUSEBUTTONDOWN:
         {
-            int mouseX, mouseY;
             SDL_GetMouseState(&mouseX, &mouseY);
             View *tempView = view->handleClick(mouseX, mouseY);
             if (tempView != nullptr)

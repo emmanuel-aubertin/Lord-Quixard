@@ -67,11 +67,11 @@ void GameEngine::undoMove()
         history.pop_back();
         board->restoreFromMemento(history.back());
         this->toogleWichPlay();
-        PlayerAI* aiPlayer = dynamic_cast<PlayerAI*>(&playerTwo);
+        PlayerAI *aiPlayer = dynamic_cast<PlayerAI *>(&playerTwo);
         if (whichPlay == Tile::O && aiPlayer != nullptr)
         {
             // Undoing AI move...
-            undoMove(); 
+            undoMove();
         }
         std::cout << "Grid updated" << std::endl;
     }
@@ -220,6 +220,7 @@ void GameEngine::makeIAmove()
  * @return true if the move is legal
  * @return false if the move isn't legal
  */
+
 bool GameEngine::isValidMove(const int x, const int y, const int new_x, const int new_y)
 {
     // If out of board
@@ -264,4 +265,24 @@ bool GameEngine::isValidMove(const int x, const int y, const int new_x, const in
     }
 
     return true;
+}
+
+Tile::Sign GameEngine::getWinnerSign()
+{
+    if (!isWinner())
+    {
+        return Tile::Blank;
+    }
+    for (int i = 0; i < this->board->getBoard().size(); ++i)
+    {
+        if (isRowWin(i))
+            return this->board->getBoard()[i][0].sign;
+        if (isColumnWin(i))
+            return this->board->getBoard()[0][i].sign;
+    }
+    if (isMainDiagonalWin())
+        return this->board->getBoard()[0][0].sign;
+    if (isAntiDiagonalWin())
+        return this->board->getBoard()[0][this->board->getBoard().size() - 1].sign;
+    return Tile::Blank;
 }

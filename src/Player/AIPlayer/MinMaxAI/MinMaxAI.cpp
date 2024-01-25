@@ -122,7 +122,7 @@ int MinMaxAI::minimax(GameBoard *board, int depth, bool isMaximizingPlayer, Tile
 
     if (isMaximizingPlayer)
     {
-        int bestValue = INT_MIN;
+        int bestValue = -10001;
         for (const auto &move : board->getPossibleMoves(sign))
         {
             GameBoard tempBoard = *board;
@@ -135,7 +135,7 @@ int MinMaxAI::minimax(GameBoard *board, int depth, bool isMaximizingPlayer, Tile
     }
     else
     {
-        int bestValue = INT_MAX;
+        int bestValue = 10001;
         for (const auto &move : board->getPossibleMoves(oppositeSign(sign)))
         {
             GameBoard tempBoard = *board;
@@ -186,7 +186,7 @@ std::vector<int> MinMaxAI::getPlay(GameBoard *board, Tile::Sign sign)
                                          return minimax(&tempBoard, depth, false, sign); }));
         }
     }
-    int bestValue = INT_MIN;
+    int bestValue = -10001;
     std::vector<int> bestMove;
 
     for (size_t i = 0; i < futures.size(); ++i)

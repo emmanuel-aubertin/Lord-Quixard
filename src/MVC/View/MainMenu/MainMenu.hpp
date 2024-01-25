@@ -17,11 +17,10 @@ public:
     void undo()override {};
 private:
     bool isCube, isBal, isMinMax;
-    TTF_Font *font;
     SDL_Surface *gHelloWorld;
     SDL_Surface *textSurface;
     SDL_Surface *window_surface;
-    Mix_Chunk *gMageVmage;
+
 
     View *handleClick(int, int) override;
     // For FPS tracking

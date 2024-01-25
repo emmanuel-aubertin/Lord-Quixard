@@ -54,21 +54,21 @@ PlayVAi::~PlayVAi()
 }
 void PlayVAi::render()
 {
-    MageSMelee::render();
     if (engine->isWinner() && !audioWin)
     {
         int randomInt = rand() % 2 + 1;
 
-        if (engine->getWichSignPlay() == Tile::O)
-        {
-            playAudio(loadAudio("balthazard/balthazard.loose." + std::to_string(randomInt), 48), 6);
-        }
-        else
+        if (engine->getWinnerSign() == Tile::O)
         {
             playAudio(loadAudio("balthazard/balthazard.win." + std::to_string(randomInt), 48), 6);
         }
+        else
+        {
+            playAudio(loadAudio("balthazard/balthazard.loose." + std::to_string(randomInt), 48), 6);
+        }
         audioWin = true;
     }
+    MageSMelee::render();
 }
 
 View *PlayVAi::handleClick(int x, int y)

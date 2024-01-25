@@ -22,7 +22,7 @@ public:
     int getIndexFromCoords(const int x, const int y);
     Player getWinner();
     void undoMove();
-
+Tile::Sign getWinnerSign();
 private:
     std::vector<GameBoardMemento> history;
     GameBoard *board;

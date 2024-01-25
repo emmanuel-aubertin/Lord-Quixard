@@ -55,12 +55,11 @@ PlayVPetiGran::~PlayVPetiGran()
 
 void PlayVPetiGran::render()
 {
-    MageSMelee::render();
     if (engine->isWinner() && !audioWin)
     {
         int randomInt = rand() % 2 + 1;
 
-        if (engine->getWichSignPlay() == Tile::O)
+        if (engine->getWinnerSign() == Tile::O)
         {
             playAudio(loadAudio("petigran/petigran.win." + std::to_string(randomInt), 48), 6);
         }
@@ -70,8 +69,8 @@ void PlayVPetiGran::render()
         }
         audioWin = true;
     }
+    MageSMelee::render();
 }
-
 
 View *PlayVPetiGran::handleClick(int x, int y)
 {

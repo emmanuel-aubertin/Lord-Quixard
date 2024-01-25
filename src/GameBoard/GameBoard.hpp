@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include "./../Tile.cpp"
+#include <array>
+#include <vector>
 
 class GameBoardMemento
 {

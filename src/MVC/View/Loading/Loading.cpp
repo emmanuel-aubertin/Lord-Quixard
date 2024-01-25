@@ -1,6 +1,7 @@
 #include "Loading.hpp"
 #include <iostream>
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h> // Include SDL_image for JPEG support
 
 Loading::Loading(SDL_Window *win) : View(win)
 {
@@ -12,6 +13,7 @@ Loading::Loading(SDL_Window *win) : View(win)
 Loading::~Loading()
 {
 }
+
 bool Loading::hasUndo() { return false; }
 void Loading::render()
 {
@@ -25,10 +27,12 @@ void Loading::render()
     lastUpdateTime = currentTime; // Update the time of the last update
 
     std::string background_path = getFramePath(imgCounter);
-    SDL_Surface *gHelloWorld = SDL_LoadBMP(background_path.c_str());
+
+    // Load the JPEG image using SDL_image
+    SDL_Surface *gHelloWorld = IMG_Load(background_path.c_str());
     if (!gHelloWorld)
     {
-        std::cerr << "Unable to load image " << background_path << "! SDL Error: " << SDL_GetError() << std::endl;
+        std::cerr << "Unable to load image " << background_path << "! SDL Error: " << IMG_GetError() << std::endl;
     }
     else
     {
@@ -52,15 +56,15 @@ std::string Loading::getFramePath(int frameNumber)
     std::string path;
     if (frameNumber < 10)
     {
-        path = getWorkingDirectory() + "/static/img/loading/thumb000" + std::to_string(frameNumber) + ".bmp";
+        path = getWorkingDirectory() + "/static/img/loading/frames_000" + std::to_string(frameNumber) + ".jpg"; // Use .jpg for JPEG
     }
     else if (frameNumber < 100)
     {
-        path = getWorkingDirectory() + "/static/img/loading/thumb00" + std::to_string(frameNumber) + ".bmp";
+        path = getWorkingDirectory() + "/static/img/loading/frames_00" + std::to_string(frameNumber) + ".jpg"; // Use .jpg for JPEG
     }
     else
     {
-        path = getWorkingDirectory() + "/static/img/loading/thumb0" + std::to_string(frameNumber) + ".bmp";
+        path = getWorkingDirectory() + "/static/img/loading/frames_0" + std::to_string(frameNumber) + ".jpg"; // Use .jpg for JPEG
     }
     return path;
 }
