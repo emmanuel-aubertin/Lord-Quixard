@@ -19,7 +19,7 @@ You can install Lord Quixard using a simple, one-liner command or by following t
 Execute the following command in your terminal to download, set execute permissions, and run the installation script in one go:
 
 ```bash
-curl -o install.sh https://sourceforge.net/p/lord-quixard/code/ci/master/tree/install.sh?format=raw && chmod +x install.sh && ./install.sh
+curl -o install.sh https://raw.githubusercontent.com/emmanuel-aubertin/QuixoCPP/main/install.sh?token=GHSAT0AAAAAACKIJZNVW4ZQBI5TGMH5NC44ZNSIT3Q && chmod +x install.sh && ./install.sh
 ```
 
 ### Step-by-Step Installation
@@ -31,7 +31,7 @@ If you prefer a step-by-step approach, follow these instructions:
    Use `curl` to download the script:
 
    ```bash
-   curl -o install.sh https://sourceforge.net/p/lord-quixard/code/ci/master/tree/install.sh?format=raw
+   curl -o install.sh https://raw.githubusercontent.com/emmanuel-aubertin/QuixoCPP/main/install.sh?token=GHSAT0AAAAAACKIJZNVW4ZQBI5TGMH5NC44ZNSIT3Q
    ```
 
 2. **Make the Script Executable:**
