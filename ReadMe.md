@@ -1,7 +1,5 @@
 # Lord Quixard: Thalila Mooncrest's Quest
 
-[![Download Lord Quixard](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/lord-quixard/files/latest/download)
-
 ## Overview
 Welcome to the immersive world of Quixo, brought to life in this digital adaptation. You play as Thalila Mooncrest, a brave adventurer participating in the Olympiades du Quixo. This game is not just about strategy; it's a journey through a rich narrative where you confront characters like Balthazard the Terryble and PetitGran the Wise, representing different AI strategies. Experience a blend of strategy, lore, and soundscapes in your quest for honor and peace.
 
