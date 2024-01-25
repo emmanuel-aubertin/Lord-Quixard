@@ -136,7 +136,7 @@ fi
 
 # Downloading all file
 colored_echo "32m--------|" "Downloading Lord Quixard |--------"
-git clone https://athomisos@git.code.sf.net/p/lord-quixard/code lord-quixard
+git clone https://github.com/emmanuel-aubertin/QuixoCPP.git lord-quixard
 
 colored_echo "32m--------|" "Installing Lord Quixard |--------"
 
