@@ -14,16 +14,45 @@ Welcome to the immersive world of Quixo, brought to life in this digital adaptat
 
 ## Installation
 
-### Dependencies
+You can install Lord Quixard using a simple, one-liner command or by following three detailed steps. Choose the method that works best for you.
+
+### Quick Installation (One-liner Command)
+
+Execute the following command in your terminal to download, set execute permissions, and run the installation script in one go:
+
 ```bash
-curl -o install.sh https://sourceforge.net/p/lord-quixard/code/ci/master/tree/install.sh?format=raw
-
-# Make the script executable
-chmod +x install.sh
-
-# Run the script
-./install.sh
+curl -o install.sh https://sourceforge.net/p/lord-quixard/code/ci/master/tree/install.sh?format=raw && chmod +x install.sh && ./install.sh
 ```
+
+### Step-by-Step Installation
+
+If you prefer a step-by-step approach, follow these instructions:
+
+1. **Download the Installation Script:**
+
+   Use `curl` to download the script:
+
+   ```bash
+   curl -o install.sh https://sourceforge.net/p/lord-quixard/code/ci/master/tree/install.sh?format=raw
+   ```
+
+2. **Make the Script Executable:**
+
+   Change the script's permissions to make it executable:
+
+   ```bash
+   chmod +x install.sh
+   ```
+
+3. **Run the Installation Script:**
+
+   Execute the script to start the installation process:
+
+   ```bash
+   ./install.sh
+   ```
+
+**Note:** Ensure you are sudoers.
 
 
 ## Playing the Game
