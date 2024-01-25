@@ -98,7 +98,7 @@ install_dependencies() {
                 echo "Homebrew not found. Installing Homebrew..."
                 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
             fi
-            brew install sdl2 sdl2_mixer sdl2_ttf sdl2_image
+            brew install sdl2 sdl2_mixer sdl2_ttf sdl2_image make
             ;;
         Linux)
             # Distinguish between Debian-based Linux and CentOS
@@ -106,14 +106,14 @@ install_dependencies() {
                 # Debian-based system
                 echo "Detected Debian-based Linux. Installing dependencies using apt..."
                 sudo apt-get update
-                sudo apt-get install -y libsdl2-dev libsdl2-mixer-dev libsdl2-ttf-dev libsdl2-image-dev clang
+                sudo apt-get install -y libsdl2-dev libsdl2-mixer-dev libsdl2-ttf-dev libsdl2-image-dev clang make
             elif [ -f /etc/centos-release ]; then
                 # CentOS system
                 echo "Detected CentOS. Installing dependencies using yum or dnf..."
                 if command -v dnf &> /dev/null; then
-                    sudo dnf install -y SDL2 SDL2_mixer SDL2_ttf SDL2_image clang
+                    sudo dnf install -y SDL2 SDL2_mixer SDL2_ttf SDL2_image clang make
                 else
-                    sudo yum install -y SDL2 SDL2_mixer SDL2_ttf SDL2_image clang
+                    sudo yum install -y SDL2 SDL2_mixer SDL2_ttf SDL2_image clang make
                 fi
             else
                 echo "Unsupported Linux distribution"
