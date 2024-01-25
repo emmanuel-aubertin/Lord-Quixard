@@ -134,6 +134,13 @@ if [ -d "/opt/lord_quixard" ]; then
     sudo rm -rf /opt/lord_quixard
 fi
 
+if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null ; then
+    echo "Detected WSL environment."
+    export XDG_RUNTIME_DIR=/tmp/runtime-$(whoami)
+    mkdir -p $XDG_RUNTIME_DIR
+    chmod 0700 $XDG_RUNTIME_DIR
+fi
+
 # Downloading all file
 colored_echo "32m--------|" "Downloading Lord Quixard |--------"
 git clone https://github.com/emmanuel-aubertin/QuixoCPP.git lord-quixard
@@ -157,7 +164,7 @@ if cd $DEST_DIR && git pull && make; then
     colored_echo "32m" "Installation complete."
 
     colored_echo "1;32m" "*************************************************"
-    colored_echo "1;33m" "*         🎉 Now you can enjoy Quixo! 🎉         *"
+    colored_echo "1;33m" "*        🎉 Now you can enjoy Quixo! 🎉         *"
     colored_echo "1;32m" "*************************************************"
     colored_echo "1;34m" "Just type 'Quixo' to start the game."
     colored_echo "1;32m" "Happy Gaming! 😊"
